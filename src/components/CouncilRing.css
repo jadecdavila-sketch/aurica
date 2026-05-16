@@ -1,0 +1,377 @@
+/* CouncilRing — the medallion-to-ring expansion.
+   Uses the cream/gold/wood palette via CSS custom properties
+   already defined in index.css. */
+
+.council-stage {
+  --portrait-size: 150px;
+  --ring-radius-collapsed: 68px;
+  --ring-radius-expanded: 230px;
+  --stage-h-collapsed: 380px;
+  --stage-h-expanded: 740px;
+  --ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--stage-h-collapsed);
+  transition: height 800ms var(--ease-slow);
+}
+
+.council-stage.is-expanded {
+  height: var(--stage-h-expanded);
+}
+
+.council-ring {
+  position: relative;
+  width: 720px;
+  height: 100%;
+  max-width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.council-ring-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Radial lines layer */
+.council-lines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 480px;
+  height: 480px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: visible;
+}
+
+.council-lines line {
+  stroke: var(--color-gold);
+  stroke-width: 1;
+  stroke-dasharray: 240;
+  stroke-dashoffset: 240;
+  opacity: 0;
+  transition:
+    stroke-dashoffset 900ms var(--ease-slow),
+    opacity 600ms var(--ease-slow),
+    stroke 300ms ease,
+    stroke-width 300ms ease;
+}
+
+.council-lines circle {
+  fill: none;
+  stroke: var(--color-gold);
+  stroke-opacity: 0.4;
+  stroke-width: 0.5;
+  stroke-dasharray: 2 6;
+  opacity: 0;
+  transition: opacity 800ms var(--ease-slow);
+  transition-delay: 600ms;
+}
+
+.council-stage.is-expanded .council-lines line {
+  stroke-dashoffset: 0;
+  opacity: 0.7;
+}
+
+.council-stage.is-expanded .council-lines circle {
+  opacity: 1;
+}
+
+/* Center invocation node */
+.council-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: var(--color-cream-soft);
+  border: 1px solid rgba(201, 169, 97, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-wood);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transition:
+    opacity 600ms var(--ease-slow),
+    box-shadow 300ms ease;
+  transition-delay: 700ms;
+  z-index: 5;
+  box-shadow:
+    0 0 0 8px var(--color-cream),
+    0 0 0 9px rgba(201, 169, 97, 0.18);
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.council-center .slash {
+  color: var(--color-terracotta);
+  font-weight: 500;
+}
+
+.council-center-hint {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-light);
+  margin-top: 4px;
+}
+
+.council-stage.is-expanded .council-center {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.council-stage.is-expanded .council-center:hover {
+  box-shadow:
+    0 0 0 8px var(--color-cream),
+    0 0 0 9px var(--color-terracotta);
+}
+
+/* Council members */
+.council-member {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--portrait-size);
+  height: var(--portrait-size);
+  margin: calc(var(--portrait-size) / -2);
+  transform:
+    rotate(var(--angle))
+    translateY(calc(-1 * var(--ring-radius-collapsed)))
+    rotate(calc(-1 * var(--angle)));
+  transition: transform 900ms var(--ease-slow);
+  z-index: 4;
+}
+
+.council-stage.is-expanded .council-member {
+  transform:
+    rotate(var(--angle))
+    translateY(calc(-1 * var(--ring-radius-expanded)))
+    rotate(calc(-1 * var(--angle)));
+}
+
+.council-portrait {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 0 0 2px var(--color-cream),
+    0 0 0 3px rgba(201, 169, 97, 0.45),
+    0 14px 36px rgba(63, 46, 31, 0.22);
+  transition:
+    transform 400ms var(--ease-slow),
+    box-shadow 400ms var(--ease-slow),
+    filter 600ms var(--ease-slow),
+    opacity 600ms var(--ease-slow);
+  cursor: pointer;
+  background: var(--color-cream-soft);
+}
+
+.council-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: saturate(0.88) contrast(1.02);
+  transition: filter 400ms var(--ease-slow);
+}
+
+.council-portrait::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, transparent 55%, rgba(63, 46, 31, 0.18) 100%);
+  pointer-events: none;
+}
+
+/* Per-portrait crop tweaks so faces stay framed */
+.council-member[data-id="architect"] .council-portrait img        { object-position: center 30%; }
+.council-member[data-id="midnight-responder"] .council-portrait img { object-position: center 28%; }
+.council-member[data-id="witness"] .council-portrait img          { object-position: center 26%; }
+.council-member[data-id="questioner"] .council-portrait img       { object-position: center 32%; }
+.council-member[data-id="groundskeeper"] .council-portrait img    { object-position: center 30%; }
+.council-member[data-id="long-game"] .council-portrait img        { object-position: center 30%; }
+
+/* Labels (only visible when expanded) */
+.council-label {
+  position: absolute;
+  width: 168px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0;
+  transition:
+    opacity 500ms var(--ease-slow),
+    transform 380ms var(--ease-slow);
+  pointer-events: none;
+}
+
+.council-stage.is-expanded .council-label { opacity: 1; }
+
+.council-stage.is-expanded .council-member:nth-child(1) .council-label { transition-delay: 750ms; }
+.council-stage.is-expanded .council-member:nth-child(2) .council-label { transition-delay: 820ms; }
+.council-stage.is-expanded .council-member:nth-child(3) .council-label { transition-delay: 890ms; }
+.council-stage.is-expanded .council-member:nth-child(4) .council-label { transition-delay: 960ms; }
+.council-stage.is-expanded .council-member:nth-child(5) .council-label { transition-delay: 1030ms; }
+.council-stage.is-expanded .council-member:nth-child(6) .council-label { transition-delay: 1100ms; }
+
+.council-label.below { top: calc(100% + 12px); }
+.council-label.above { bottom: calc(100% + 12px); }
+
+.council-label-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--color-wood-deep);
+  letter-spacing: -0.005em;
+}
+
+.council-label-pillar {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-light);
+  margin-top: 3px;
+}
+
+/* Hover state in expanded mode — the hovered voice grows and steps forward */
+.council-stage.is-expanded .council-member:hover {
+  z-index: 9;
+}
+
+.council-stage.is-expanded .council-member:hover .council-portrait {
+  transform: scale(1.34);
+  box-shadow:
+    0 0 0 2px var(--color-cream),
+    0 0 0 3px var(--color-gold),
+    0 28px 64px rgba(63, 46, 31, 0.4);
+}
+
+.council-stage.is-expanded .council-member:hover .council-portrait img {
+  filter: saturate(1) contrast(1.05);
+}
+
+/* As the portrait grows, its label steps clear so the circle never covers it */
+.council-stage.is-expanded .council-member:hover .council-label.above {
+  transform: translateX(-50%) translateY(-30px);
+  transition-delay: 0s;
+}
+.council-stage.is-expanded .council-member:hover .council-label.below {
+  transform: translateX(-50%) translateY(30px);
+  transition-delay: 0s;
+}
+
+.council-stage.is-expanded:has(.council-member:hover) .council-member:not(:hover) .council-portrait {
+  filter: saturate(0.5) brightness(0.95);
+  opacity: 0.55;
+}
+
+.council-stage.is-expanded:has(.council-member:hover) .council-member:not(:hover) .council-label {
+  opacity: 0.3;
+}
+
+.council-stage.is-expanded:has(.council-member[data-index="0"]:hover) .council-lines line[data-index="0"],
+.council-stage.is-expanded:has(.council-member[data-index="1"]:hover) .council-lines line[data-index="1"],
+.council-stage.is-expanded:has(.council-member[data-index="2"]:hover) .council-lines line[data-index="2"],
+.council-stage.is-expanded:has(.council-member[data-index="3"]:hover) .council-lines line[data-index="3"],
+.council-stage.is-expanded:has(.council-member[data-index="4"]:hover) .council-lines line[data-index="4"],
+.council-stage.is-expanded:has(.council-member[data-index="5"]:hover) .council-lines line[data-index="5"] {
+  stroke: var(--color-terracotta);
+  stroke-width: 1.5;
+  opacity: 1;
+}
+
+/* Collapsed-state portrait shadow */
+.council-stage:not(.is-expanded) .council-portrait {
+  box-shadow:
+    0 0 0 2px var(--color-cream),
+    0 0 0 3px rgba(201, 169, 97, 0.45),
+    0 10px 28px rgba(63, 46, 31, 0.28);
+}
+
+.council-stage:not(.is-expanded) .council-member[data-index="0"] { z-index: 7; }
+.council-stage:not(.is-expanded) .council-member[data-index="3"] { z-index: 8; }
+
+/* Convene hint */
+.council-convene-hint {
+  position: absolute;
+  top: 50%;
+  margin-top: 165px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-light);
+  opacity: 0.7;
+  transition: opacity 400ms ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.council-convene-hint .arrow {
+  color: var(--color-terracotta);
+  margin: 0 8px;
+}
+
+.council-stage.is-expanded .council-convene-hint { opacity: 0; }
+
+.council-ring:hover .council-convene-hint {
+  opacity: 1;
+  color: var(--color-wood);
+}
+
+.council-stage.is-expanded .council-ring:hover .council-convene-hint {
+  opacity: 0;
+}
+
+/* Subtle breathing animation on collapsed medallion */
+@keyframes council-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.008); }
+}
+
+.council-stage:not(.is-expanded) .council-ring-inner {
+  animation: council-breathe 6s ease-in-out infinite;
+}
+
+/* Responsive sizing */
+@media (max-width: 880px) {
+  .council-stage {
+    --portrait-size: 104px;
+    --ring-radius-collapsed: 46px;
+    --ring-radius-expanded: 153px;
+    --stage-h-collapsed: 280px;
+    --stage-h-expanded: 540px;
+  }
+  .council-lines { width: 320px; height: 320px; }
+  .council-label { width: 108px; }
+  .council-label-name { font-size: 12px; }
+  .council-label-pillar { font-size: 9px; }
+  .council-label.below { top: calc(100% + 8px); }
+  .council-label.above { bottom: calc(100% + 8px); }
+  .council-center { width: 64px; height: 64px; font-size: 10px; }
+  .council-center-hint { font-size: 8px; }
+  .council-convene-hint { margin-top: 110px; font-size: 9px; }
+}

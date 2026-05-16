@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,700&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ──────────────── Design system ────────────────
+   Two coexisting palettes:
+   1) Cradle palette (cream/wood/Fraunces) — used by the Home hero
+   2) Council-app palette (cream/forest/gold/olive + shadcn semantic tokens)
+      — used by drilldowns and content pages, copied from the
+      product-council-app so its UI primitives drop in cleanly.
+*/
+@theme inline {
+  /* Cradle palette */
+  --color-cream:        #F5F0E6;
+  --color-cream-soft:   #FAF6EE;
+  --color-stone:        #C9C1B0;
+  --color-stone-dark:   #C9C1B0;
+  --color-ink:          #2A2620;
+  --color-ink-soft:     #5A5248;
+  --color-ink-light:    #8A8275;
+  --color-wood:         #58412D;
+  --color-wood-deep:    #3F2E1F;
+  --color-wood-light:   #82603F;
+  --color-gold:         #C9A961;
+  --color-terracotta:   #C97B5A;
+
+  /* Council-app semantic tokens (shadcn-style; reference :root vars below) */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background:           var(--background);
+  --color-foreground:           var(--foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-popover:              var(--popover);
+  --color-popover-foreground:   var(--popover-foreground);
+  --color-primary:              var(--primary);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-accent:               var(--accent);
+  --color-accent-foreground:    var(--accent-foreground);
+  --color-destructive:          var(--destructive);
+  --color-border:               var(--border);
+  --color-input:                var(--input);
+  --color-ring:                 var(--ring);
+  --color-warm:                 var(--warm);
+
+  /* Type families */
+  --font-display:  'Fraunces', Georgia, serif;
+  --font-body:     'Montserrat', sans-serif;
+  --font-sans:     'Montserrat', system-ui, sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+
+  --ease-out-soft:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+:root {
+  /* Cradle layout dims */
+  --sphere-size:  108px;
+  --string-len:   220px;
+  --frame-h:      18px;
+  --row-width:    1089px;
+  --stage-width:  1209px;
+
+  /* Council-app semantic palette (verbatim from product-council-app) */
+  --radius: 0.625rem;
+  --background:           #F5F1EA;  /* warm cream */
+  --foreground:           #3A2A28;  /* dark brown */
+  --card:                 #FFFFFF;
+  --card-foreground:      #3A2A28;
+  --popover:              #FFFFFF;
+  --popover-foreground:   #3A2A28;
+  --primary:              #516C61;  /* forest */
+  --primary-foreground:   #F5F1EA;
+  --secondary:            #8C8C5A;  /* olive */
+  --secondary-foreground: #F5F1EA;
+  --muted:                #E8E4DC;
+  --muted-foreground:     #6B6B4A;
+  --accent:               #D8B466;  /* gold */
+  --accent-foreground:    #3A2A28;
+  --warm:                 #F0C2B4;  /* blush */
+  --destructive:          #B54A32;
+  --border:               #D4CFC5;
+  --input:                #D4CFC5;
+  --ring:                 #516C61;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Radix accordion: once open, release the height var so content
+   isn't clipped by sub-pixel rounding of --radix-accordion-content-height. */
+[data-slot="accordion-content"][data-state="open"] {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 1280px) {
+  :root { --sphere-size: 80px; --string-len: 170px; --row-width: 809px; --stage-width: 929px; }
+}
+@media (max-width: 880px) {
+  :root { --sphere-size: 56px; --string-len: 120px; --row-width: 569px; --stage-width: 689px; }
+}
+@media (max-width: 600px) {
+  :root { --sphere-size: 38px; --string-len: 80px; --row-width: 389px; --stage-width: 509px; }
+}
+
+/* Base layer — Tailwind preflight already handles margin/padding reset.
+   Anything site-wide goes in @layer base so utilities still win. */
+@layer base {
+  html, body, #root { min-height: 100vh; }
+  body {
+    font-family: var(--font-body);
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+.font-display    { font-family: var(--font-display); font-variation-settings: 'opsz' 144; }
+.font-display-sm { font-family: var(--font-display); font-variation-settings: 'opsz' 36; }
+.font-body       { font-family: var(--font-body); }
+.font-mono       { font-family: var(--font-mono); }
+
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(28px, 4.5vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-variation-settings: 'opsz' 144;
+}
+.text-display .accent {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-terracotta);
+}
+
+.text-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--color-ink-light);
+  text-transform: uppercase;
+}
+.text-eyebrow-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.text-eyebrow-rule::before,
+.text-eyebrow-rule::after {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--color-ink-light);
+  opacity: 0.4;
+}
+
+.text-question {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-ink-soft);
+  font-variation-settings: 'opsz' 24;
+}
+
+@media (max-width: 880px) {
+  .text-display { font-size: clamp(22px, 6vw, 36px); }
+}
+
+.cradle-stage {
+  position: relative;
+  width: var(--stage-width);
+  max-width: 100%;
+  height: calc(var(--frame-h) + var(--string-len) + var(--sphere-size) + 110px);
+  margin: 0 auto;
+}
+
+.cradle-frame {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--row-width);
+  height: var(--frame-h);
+  background: linear-gradient(
+    to bottom,
+    var(--color-wood-light) 0%,
+    var(--color-wood) 30%,
+    var(--color-wood-deep) 100%
+  );
+  border-radius: 1px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.1) inset,
+    0 -1px 0 rgba(0,0,0,0.2) inset,
+    0 6px 12px rgba(58,46,31,0.15);
+}
+.cradle-frame::before,
+.cradle-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: var(--frame-h);
+  background: var(--color-wood-deep);
+  border-radius: 1px;
+}
+.cradle-frame::before { left: -12px; }
+.cradle-frame::after  { right: -12px; }
+
+.pendulums {
+  position: absolute;
+  top: var(--frame-h);
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--row-width);
+  height: calc(var(--string-len) + var(--sphere-size));
+  pointer-events: none;
+}
+
+.strings-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.sphere {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--sphere-size);
+  height: var(--sphere-size);
+  border-radius: 50%;
+  /* Zoom slightly to crop the transparent rim baked into the PNGs. */
+  background-size: 116%;
+  background-position: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: filter 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.sphere:hover { filter: brightness(1.04); }
+
+.shadow-track {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--row-width);
+  height: 30px;
+  pointer-events: none;
+}
+.shadow {
+  position: absolute;
+  width: calc(var(--sphere-size) * 1.05);
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(58,46,31,0.32) 0%,
+    rgba(58,46,31,0.18) 45%,
+    rgba(58,46,31,0) 75%
+  );
+  transform: translateX(var(--shadow-offset, 0px)) scale(var(--shadow-scale, 1));
+  filter: blur(var(--shadow-blur, 3px));
+  opacity: var(--shadow-opacity, 1);
+  will-change: transform, opacity, filter;
+}
+
+.labels {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--row-width);
+  height: 24px;
+  pointer-events: none;
+}
+.label {
+  position: absolute;
+  top: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  text-align: center;
+  font-variation-settings: 'opsz' 14;
+  width: var(--sphere-size);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  white-space: nowrap;
+}
+.cradle-stage.is-revealed .label { opacity: 0.85; transform: translateY(0); }
+
+@media (max-width: 880px) {
+  .label { font-size: 10px; }
+}
+@media (max-width: 600px) {
+  .label { font-size: 9px; }
+}
+
+.river {
+  margin: 60px auto 0;
+  padding: 32px 0 8px;
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.river-dots {
+  width: 100%;
+  height: 8px;
+  background-image: radial-gradient(circle at 4px center, var(--color-gold) 0 1.5px, transparent 1.5px);
+  background-size: 16px 8px;
+  background-position: 0 center;
+  animation: river-flow 18s linear infinite;
+  opacity: 0.7;
+}
+@keyframes river-flow {
+  from { background-position: 0 center; }
+  to   { background-position: 320px center; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fade-up 0.8s var(--ease-out-quart) both; }
