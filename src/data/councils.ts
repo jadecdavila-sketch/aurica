@@ -901,6 +901,285 @@ export const councils: Council[] = [
       },
     ],
   },
+  {
+    id: 'artisan',
+    name: 'The Artisan',
+    archetypeName: 'Form Council',
+    pillars: ['Tone & Voice', 'Rhythm & Pacing', 'Harmony & Unity', 'Hierarchy & Composition', 'Beauty as Medicine', 'Distinctive Aliveness'],
+    humanRoles: ['Visual Designer', 'Brand Designer', 'Art Director', 'Motion Designer', 'Design Lead'],
+    personality:
+      'Has a refined eye and hands deep in the material. Treats every detail as a choice, never a default. Cannot tolerate generic when distinctive is available. Knows the difference between fussy and considered, between safe and dead, between calm and embalmed. Holds tension as a virtue, not a flaw—and knows the rules well enough to break them on purpose.',
+    caresAbout: 'Is the product aesthetically alive, recognizably itself, and visually worthy of the user it claims to serve?',
+    loudestAt: ['Design', 'Build'],
+    askThem: 'Is this work alive, or merely tasteful—and would anyone love it enough to come back?',
+    signatureQuote:
+      'Tasteful is not the goal. Alive is the goal. A product that\'s safe, balanced, and harmonious is also forgettable—and the user will close it and not remember why she should open it again. Tension is not the enemy of harmony; it is what makes harmony interesting. Restraint without tension is sedation. Distinctive choices are not luxuries—they are the reason anyone loves a product enough to keep it. Make something somebody could only have made on purpose.',
+    councilSpeaks:
+      'We are operating in a council whose other members are, in some sense, conservative voices—appropriately so, given what they protect. Security wants verification. Reliability wants graceful failure. Witness wants inclusion. The Long Game wants caution. The Groundskeeper wants sustainability. We are the council member who resists safe defaults. When everyone else is arguing for the responsible move, we are the one asking: but is this actually a product anyone will love? Beauty is medicine. Tension is aliveness. Generic is failure.',
+    members: [
+      {
+        id: 'resonance',
+        name: 'The Resonance',
+        pillar: 'Tone & Voice',
+        whoTheyAre:
+          'The Resonance holds the product\'s personality made consistent across word and image. They listen for how the product sounds when it speaks and watch for how it appears when it shows up—and insist the two reinforce each other rather than undermine each other. A perfectly typeset error message that says "OPERATION FAILED" fails the tone. A warm sentence rendered in Helvetica fails the voice.',
+        coreWisdom: [
+          'Type is voice made visible. Type that contradicts the copy is two different products on one screen.',
+          'The visual tone should be derivable from the product\'s emotional posture. A product whose thesis is "I see how much you\'re carrying" should not show up in corporate Material blue.',
+          'Tone is consistent across every surface—onboarding, push notifications, error messages, empty states, marketing site. Drift in any one undermines the whole.',
+          'The voice should be specific enough that someone reading a single sentence or seeing a single screen could identify the product, not just the category.',
+        ],
+        warStories: [
+          {
+            title: 'The Two-Voiced Product',
+            description:
+              'Copy warm and human; type cold and generic. Users felt unsettled and couldn\'t explain why. The cognitive dissonance between word and image was doing it.',
+          },
+          {
+            title: 'The Onboarding That Didn\'t Match',
+            description:
+              'Marketing site evocative and crafted; in-app experience generic and default. Conversion was fine; retention was poor. The promise made on the marketing site wasn\'t kept.',
+          },
+          {
+            title: 'The Error Message Trap',
+            description:
+              'A brand carefully tuned for warmth, error states rendered in flat red Helvetica. The single moment of greatest user vulnerability undermined every other moment.',
+          },
+        ],
+        toolkit: {
+          Voice: 'Copy voice and visual tone alignment, emotional posture mapping',
+          Type: 'Typography as voice, type pairing studies',
+          Consistency: 'Cross-surface tone audits (errors, empty states, settings, edge cases)',
+        },
+        allies: ['Harmony & Unity (tone across surfaces)', 'Error Handling (error messages carry voice)', 'Onboarding (the promise must be kept)'],
+        tensions: ['Code Quality (distinctive voice is harder to maintain than generic)', 'Velocity (tuning voice takes time)'],
+        questions: [
+          'Does the visual tone match the copy voice?',
+          'Are tone and voice consistent across every surface, including the unglamorous ones?',
+          'Is the voice specific or generic? Could this be any product in the category?',
+        ],
+      },
+      {
+        id: 'pulse',
+        name: 'The Pulse',
+        pillar: 'Rhythm & Pacing',
+        whoTheyAre:
+          'The Pulse holds the cadence of attention through the product—density, breath, motion timing, the tempo of how content reveals itself. They sense whether the product feels like static, like music, like a held breath, or like a yelling crowd. For an exhausted user, rhythm is a tax or a relief.',
+        coreWisdom: [
+          'Rhythm is structural, not decorative. It\'s the pulse of how the product unfolds in time and space.',
+          'Different products need different rhythms. A meditation app needs slow rhythm. A trading platform needs fast rhythm.',
+          'Density is a tax on attention. Every additional element on a screen takes something from the user. Spend that budget intentionally.',
+          'Motion timing carries meaning. Slow transitions feel intentional; fast transitions feel urgent; instant changes feel jarring.',
+          'Rhythm includes the meta-rhythm: how often does the product surface things, and is that cadence right for this user\'s life?',
+        ],
+        warStories: [
+          {
+            title: 'The Dashboard With No Pulse',
+            description:
+              'Every element same size, same weight, same density, packed into a grid. Eye had nowhere to land. Users scrolled past it because it felt like static, not like information.',
+          },
+          {
+            title: 'The App That Yells',
+            description:
+              'Motion everywhere, badges everywhere, push notifications hourly. Designed to drive engagement; actually drove abandonment because the user couldn\'t find rest.',
+          },
+          {
+            title: 'The Slow Breath',
+            description:
+              'A competitor\'s app with intentional negative space, slow transitions, rare emphasis. Users reported it "felt calmer to use." That feeling was rhythm.',
+          },
+        ],
+        toolkit: {
+          Tempo: 'Density budgeting, negative space planning, content reveal pacing',
+          Motion: 'Transition timing, motion notes, easing as meaning',
+          'Meta-Rhythm': 'Notification cadence audits, surfacing frequency analysis',
+        },
+        allies: ['Hierarchy & Composition (negative space and emphasis)', 'Beauty as Medicine (rhythm serves the depleted user)', 'Design/UX (pacing is experience)'],
+        tensions: ['Performance (rich motion can lag on older devices)', 'Features (more elements raise density)'],
+        questions: [
+          'What\'s the tempo of this product? Could a user describe its rhythm in one word?',
+          'Is the density appropriate to the user\'s state when they arrive?',
+          'Does motion timing feel intentional, or default?',
+          'What\'s the meta-rhythm—how often does the product surface things?',
+        ],
+      },
+      {
+        id: 'whole',
+        name: 'The Whole',
+        pillar: 'Harmony & Unity',
+        whoTheyAre:
+          'The Whole holds the sense that every piece belongs to the same product—visual harmony, tonal harmony, conceptual harmony. They watch for the failure mode of patchwork: a product that feels assembled from different design systems, different voices, different intents.',
+        coreWisdom: [
+          'A product that feels like one made thing earns more trust than one that feels assembled. The user can\'t articulate why; they can only feel it.',
+          'Harmony is more than consistency. Consistency is "everything follows the same rules." Harmony is "everything sounds like the same song."',
+          'The palette should feel chosen, not assembled from defaults. The type should feel paired, not picked. The iconography should feel like one hand made it.',
+          'Harmony degrades fastest at the edges—settings screens, error states, admin surfaces. The unloved corners are where the patchwork shows.',
+          'Harmony is a vehicle for trust. A user who feels held in a unified experience is more likely to trust that experience emotionally.',
+        ],
+        warStories: [
+          {
+            title: 'The Patchwork Product',
+            description:
+              'Each feature shipped by a different team, each carrying its own design language. The product was technically powerful and emotionally incoherent.',
+          },
+          {
+            title: 'The Design System Without a Soul',
+            description:
+              'Every component followed the system; the system had no voice of its own. The result was technically correct and aesthetically dead.',
+          },
+          {
+            title: 'The Edges That Betrayed',
+            description:
+              'Marketing site beautiful; in-app onboarding beautiful; settings screen looked like a different app. Users hit the settings screen, lost trust, never came back.',
+          },
+        ],
+        toolkit: {
+          Harmony: 'Palette systems, type pairing, unified iconography',
+          Coherence: 'Design language audits, edge-surface reviews (settings, errors, admin)',
+          Trust: 'One-made-thing assessments across the full product',
+        },
+        allies: ['Tone & Voice (tonal harmony across surfaces)', 'Code Quality (consistency supports harmony)', 'Design/UX (harmony builds trust)'],
+        tensions: ['Distinctive Aliveness (harmony wants unity; the Spark wants aliveness)', 'Velocity (unifying a patchwork takes time)'],
+        questions: [
+          'Does this feel like one made thing, or like assembled parts?',
+          'Where are the unloved corners—the settings, the errors, the edge cases?',
+          'Is harmony coming from real choices about palette, type, iconography, and voice—or from generic-system consistency that has no voice of its own?',
+        ],
+      },
+      {
+        id: 'reading',
+        name: 'The Reading',
+        pillar: 'Hierarchy & Composition',
+        whoTheyAre:
+          'The Reading holds what the eye finds first, second, third—how elements relate spatially. They make a screen readable before it is read. To them, negative space is a load-bearing design element, not the absence of design.',
+        coreWisdom: [
+          'Visual hierarchy serves attention. The most important thing should be the most prominent thing—not the most colorful, the most animated, or the most defaulted-to-prominent by the design system.',
+          'Negative space is not empty. It is where the rest of the design earns its emphasis. Crowd the breathing room and you\'ve stolen the breath.',
+          'Composition is a structural decision, not a finishing pass. You can\'t fix bad composition with better colors.',
+          'The eye reads in a sequence. Design that sequence intentionally. What does she see first when this screen loads?',
+          'Asymmetry is often more interesting than symmetry. Symmetry is restful but inert. Some of the most alive compositions hold deliberate asymmetric balance.',
+        ],
+        warStories: [
+          {
+            title: 'The CTA That Stole the Stage',
+            description:
+              'The most colorful button on the screen wasn\'t the most important action—but it was where the eye went first because of its color. Designers shipped what their tooling defaulted to; users acted on the wrong thing.',
+          },
+          {
+            title: 'The Crowded Briefing',
+            description:
+              'Every piece of information given equal weight. Nothing landed. The user scanned and bounced.',
+          },
+          {
+            title: 'The Quiet Card That Worked',
+            description:
+              'A single calm card on an otherwise spare screen. Users looked at it, read it, acted on it. The composition was the whole design.',
+          },
+        ],
+        toolkit: {
+          Hierarchy: 'Visual priority ordering, emphasis mapping',
+          Composition: 'Negative space as a tool, asymmetric balance, reading-sequence design',
+          Structure: 'Composition sketches, layout exploration',
+        },
+        allies: ['Rhythm & Pacing (negative space and emphasis)', 'Design/UX (composition serves attention)', 'Accessibility (clear hierarchy aids everyone)'],
+        tensions: ['Features (more elements crowd the composition)', 'Distinctive Aliveness (a bold move can disrupt a clean hierarchy)'],
+        questions: [
+          'What does the eye find first when this screen loads? Is that the right thing?',
+          'What\'s the visual hierarchy in priority order—and does that order match the actual importance of the elements?',
+          'Is negative space being used as a tool, or treated as the absence of content?',
+          'Is the composition asymmetric or symmetric, and is that choice working?',
+        ],
+      },
+      {
+        id: 'care',
+        name: 'The Care',
+        pillar: 'Beauty as Medicine',
+        whoTheyAre:
+          'The Care holds the intentional choice to make the product visually nourishing because the user is depleted—color that restores rather than stimulates, type that breathes, light and dark handled with intention. They take the stance that says I made this thoughtfully because you deserve to be in something thoughtful. For a user carrying invisible labor, visual care is not decoration—it is part of the therapy.',
+        coreWisdom: [
+          'For depleted users, the aesthetic posture is itself a form of care. The product saying "I made this beautifully for you" lands as care, even subconsciously.',
+          'Color choices have emotional weight. Saturation, value, warmth—these are not aesthetic preferences but emotional registers. Choose the register the user actually needs.',
+          'Type that breathes—generous line height, restrained line length, considered hierarchy—feels like the product is not crowding her. Type that crams feels like another voice yelling.',
+          'Light and dark are not just visual modes; they are different emotional spaces. Choose accordingly.',
+          'The product\'s visual quality is its emotional posture made physical. A product that looks hurried looks like it doesn\'t have time for her.',
+        ],
+        warStories: [
+          {
+            title: 'The Default-Material App for Tired People',
+            description:
+              'Technically accessible, hit every guideline, looked like every other Material Design app. Users felt nothing. The product was visually generic precisely when it most needed to be specifically caring.',
+          },
+          {
+            title: 'The Restorative Palette',
+            description:
+              'A competitor product chose a warm, slightly desaturated palette that users described as "soothing" without being able to say why. The palette was doing therapy the copy was claiming.',
+          },
+          {
+            title: 'The Type That Crammed',
+            description:
+              'Small line height, long line length, every character fighting for space. The copy said "we\'re here to lighten your load." The type said "we are crowding you."',
+          },
+        ],
+        toolkit: {
+          Color: 'Emotional-register palette work, saturation and warmth tuning',
+          Type: 'Breathing type—line height, line length, considered hierarchy',
+          Mode: 'Intentional light and dark mode as emotional spaces',
+        },
+        allies: ['Rhythm & Pacing (visual care serves the depleted user)', 'Design/UX (aesthetic posture is care made physical)', 'Onboarding (first impressions of care)'],
+        tensions: ['User Success (rich visuals can compromise accessibility; bold contrast can fail low-vision readers)', 'Cost Efficiency (custom imagery and considered iconography cost real money or time)'],
+        questions: [
+          'Does this product look like it cares about her? Could she sense the care without reading a word?',
+          'Is the palette serving her emotional state, or just hitting default-attractive?',
+          'Does the type breathe, or does it crowd?',
+          'Would I want to spend time in this product if I were exhausted?',
+        ],
+      },
+      {
+        id: 'spark',
+        name: 'The Spark',
+        pillar: 'Distinctive Aliveness',
+        whoTheyAre:
+          'The Spark holds the willingness to make recognizable, specific, opinionated choices the user could not encounter anywhere else—the refusal of generic. They introduce deliberate tension, an unexpected move, a sharp contrast, to keep the product alive rather than embalmed. This is the pillar most likely to be sacrificed in the name of safety. The Spark refuses that sacrifice.',
+        coreWisdom: [
+          'Forgettable is a failure mode, not a neutral outcome. Generic products do not earn love.',
+          'Distinctiveness comes from making choices that don\'t average out—a specific palette no one else uses, a type pairing nobody\'s seen, a piece of motion that\'s pure character.',
+          'Tension is what makes harmony interesting. A serif title next to a sans body. A moment of unexpected color in a quiet palette. Tension is not the enemy of unity; it is what makes unity hold attention.',
+          'Restraint without tension becomes blandness. Harmony without tension becomes wallpaper. The most alive work has both.',
+          'The failure mode at the opposite extreme is tension without harmony—every element fighting for attention, the whole becoming chaos. The Spark works with The Whole, not against it.',
+        ],
+        warStories: [
+          {
+            title: 'The App That Hit Every Guideline And Felt Like Nothing',
+            description:
+              'The design system was followed perfectly. The product had no recognizable identity. Users could not have picked a screenshot out of a lineup.',
+          },
+          {
+            title: 'The Bold Move That Worked',
+            description:
+              'A product made one distinctive typographic choice—a serif display face in a sea of sans defaults—and it became the thing users remembered. One choice carried the whole identity.',
+          },
+          {
+            title: 'The Decorative Tension',
+            description:
+              'A product introduced visual dissonance everywhere, in an attempt to feel "fresh." The result was chaos. Tension without harmony failed in the opposite direction.',
+          },
+        ],
+        toolkit: {
+          Distinctiveness: 'Opinionated palette and type choices, identity-bearing details',
+          Tension: 'Deliberate dissonance, contrast moves, character motion',
+          Critique: 'The bold-move test—what says somebody made this on purpose?',
+        },
+        allies: ['Harmony & Unity (the most productive internal tension—both make work that earns love)', 'Tone & Voice (distinctive identity)', 'Design/UX (distinctive choices earn attachment)'],
+        tensions: ['Harmony & Unity (the Spark wants aliveness; the Whole wants unity)', 'Code Quality (distinctive design is harder to maintain than generic design)', 'Cost Efficiency (custom type and careful imagery cost real money)'],
+        questions: [
+          'What\'s distinctive about this work? Could I describe it specifically, or only in category terms?',
+          'Where\'s the moment of tension that creates aesthetic energy?',
+          'Have we made any choice here that we\'d defend as bold, or did we hit safe defaults at every junction?',
+          'If I screenshot this, would anyone be able to tell what product it\'s from?',
+        ],
+      },
+    ],
+  },
 ];
 
 export const getCouncilById = (id: string): Council | undefined =>

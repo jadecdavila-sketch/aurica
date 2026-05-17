@@ -85,6 +85,28 @@
   opacity: 1;
 }
 
+/* Human-in-the-loop strands — the thread woven through the council ring.
+   Sits behind the portraits so the six councils ride it like beads. */
+.council-strands {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 480px;
+  height: 480px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.council-strands path {
+  fill: none;
+  stroke: var(--color-terracotta);
+  stroke-width: 1;
+  stroke-opacity: 0.5;
+  stroke-linecap: round;
+}
+
 /* Center invocation node */
 .council-center {
   position: absolute;
@@ -226,12 +248,15 @@
 
 .council-stage.is-expanded .council-label { opacity: 1; }
 
-.council-stage.is-expanded .council-member:nth-child(1) .council-label { transition-delay: 750ms; }
-.council-stage.is-expanded .council-member:nth-child(2) .council-label { transition-delay: 820ms; }
-.council-stage.is-expanded .council-member:nth-child(3) .council-label { transition-delay: 890ms; }
-.council-stage.is-expanded .council-member:nth-child(4) .council-label { transition-delay: 960ms; }
-.council-stage.is-expanded .council-member:nth-child(5) .council-label { transition-delay: 1030ms; }
-.council-stage.is-expanded .council-member:nth-child(6) .council-label { transition-delay: 1100ms; }
+/* Label stagger — keyed by data-index. The members are not the literal
+   first children of .council-ring-inner, so :nth-child mistargets them. */
+.council-stage.is-expanded .council-member[data-index="0"] .council-label { transition-delay: 750ms; }
+.council-stage.is-expanded .council-member[data-index="1"] .council-label { transition-delay: 820ms; }
+.council-stage.is-expanded .council-member[data-index="2"] .council-label { transition-delay: 890ms; }
+.council-stage.is-expanded .council-member[data-index="3"] .council-label { transition-delay: 960ms; }
+.council-stage.is-expanded .council-member[data-index="4"] .council-label { transition-delay: 1030ms; }
+.council-stage.is-expanded .council-member[data-index="5"] .council-label { transition-delay: 1100ms; }
+.council-stage.is-expanded .council-member[data-index="6"] .council-label { transition-delay: 1170ms; }
 
 .council-label.below { top: calc(100% + 12px); }
 .council-label.above { bottom: calc(100% + 12px); }
@@ -295,7 +320,8 @@
 .council-stage.is-expanded:has(.council-member[data-index="2"]:hover) .council-lines line[data-index="2"],
 .council-stage.is-expanded:has(.council-member[data-index="3"]:hover) .council-lines line[data-index="3"],
 .council-stage.is-expanded:has(.council-member[data-index="4"]:hover) .council-lines line[data-index="4"],
-.council-stage.is-expanded:has(.council-member[data-index="5"]:hover) .council-lines line[data-index="5"] {
+.council-stage.is-expanded:has(.council-member[data-index="5"]:hover) .council-lines line[data-index="5"],
+.council-stage.is-expanded:has(.council-member[data-index="6"]:hover) .council-lines line[data-index="6"] {
   stroke: var(--color-terracotta);
   stroke-width: 1.5;
   opacity: 1;
@@ -366,6 +392,7 @@
     --stage-h-expanded: 540px;
   }
   .council-lines { width: 320px; height: 320px; }
+  .council-strands { width: 320px; height: 320px; }
   .council-label { width: 108px; }
   .council-label-name { font-size: 12px; }
   .council-label-pillar { font-size: 9px; }

@@ -7,4 +7,5 @@ export const councilImages: Record<string, string> = {
   'questioner':         '/council/4. Questioner.png',
   'groundskeeper':      '/council/5. Groundskeeper.png',
   'long-game':          '/council/6. Long-game.png',
+  'artisan':            '/council/7. Artisan.png',
 };

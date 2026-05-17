@@ -5,3 +5,4 @@ export { stageCouncilContent, getStageCouncilContent } from './stageCouncilConte
 export { continuousActivities, getContinuousActivityById } from './continuousActivities';
 export { sphereImages } from './spheres';
 export { councilImages } from './councilImages';
+export { team, getTeamMemberById } from './team';

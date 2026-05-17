@@ -83,3 +83,23 @@ export const collaborationModeLabels: Record<CollaborationMode, string> = {
   'human-leads': 'Human Leads, AI Assists',
   'human-only': 'Human Only',
 };
+
+/** A member of the studio — the human form of the council. */
+export interface TeamMember {
+  id: string;
+  name: string;
+  /** Title, e.g. "Co-Founder" or "Open role". */
+  role: string;
+  /** Short craft line paired to the studio name, e.g. "the sketch". */
+  craft: string;
+  /** One-line essence, shown under the name in the drawer. */
+  tagline: string;
+  /** Paragraphs for the detail drawer. */
+  bio: string[];
+  /** What this maker holds — or, for the open seat, who is sought. */
+  focus: string[];
+  /** Square portrait in /public/team/. Falls back to a monogram disc. */
+  portrait?: string;
+  /** True for the unfilled third seat. */
+  open?: boolean;
+}

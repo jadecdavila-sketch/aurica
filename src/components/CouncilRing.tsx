@@ -1,8 +1,9 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { getCouncilById, councilImages } from '@/data';
+import { CouncilStrands } from './CouncilStrands';
 import './CouncilRing.css';
 
-// Order in which the six councils appear in the ring (clockwise from top).
+// Order in which the seven councils appear in the ring (clockwise from top).
 const councilOrder = [
   'architect',
   'midnight-responder',
@@ -10,18 +11,19 @@ const councilOrder = [
   'questioner',
   'groundskeeper',
   'long-game',
+  'artisan',
 ] as const;
 
-// Top three sit "above" their portraits; bottom three sit "below".
-// Index map (clockwise from 12 o'clock): 0 top, 1 upper-right, 2 lower-right,
-// 3 bottom, 4 lower-left, 5 upper-left.
+// A seat's label sits "above" its portrait when the seat is in the upper
+// half of the ring and "below" otherwise. Indices run clockwise from 12.
 const labelPositions: Record<number, 'above' | 'below'> = {
   0: 'above',
   1: 'above',
   2: 'below',
   3: 'below',
   4: 'below',
-  5: 'above',
+  5: 'below',
+  6: 'above',
 };
 
 interface CouncilRingProps {
@@ -92,13 +94,25 @@ export function CouncilRing({ onSelectCouncil }: CouncilRingProps) {
             aria-hidden
           >
             <circle cx="0" cy="0" r="230" />
-            <line data-index="0" x1="0" y1="0" x2="0"        y2="-230" />
-            <line data-index="1" x1="0" y1="0" x2="199.19"   y2="-115" />
-            <line data-index="2" x1="0" y1="0" x2="199.19"   y2="115" />
-            <line data-index="3" x1="0" y1="0" x2="0"        y2="230" />
-            <line data-index="4" x1="0" y1="0" x2="-199.19"  y2="115" />
-            <line data-index="5" x1="0" y1="0" x2="-199.19"  y2="-115" />
+            {/* One radial spoke per seat — generated so the count stays in
+                sync with councilOrder. */}
+            {councilOrder.map((_, i) => {
+              const a = (i * 2 * Math.PI) / councilOrder.length;
+              return (
+                <line
+                  key={i}
+                  data-index={i}
+                  x1="0"
+                  y1="0"
+                  x2={(230 * Math.sin(a)).toFixed(2)}
+                  y2={(-230 * Math.cos(a)).toFixed(2)}
+                />
+              );
+            })}
           </svg>
+
+          {/* The human-in-the-loop thread, woven through the ring */}
+          <CouncilStrands expanded={expanded} />
 
           <div className="council-center" onClick={(e) => { e.stopPropagation(); if (expanded) toggle(); }}>
             <div>
@@ -111,7 +125,7 @@ export function CouncilRing({ onSelectCouncil }: CouncilRingProps) {
             const c = getCouncilById(id);
             const src = councilImages[id];
             if (!c || !src) return null;
-            const angle = i * 60;
+            const angle = (i * 360) / councilOrder.length;
             const labelPos = labelPositions[i];
             return (
               <div
