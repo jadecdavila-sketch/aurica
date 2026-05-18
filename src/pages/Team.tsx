@@ -27,7 +27,7 @@ export function Team() {
         <h1 className="text-display text-center max-w-[900px] mx-auto mb-5">
           A small bench of <span className="accent">makers</span>.
         </h1>
-        <p className="font-display italic text-base text-ink-soft mb-6 text-center">
+        <p className="font-display text-base text-ink-soft mb-6 text-center">
           the human form of the council
         </p>
 

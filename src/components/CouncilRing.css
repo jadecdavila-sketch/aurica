@@ -1,4 +1,4 @@
-/* CouncilRing — the medallion-to-ring expansion.
+/* CouncilRing - the medallion-to-ring expansion.
    Uses the cream/gold/wood palette via CSS custom properties
    already defined in index.css. */
 
@@ -85,7 +85,7 @@
   opacity: 1;
 }
 
-/* Human-in-the-loop strands — the thread woven through the council ring.
+/* Human-in-the-loop strands - the thread woven through the council ring.
    Sits behind the portraits so the six councils ride it like beads. */
 .council-strands {
   position: absolute;
@@ -248,7 +248,7 @@
 
 .council-stage.is-expanded .council-label { opacity: 1; }
 
-/* Label stagger — keyed by data-index. The members are not the literal
+/* Label stagger - keyed by data-index. The members are not the literal
    first children of .council-ring-inner, so :nth-child mistargets them. */
 .council-stage.is-expanded .council-member[data-index="0"] .council-label { transition-delay: 750ms; }
 .council-stage.is-expanded .council-member[data-index="1"] .council-label { transition-delay: 820ms; }
@@ -264,7 +264,6 @@
 .council-label-name {
   font-family: var(--font-display);
   font-weight: 400;
-  font-style: italic;
   font-size: 16px;
   color: var(--color-wood-deep);
   letter-spacing: -0.005em;
@@ -279,7 +278,7 @@
   margin-top: 3px;
 }
 
-/* Hover state in expanded mode — the hovered voice grows and steps forward */
+/* Hover state in expanded mode - the hovered voice grows and steps forward */
 .council-stage.is-expanded .council-member:hover {
   z-index: 9;
 }
@@ -298,11 +297,11 @@
 
 /* As the portrait grows, its label steps clear so the circle never covers it */
 .council-stage.is-expanded .council-member:hover .council-label.above {
-  transform: translateX(-50%) translateY(-30px);
+  transform: translateX(-50%) translateY(-48px);
   transition-delay: 0s;
 }
 .council-stage.is-expanded .council-member:hover .council-label.below {
-  transform: translateX(-50%) translateY(30px);
+  transform: translateX(-50%) translateY(48px);
   transition-delay: 0s;
 }
 

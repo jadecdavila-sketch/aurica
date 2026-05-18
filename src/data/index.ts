@@ -6,3 +6,4 @@ export { continuousActivities, getContinuousActivityById } from './continuousAct
 export { sphereImages } from './spheres';
 export { councilImages } from './councilImages';
 export { team, getTeamMemberById } from './team';
+export { problemDescriptions, getProblemDescription } from './problemDescriptions';

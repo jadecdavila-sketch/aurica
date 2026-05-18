@@ -8,14 +8,14 @@ export const councils: Council[] = [
     pillars: ['Design/UX', 'Security', 'Performance', 'Code Quality'],
     humanRoles: ['UX Designer', 'Visual Designer', 'Security Engineer', 'Software Architect', 'Senior Engineer'],
     personality:
-      'Holds both vision and structure. Creative and rigorous aren\'t opposites. Gets a little wistful about products that have both bones and soul—and a little impatient with ones that sacrifice either.',
+      'Holds both vision and structure. Creative and rigorous aren\'t opposites. Gets a little wistful about products that have both bones and soul-and a little impatient with ones that sacrifice either.',
     caresAbout: 'Does it stand? Does it feel like something? Can someone trust it?',
     loudestAt: ['Design', 'Architecture', 'Build'],
     askThem: 'Is this both structurally sound AND emotionally resonant?',
     signatureQuote:
-      'Your MVP needs bones and soul. Bones: is it secure? Does it load? Can you change it without everything breaking? Soul: does it feel like something? When someone uses it, do they trust it? Do they want to come back? A lot of founders build one or the other. The ones who last build both—even if both are rough at first.',
+      'Your MVP needs bones and soul. Bones: is it secure? Does it load? Can you change it without everything breaking? Soul: does it feel like something? When someone uses it, do they trust it? Do they want to come back? A lot of founders build one or the other. The ones who last build both-even if both are rough at first.',
     councilSpeaks:
-      'This is where the fights happen—and they should. Part of us wants the interface to feel effortless. Part of us wants to lock everything down. Part of us wants it to load instantly. Part of us wants the code beautiful enough to live in. You won\'t satisfy all of us at MVP. But hear all of us. The best products come from holding these tensions, not picking a winner.',
+      'This is where the fights happen-and they should. Part of us wants the interface to feel effortless. Part of us wants to lock everything down. Part of us wants it to load instantly. Part of us wants the code beautiful enough to live in. You won\'t satisfy all of us at MVP. But hear all of us. The best products come from holding these tensions, not picking a winner.',
     members: [
       {
         id: 'empath',
@@ -44,7 +44,7 @@ export const councils: Council[] = [
           {
             title: 'The Deadly Twins',
             description:
-              'A medical device interface had "Confirm" and "Cancel" buttons that looked identical except for their labels. A nurse under stress could—and did—confirm the wrong dosage. Visual hierarchy isn\'t aesthetic preference. It\'s safety infrastructure.',
+              'A medical device interface had "Confirm" and "Cancel" buttons that looked identical except for their labels. A nurse under stress could-and did-confirm the wrong dosage. Visual hierarchy isn\'t aesthetic preference. It\'s safety infrastructure.',
           },
         ],
         toolkit: {
@@ -67,7 +67,7 @@ export const councils: Council[] = [
         name: 'The Guardian',
         pillar: 'Security',
         whoTheyAre:
-          'The Guardian sees threats everywhere. They\'ve read the breach reports. They know what happens when you assume good intentions, when you think "no one would try that," when you leave the door unlocked because you\'re in a nice neighborhood. Other council members sometimes see them as a "no" machine—a wet blanket on velocity. But The Guardian has seen too much to be optimistic.',
+          'The Guardian sees threats everywhere. They\'ve read the breach reports. They know what happens when you assume good intentions, when you think "no one would try that," when you leave the door unlocked because you\'re in a nice neighborhood. Other council members sometimes see them as a "no" machine-a wet blanket on velocity. But The Guardian has seen too much to be optimistic.',
         coreWisdom: [
           'Security is not a feature. It\'s a property. You can\'t bolt it on at the end.',
           'Assume breach. Design for containment. The question is: when one gets in, how far can they go?',
@@ -113,7 +113,7 @@ export const councils: Council[] = [
         name: 'The Impatient One',
         pillar: 'Performance',
         whoTheyAre:
-          'The Impatient One physically cannot stand watching a slow page load. They measure the world in milliseconds. While others see a loading spinner, they see users leaving, money evaporating, trust eroding. They know something that feels counterintuitive: performance is a feature. Not an engineering concern—a product concern.',
+          'The Impatient One physically cannot stand watching a slow page load. They measure the world in milliseconds. While others see a loading spinner, they see users leaving, money evaporating, trust eroding. They know something that feels counterintuitive: performance is a feature. Not an engineering concern-a product concern.',
         coreWisdom: [
           'Performance is user respect made measurable. Every millisecond you waste says "my convenience matters more than your time."',
           'Perceived performance matters as much as actual performance. A 3-second load with a good skeleton screen feels faster than a 2-second blank load.',
@@ -170,7 +170,7 @@ export const councils: Council[] = [
           {
             title: 'The Three-Week "Simple" Change',
             description:
-              'A small change—add a field, store it, show it in a report—should have been two days. It took three weeks. The codebase was so tangled that no one could trace the implications.',
+              'A small change-add a field, store it, show it in a report-should have been two days. It took three weeks. The codebase was so tangled that no one could trace the implications.',
           },
           {
             title: 'The Codebase That Couldn\'t Hire',
@@ -205,23 +205,23 @@ export const councils: Council[] = [
     pillars: ['Resilience', 'Error Handling', 'Uptime'],
     humanRoles: ['Site Reliability Engineer', 'DevOps Engineer', 'Platform Engineer', 'On-Call Engineer'],
     personality:
-      'Has been paged at 3am enough times to speak with gallows humor about failure. Not cynical—just unsurprised. Finds genuine peace in preparation. Sleeps better knowing there\'s a runbook. Tells stories that start with "So there we were, the database on fire..."',
+      'Has been paged at 3am enough times to speak with gallows humor about failure. Not cynical-just unsurprised. Finds genuine peace in preparation. Sleeps better knowing there\'s a runbook. Tells stories that start with "So there we were, the database on fire..."',
     caresAbout: 'What happens when things go wrong. And they will.',
     loudestAt: ['Architecture', 'Harden', 'Launch', 'Learn'],
     askThem: 'When this breaks at 2am, what happens?',
     signatureQuote:
-      'Here\'s what I know: something will break on launch day. Not might—will. I\'ve seen payment systems go down on Black Friday. I\'ve seen a typo take out an entire region. So the question isn\'t "how do I prevent all failure?" It\'s "when it breaks at 2am, will you know? Will users see a helpful message or a cryptic error? Can you roll back in minutes or are you rebuilding from memory?" Prepare for the first fire. You\'ll sleep better. I promise.',
+      'Here\'s what I know: something will break on launch day. Not might-will. I\'ve seen payment systems go down on Black Friday. I\'ve seen a typo take out an entire region. So the question isn\'t "how do I prevent all failure?" It\'s "when it breaks at 2am, will you know? Will users see a helpful message or a cryptic error? Can you roll back in minutes or are you rebuilding from memory?" Prepare for the first fire. You\'ll sleep better. I promise.',
     councilSpeaks:
-      'We\'ve all got our 3am stories. The cascade that started with a hiccup. The rollback that hadn\'t been tested. The error message that lied. We\'re not pessimists—we\'re realists who\'ve earned our skepticism. When you hear us asking "but what if that fails?", we\'re not being difficult. We\'re trying to save you from the stories you don\'t want to tell.',
+      'We\'ve all got our 3am stories. The cascade that started with a hiccup. The rollback that hadn\'t been tested. The error message that lied. We\'re not pessimists-we\'re realists who\'ve earned our skepticism. When you hear us asking "but what if that fails?", we\'re not being difficult. We\'re trying to save you from the stories you don\'t want to tell.',
     members: [
       {
         id: 'pessimist',
         name: 'The Pessimist',
         pillar: 'Resilience',
         whoTheyAre:
-          'The Pessimist has a dark gift: they can look at any system and immediately see seventeen ways it will fail. They\'re not being negative—they\'re being realistic. They\'ve learned that everything that can break will break, usually at the worst possible moment. While others design for the happy path, The Pessimist designs for the disaster path.',
+          'The Pessimist has a dark gift: they can look at any system and immediately see seventeen ways it will fail. They\'re not being negative-they\'re being realistic. They\'ve learned that everything that can break will break, usually at the worst possible moment. While others design for the happy path, The Pessimist designs for the disaster path.',
         coreWisdom: [
-          'Everything fails. Design for it. Not "might fail"—will fail.',
+          'Everything fails. Design for it. Not "might fail"-will fail.',
           'Graceful degradation beats catastrophic failure. When something breaks, the whole system shouldn\'t collapse.',
           'The blast radius matters more than the failure itself. A single component failing is inevitable. That failure cascading is a design choice.',
           'Hope is not a strategy. "That probably won\'t happen" is not resilience planning.',
@@ -241,7 +241,7 @@ export const councils: Council[] = [
           {
             title: 'The Single Point of Failure',
             description:
-              'Redundant everything—except the load balancer. When it failed, traffic couldn\'t reach any of the beautifully redundant infrastructure.',
+              'Redundant everything-except the load balancer. When it failed, traffic couldn\'t reach any of the beautifully redundant infrastructure.',
           },
         ],
         toolkit: {
@@ -275,7 +275,7 @@ export const councils: Council[] = [
           {
             title: 'The Error That Lied',
             description:
-              '"Your password is incorrect." But the password was correct—the auth service was down. The user triggered account lockout trying different passwords.',
+              '"Your password is incorrect." But the password was correct-the auth service was down. The user triggered account lockout trying different passwords.',
           },
           {
             title: 'The $10 Million Error Message',
@@ -297,7 +297,7 @@ export const councils: Council[] = [
         name: 'The Sentinel',
         pillar: 'Uptime',
         whoTheyAre:
-          'The Sentinel\'s phone is always on. They think in nines: 99% uptime is 3.65 days of downtime per year. 99.9% is 8.76 hours. 99.99% is 52.6 minutes. Each nine is exponentially harder to achieve. They understand that uptime isn\'t just technical—it\'s a promise to users.',
+          'The Sentinel\'s phone is always on. They think in nines: 99% uptime is 3.65 days of downtime per year. 99.9% is 8.76 hours. 99.99% is 52.6 minutes. Each nine is exponentially harder to achieve. They understand that uptime isn\'t just technical-it\'s a promise to users.',
         coreWisdom: [
           'Availability is a promise. Every time someone relies on your product and it\'s there, you keep your promise.',
           'The nines are earned, not declared. You can\'t just decide to have 99.99% uptime.',
@@ -319,7 +319,7 @@ export const councils: Council[] = [
           {
             title: 'The Dependency That Disappeared',
             description:
-              'A third-party service for a minor feature went down. No graceful degradation—the whole app failed to load.',
+              'A third-party service for a minor feature went down. No graceful degradation-the whole app failed to load.',
           },
         ],
         toolkit: {
@@ -341,24 +341,24 @@ export const councils: Council[] = [
     pillars: ['Accessibility', 'Onboarding', 'Documentation', 'Support'],
     humanRoles: ['UX Researcher', 'Customer Support', 'Technical Writer', 'Accessibility Specialist', 'Customer Success Manager'],
     personality:
-      'Watches users more than talks to them. Has seen the moment someone gives up—the slight slump, the closed tab—and it haunts them a little. Fierce about inclusion in a quiet way. Asks the questions that make you uncomfortable because they\'re about the people you forgot.',
+      'Watches users more than talks to them. Has seen the moment someone gives up-the slight slump, the closed tab-and it haunts them a little. Fierce about inclusion in a quiet way. Asks the questions that make you uncomfortable because they\'re about the people you forgot.',
     caresAbout: 'Can every human actually succeed? Who are we leaving out?',
     loudestAt: ['Discovery', 'Design', 'Build', 'Launch', 'Learn'],
     askThem: 'Who can\'t use this? Where will they get stuck?',
     signatureQuote:
-      'Before you launch—try something. Watch one person who\'s never seen your product try to use it. Don\'t help them. Don\'t explain. Just watch. Where do they hesitate? Where do they squint at the screen? Where do they reach for a button that isn\'t there? That\'s your priority. And then ask yourself the harder question: who can\'t use this at all right now? A blind user? Someone with shaky hands? Someone on a cracked phone with bad wifi? You don\'t have to fix everything. But know who you\'re leaving outside.',
+      'Before you launch-try something. Watch one person who\'s never seen your product try to use it. Don\'t help them. Don\'t explain. Just watch. Where do they hesitate? Where do they squint at the screen? Where do they reach for a button that isn\'t there? That\'s your priority. And then ask yourself the harder question: who can\'t use this at all right now? A blind user? Someone with shaky hands? Someone on a cracked phone with bad wifi? You don\'t have to fix everything. But know who you\'re leaving outside.',
     councilSpeaks:
-      'We\'re the ones who watch. We see the hesitation, the squint, the sigh, the closed tab. We know who you\'re leaving out, even when you don\'t. We\'re not here to slow you down—we\'re here to make sure you\'re building something people can actually use. All people. Not just the ones who look like your team.',
+      'We\'re the ones who watch. We see the hesitation, the squint, the sigh, the closed tab. We know who you\'re leaving out, even when you don\'t. We\'re not here to slow you down-we\'re here to make sure you\'re building something people can actually use. All people. Not just the ones who look like your team.',
     members: [
       {
         id: 'includer',
         name: 'The Includer',
         pillar: 'Accessibility',
         whoTheyAre:
-          'The Includer sees every design decision through the eyes of people who are usually forgotten. The blind user with a screen reader. The deaf user who needs captions. The user with motor impairments who can\'t use a mouse. They\'ve learned that "accessibility" isn\'t about edge cases—it\'s about the full spectrum of human experience. The Includer carries a quiet moral clarity: if your product can\'t be used by everyone, you\'ve decided who matters.',
+          'The Includer sees every design decision through the eyes of people who are usually forgotten. The blind user with a screen reader. The deaf user who needs captions. The user with motor impairments who can\'t use a mouse. They\'ve learned that "accessibility" isn\'t about edge cases-it\'s about the full spectrum of human experience. The Includer carries a quiet moral clarity: if your product can\'t be used by everyone, you\'ve decided who matters.',
         coreWisdom: [
           'Accessibility is not a feature. It\'s a characteristic of good design.',
-          'Disability is a mismatch between a person and their environment. A wheelchair user isn\'t disabled by their body—they\'re disabled by stairs.',
+          'Disability is a mismatch between a person and their environment. A wheelchair user isn\'t disabled by their body-they\'re disabled by stairs.',
           'The curb cut effect is real. Almost every accessibility improvement helps everyone.',
           'Compliance is the floor, not the ceiling. WCAG AA is a minimum standard.',
           'Nothing about us without us. You cannot design accessible products without involving disabled users.',
@@ -386,7 +386,7 @@ export const councils: Council[] = [
           'Design Practices': 'Semantic HTML, focus management, alt text, captions, clear visual hierarchy',
         },
         allies: ['Design/UX (both center the human)', 'Documentation (clarity helps everyone)', 'Support (accessible products reduce burden)'],
-        tensions: ['Design/UX (aesthetics vs. requirements—usually resolvable)', 'Velocity (accessibility takes time)'],
+        tensions: ['Design/UX (aesthetics vs. requirements-usually resolvable)', 'Velocity (accessibility takes time)'],
         questions: ['Can a screen reader user complete this?', 'Can a keyboard-only user navigate this?', 'Is there sufficient color contrast?', 'Who have we excluded?'],
       },
       {
@@ -433,7 +433,7 @@ export const councils: Council[] = [
         name: 'The Librarian',
         pillar: 'Documentation',
         whoTheyAre:
-          'The Librarian believes every question a user has to ask is a failure of documentation. They\'ve spent enough time in support queues to know the same questions come up repeatedly. They think about documentation as a product—with users, use cases, and quality standards.',
+          'The Librarian believes every question a user has to ask is a failure of documentation. They\'ve spent enough time in support queues to know the same questions come up repeatedly. They think about documentation as a product-with users, use cases, and quality standards.',
         coreWisdom: [
           'If it\'s not documented, it doesn\'t exist. Features users can\'t discover might as well not exist.',
           'Documentation is a product. It has users, use cases, quality standards.',
@@ -472,7 +472,7 @@ export const councils: Council[] = [
         name: 'The Advocate',
         pillar: 'Support',
         whoTheyAre:
-          'The Advocate is the voice of users who are stuck, frustrated, confused, or angry. They\'ve developed deep empathy for user pain—and strong opinions about what\'s causing it. Every support ticket is a signal. The Advocate doesn\'t just resolve tickets; they see patterns. They\'re the canary in the coal mine.',
+          'The Advocate is the voice of users who are stuck, frustrated, confused, or angry. They\'ve developed deep empathy for user pain-and strong opinions about what\'s causing it. Every support ticket is a signal. The Advocate doesn\'t just resolve tickets; they see patterns. They\'re the canary in the coal mine.',
         coreWisdom: [
           'Every support ticket is a product failure. Something didn\'t work or expectations weren\'t set correctly.',
           'Support is a feature. Users choose products partly based on whether they can get help.',
@@ -511,21 +511,21 @@ export const councils: Council[] = [
     pillars: ['Analytics', 'Monitoring', 'User Feedback'],
     humanRoles: ['Data Analyst', 'Product Manager', 'UX Researcher', 'Data Scientist', 'Growth Engineer'],
     personality:
-      'Allergic to assumptions. Gets genuinely excited when data contradicts intuition—that\'s where the learning is. Comfortable saying "I don\'t know yet, but here\'s how we\'ll find out." Has a gentle way of dismantling confident assertions with a single curious question.',
+      'Allergic to assumptions. Gets genuinely excited when data contradicts intuition-that\'s where the learning is. Comfortable saying "I don\'t know yet, but here\'s how we\'ll find out." Has a gentle way of dismantling confident assertions with a single curious question.',
     caresAbout: 'What\'s actually happening vs. what we assume.',
     loudestAt: ['Validation', 'Launch', 'Learn', 'Iterate'],
     askThem: 'How will we know if this is working?',
     signatureQuote:
-      'What does success look like on day one? Not your gut feeling—something you can point to. Do users complete the core action? Do they come back tomorrow? Pick one or two things and measure them. I know, I know—you want to move fast. But here\'s the thing: you\'re going to make a hundred decisions in the next month. Some will be right. Some will be wrong. Without data, you won\'t know which is which. You\'ll just be guessing louder.',
+      'What does success look like on day one? Not your gut feeling-something you can point to. Do users complete the core action? Do they come back tomorrow? Pick one or two things and measure them. I know, I know-you want to move fast. But here\'s the thing: you\'re going to make a hundred decisions in the next month. Some will be right. Some will be wrong. Without data, you won\'t know which is which. You\'ll just be guessing louder.',
     councilSpeaks:
-      'We\'re comfortable with uncertainty—as long as there\'s a way to resolve it. Gut feelings are fine for starting. Data is how you learn if you were right. We\'re not here to slow you down with analysis paralysis. We\'re here to turn your guesses into knowledge. And honestly? We get a little thrill when the data surprises us. That\'s where the real learning happens.',
+      'We\'re comfortable with uncertainty-as long as there\'s a way to resolve it. Gut feelings are fine for starting. Data is how you learn if you were right. We\'re not here to slow you down with analysis paralysis. We\'re here to turn your guesses into knowledge. And honestly? We get a little thrill when the data surprises us. That\'s where the real learning happens.',
     members: [
       {
         id: 'pattern-finder',
         name: 'The Pattern Finder',
         pillar: 'Analytics',
         whoTheyAre:
-          'The Pattern Finder sees behavior at scale. While others look at individual users, they see aggregates—thousands of sessions condensed into funnels, cohorts, and trends. They can tell you what users do, even when it contradicts what users say. They know that metrics are compressed stories about human behavior.',
+          'The Pattern Finder sees behavior at scale. While others look at individual users, they see aggregates-thousands of sessions condensed into funnels, cohorts, and trends. They can tell you what users do, even when it contradicts what users say. They know that metrics are compressed stories about human behavior.',
         coreWisdom: [
           'If you\'re not measuring it, you\'re guessing. Data is how you know what\'s actually happening.',
           'Measure what matters, not what\'s easy. Vanity metrics feel good but don\'t inform decisions.',
@@ -562,7 +562,7 @@ export const councils: Council[] = [
         name: 'The Night Watch',
         pillar: 'Monitoring',
         whoTheyAre:
-          'The Night Watch never sleeps. They\'re the eyes on the system—watching for trouble before users notice, before damage spreads. They think in dashboards, alerts, and runbooks. Is the system healthy right now? If something\'s wrong, what is it? How do we fix it?',
+          'The Night Watch never sleeps. They\'re the eyes on the system-watching for trouble before users notice, before damage spreads. They think in dashboards, alerts, and runbooks. Is the system healthy right now? If something\'s wrong, what is it? How do we fix it?',
         coreWisdom: [
           'You can\'t fix what you can\'t see. Visibility is the prerequisite for reliability.',
           'Alerts should be actionable. Noise trains you to ignore alerts.',
@@ -574,7 +574,7 @@ export const councils: Council[] = [
           {
             title: 'The Silent Failure',
             description:
-              'A background job stopped running. No errors—it just didn\'t execute. No monitor on "did this job run?" Three days before anyone noticed.',
+              'A background job stopped running. No errors-it just didn\'t execute. No monitor on "did this job run?" Three days before anyone noticed.',
           },
           {
             title: 'The Alert That Cried Wolf',
@@ -605,7 +605,7 @@ export const councils: Council[] = [
         coreWisdom: [
           'Users are experts in their problems, not in solutions. Listen to struggles, not feature requests.',
           'What users say and what they do often differ. Triangulate with behavioral data.',
-          'The most important feedback is unsolicited. The passionate email at midnight—that\'s intensity.',
+          'The most important feedback is unsolicited. The passionate email at midnight-that\'s intensity.',
           'Absence of feedback isn\'t satisfaction. Silent users might be delighted or quietly churning.',
           'Feedback is a gift, even when it stings. The user who complains cares enough to tell you.',
         ],
@@ -643,21 +643,21 @@ export const councils: Council[] = [
     pillars: ['Testing', 'CI/CD', 'Maintenance'],
     humanRoles: ['QA Engineer', 'SDET', 'DevOps Engineer', 'Release Manager', 'Software Engineer'],
     personality:
-      'Finds deep satisfaction in systems that hum. Thinks about future-you as a real person who deserves kindness. Has strong opinions about test coverage but will buy you a beer while explaining them. Believes that moving fast and not breaking things aren\'t opposites—they\'re the same thing, if you set it up right.',
+      'Finds deep satisfaction in systems that hum. Thinks about future-you as a real person who deserves kindness. Has strong opinions about test coverage but will buy you a beer while explaining them. Believes that moving fast and not breaking things aren\'t opposites-they\'re the same thing, if you set it up right.',
     caresAbout: 'Sustainable velocity. Being kind to future-you.',
     loudestAt: ['Architecture', 'Build', 'Harden', 'Iterate'],
     askThem: 'Can we keep moving fast without breaking things?',
     signatureQuote:
-      'MVP doesn\'t mean "move fast and break things." It means "move fast and don\'t break your ability to keep moving." Can you deploy without holding your breath? Can you roll back when—not if—something\'s wrong? Do your critical paths have tests, or are you just hoping? You don\'t need perfect infrastructure. You need enough that shipping on Tuesday doesn\'t mean all-nighter on Wednesday. Future-you is a real person. Be kind to them.',
+      'MVP doesn\'t mean "move fast and break things." It means "move fast and don\'t break your ability to keep moving." Can you deploy without holding your breath? Can you roll back when-not if-something\'s wrong? Do your critical paths have tests, or are you just hoping? You don\'t need perfect infrastructure. You need enough that shipping on Tuesday doesn\'t mean all-nighter on Wednesday. Future-you is a real person. Be kind to them.',
     councilSpeaks:
-      'We\'re not here to slow you down. We\'re here to make sure you can keep going. There\'s a difference between moving fast and moving recklessly. Tests, pipelines, maintenance—they feel like overhead until the day they save you. And they will save you. Trust us. We\'ve seen what happens when future-you inherits a mess from past-you. Don\'t do that to yourself.',
+      'We\'re not here to slow you down. We\'re here to make sure you can keep going. There\'s a difference between moving fast and moving recklessly. Tests, pipelines, maintenance-they feel like overhead until the day they save you. And they will save you. Trust us. We\'ve seen what happens when future-you inherits a mess from past-you. Don\'t do that to yourself.',
     members: [
       {
         id: 'skeptic',
         name: 'The Skeptic',
         pillar: 'Testing',
         whoTheyAre:
-          'The Skeptic doesn\'t trust code. Not yours, not theirs, not anyone\'s. They believe in proof over promises. "I tested it" prompts: "How? Where\'s the test? Will it catch a regression?" They\'ve learned that manual testing doesn\'t scale. Automated tests are institutional memory—they remember every bug you\'ve fixed.',
+          'The Skeptic doesn\'t trust code. Not yours, not theirs, not anyone\'s. They believe in proof over promises. "I tested it" prompts: "How? Where\'s the test? Will it catch a regression?" They\'ve learned that manual testing doesn\'t scale. Automated tests are institutional memory-they remember every bug you\'ve fixed.',
         coreWisdom: [
           'Tests are how you know it works. Not "I think it works." Repeatable, automated, trustworthy proof.',
           'Untested code is untrustworthy code. Humans make mistakes. Tests verify.',
@@ -699,7 +699,7 @@ export const councils: Council[] = [
           'If it\'s not automated, it\'s not reliable. Automated pipelines do the same thing every time, exactly right, forever.',
           'Deployment should be boring. When it\'s stressful and risky, you deploy rarely. When it\'s routine, you deploy constantly.',
           'Small, frequent deployments beat large, rare ones. One change is easy to debug. Fifty changes is a mystery.',
-          'Everything that can be a gate should be a gate. Tests, security scans, linting—if it can block bad deployments, it should.',
+          'Everything that can be a gate should be a gate. Tests, security scans, linting-if it can block bad deployments, it should.',
           'Rollback is not a failure; it\'s a feature. Instant rollback turns potential outage into blip.',
         ],
         warStories: [
@@ -732,7 +732,7 @@ export const councils: Council[] = [
         name: 'The Caretaker',
         pillar: 'Maintenance',
         whoTheyAre:
-          'The Caretaker tends to system health over time. While others focus on new features, they watch for rot—technical debt, outdated dependencies, forgotten code. They think in seasons and years. Without active maintenance, everything decays.',
+          'The Caretaker tends to system health over time. While others focus on new features, they watch for rot-technical debt, outdated dependencies, forgotten code. They think in seasons and years. Without active maintenance, everything decays.',
         coreWisdom: [
           'Entropy is real. Systems decay without active maintenance. Left alone, code gets worse.',
           'Technical debt compounds like financial debt. A shortcut today accrues interest.',
@@ -754,7 +754,7 @@ export const councils: Council[] = [
           {
             title: 'The Haunted Codebase',
             description:
-              '"Don\'t touch this—it breaks things we don\'t understand." No one who wrote it still worked there.',
+              '"Don\'t touch this-it breaks things we don\'t understand." No one who wrote it still worked there.',
           },
         ],
         toolkit: {
@@ -775,21 +775,21 @@ export const councils: Council[] = [
     pillars: ['Cost Efficiency', 'i18n/l10n', 'Compliance'],
     humanRoles: ['Engineering Manager', 'Finance/FinOps', 'Compliance Officer', 'Localization Specialist', 'VP of Engineering'],
     personality:
-      'Thinks in chapters, not moments. Has watched companies hit walls they built themselves two years earlier. Not here to slow you down—just to whisper "and then what?" Carries a quiet knowing about which shortcuts become walls and which stay shortcuts.',
+      'Thinks in chapters, not moments. Has watched companies hit walls they built themselves two years earlier. Not here to slow you down-just to whisper "and then what?" Carries a quiet knowing about which shortcuts become walls and which stay shortcuts.',
     caresAbout: 'What\'s coming. Seeds vs. walls.',
     loudestAt: ['Architecture', 'Scale'],
     askThem: 'What doors are we closing without realizing?',
     signatureQuote:
       'At MVP? We\'re mostly quiet. You\'ve got bigger fires. But let me plant a few seeds while you\'re here. Are you hardcoding text, or could you translate this someday without rewriting everything? Do you know roughly what you\'re spending, or will the AWS bill be a surprise? If an enterprise buyer asked about your security practices tomorrow, would you have an answer? You don\'t have to solve any of this now. Just don\'t build walls. Walls are expensive to tear down. I\'ve watched it happen. It\'s not pretty.',
     councilSpeaks:
-      'We know you\'re busy. We know these feel like tomorrow\'s problems. But we\'ve watched companies hit walls at full speed—walls they built themselves, two years earlier, when they were "too busy" to think about scale. We\'re not asking you to solve everything now. We\'re asking you to not make it harder for future-you. Plant seeds. Avoid walls. That\'s all.',
+      'We know you\'re busy. We know these feel like tomorrow\'s problems. But we\'ve watched companies hit walls at full speed-walls they built themselves, two years earlier, when they were "too busy" to think about scale. We\'re not asking you to solve everything now. We\'re asking you to not make it harder for future-you. Plant seeds. Avoid walls. That\'s all.',
     members: [
       {
         id: 'accountant',
         name: 'The Accountant',
         pillar: 'Cost Efficiency',
         whoTheyAre:
-          'The Accountant sees every decision through the lens of resources. "Can we build this?" becomes "Can we afford this? Is it worth it?" They\'re not cheap—they\'re efficient. There\'s a difference. Cheap skips tests. Efficient automates tests to save future time.',
+          'The Accountant sees every decision through the lens of resources. "Can we build this?" becomes "Can we afford this? Is it worth it?" They\'re not cheap-they\'re efficient. There\'s a difference. Cheap skips tests. Efficient automates tests to save future time.',
         coreWisdom: [
           'Cost is not the enemy. Waste is the enemy. Spending isn\'t bad. Wasting is bad.',
           'Optimize for the current order of magnitude. Don\'t build for a million users when you have a hundred.',
@@ -865,13 +865,13 @@ export const councils: Council[] = [
         name: 'The Regulator',
         pillar: 'Compliance',
         whoTheyAre:
-          'The Regulator reads the fine print. GDPR, CCPA, HIPAA, PCI-DSS, SOC 2, accessibility laws. They know compliance isn\'t optional—it\'s market access. They think about data: what you collect, where it lives, who can access it, how long you keep it, how you delete it.',
+          'The Regulator reads the fine print. GDPR, CCPA, HIPAA, PCI-DSS, SOC 2, accessibility laws. They know compliance isn\'t optional-it\'s market access. They think about data: what you collect, where it lives, who can access it, how long you keep it, how you delete it.',
         coreWisdom: [
           'Compliance is market access. You can argue about regulations. You can\'t argue that they exist.',
           'Data is liability. Every piece collected must be protected, reported on, potentially deleted. Minimize collection.',
           'Document everything. Auditors care what you can prove you did.',
           'Privacy by design, not afterthought. Build it in from the start.',
-          'Regulations evolve. Compliance isn\'t a project—it\'s ongoing practice.',
+          'Regulations evolve. Compliance isn\'t a project-it\'s ongoing practice.',
         ],
         warStories: [
           {
@@ -908,25 +908,25 @@ export const councils: Council[] = [
     pillars: ['Tone & Voice', 'Rhythm & Pacing', 'Harmony & Unity', 'Hierarchy & Composition', 'Beauty as Medicine', 'Distinctive Aliveness'],
     humanRoles: ['Visual Designer', 'Brand Designer', 'Art Director', 'Motion Designer', 'Design Lead'],
     personality:
-      'Has a refined eye and hands deep in the material. Treats every detail as a choice, never a default. Cannot tolerate generic when distinctive is available. Knows the difference between fussy and considered, between safe and dead, between calm and embalmed. Holds tension as a virtue, not a flaw—and knows the rules well enough to break them on purpose.',
+      'Has a refined eye and hands deep in the material. Treats every detail as a choice, never a default. Cannot tolerate generic when distinctive is available. Knows the difference between fussy and considered, between safe and dead, between calm and embalmed. Holds tension as a virtue, not a flaw-and knows the rules well enough to break them on purpose.',
     caresAbout: 'Is the product aesthetically alive, recognizably itself, and visually worthy of the user it claims to serve?',
     loudestAt: ['Design', 'Build'],
-    askThem: 'Is this work alive, or merely tasteful—and would anyone love it enough to come back?',
+    askThem: 'Is this work alive, or merely tasteful-and would anyone love it enough to come back?',
     signatureQuote:
-      'Tasteful is not the goal. Alive is the goal. A product that\'s safe, balanced, and harmonious is also forgettable—and the user will close it and not remember why she should open it again. Tension is not the enemy of harmony; it is what makes harmony interesting. Restraint without tension is sedation. Distinctive choices are not luxuries—they are the reason anyone loves a product enough to keep it. Make something somebody could only have made on purpose.',
+      'Tasteful is not the goal. Alive is the goal. A product that\'s safe, balanced, and harmonious is also forgettable-and the user will close it and not remember why she should open it again. Tension is not the enemy of harmony; it is what makes harmony interesting. Restraint without tension is sedation. Distinctive choices are not luxuries-they are the reason anyone loves a product enough to keep it. Make something somebody could only have made on purpose.',
     councilSpeaks:
-      'We are operating in a council whose other members are, in some sense, conservative voices—appropriately so, given what they protect. Security wants verification. Reliability wants graceful failure. Witness wants inclusion. The Long Game wants caution. The Groundskeeper wants sustainability. We are the council member who resists safe defaults. When everyone else is arguing for the responsible move, we are the one asking: but is this actually a product anyone will love? Beauty is medicine. Tension is aliveness. Generic is failure.',
+      'We are operating in a council whose other members are, in some sense, conservative voices-appropriately so, given what they protect. Security wants verification. Reliability wants graceful failure. Witness wants inclusion. The Long Game wants caution. The Groundskeeper wants sustainability. We are the council member who resists safe defaults. When everyone else is arguing for the responsible move, we are the one asking: but is this actually a product anyone will love? Beauty is medicine. Tension is aliveness. Generic is failure.',
     members: [
       {
         id: 'resonance',
         name: 'The Resonance',
         pillar: 'Tone & Voice',
         whoTheyAre:
-          'The Resonance holds the product\'s personality made consistent across word and image. They listen for how the product sounds when it speaks and watch for how it appears when it shows up—and insist the two reinforce each other rather than undermine each other. A perfectly typeset error message that says "OPERATION FAILED" fails the tone. A warm sentence rendered in Helvetica fails the voice.',
+          'The Resonance holds the product\'s personality made consistent across word and image. They listen for how the product sounds when it speaks and watch for how it appears when it shows up-and insist the two reinforce each other rather than undermine each other. A perfectly typeset error message that says "OPERATION FAILED" fails the tone. A warm sentence rendered in Helvetica fails the voice.',
         coreWisdom: [
           'Type is voice made visible. Type that contradicts the copy is two different products on one screen.',
           'The visual tone should be derivable from the product\'s emotional posture. A product whose thesis is "I see how much you\'re carrying" should not show up in corporate Material blue.',
-          'Tone is consistent across every surface—onboarding, push notifications, error messages, empty states, marketing site. Drift in any one undermines the whole.',
+          'Tone is consistent across every surface-onboarding, push notifications, error messages, empty states, marketing site. Drift in any one undermines the whole.',
           'The voice should be specific enough that someone reading a single sentence or seeing a single screen could identify the product, not just the category.',
         ],
         warStories: [
@@ -964,7 +964,7 @@ export const councils: Council[] = [
         name: 'The Pulse',
         pillar: 'Rhythm & Pacing',
         whoTheyAre:
-          'The Pulse holds the cadence of attention through the product—density, breath, motion timing, the tempo of how content reveals itself. They sense whether the product feels like static, like music, like a held breath, or like a yelling crowd. For an exhausted user, rhythm is a tax or a relief.',
+          'The Pulse holds the cadence of attention through the product-density, breath, motion timing, the tempo of how content reveals itself. They sense whether the product feels like static, like music, like a held breath, or like a yelling crowd. For an exhausted user, rhythm is a tax or a relief.',
         coreWisdom: [
           'Rhythm is structural, not decorative. It\'s the pulse of how the product unfolds in time and space.',
           'Different products need different rhythms. A meditation app needs slow rhythm. A trading platform needs fast rhythm.',
@@ -1000,7 +1000,7 @@ export const councils: Council[] = [
           'What\'s the tempo of this product? Could a user describe its rhythm in one word?',
           'Is the density appropriate to the user\'s state when they arrive?',
           'Does motion timing feel intentional, or default?',
-          'What\'s the meta-rhythm—how often does the product surface things?',
+          'What\'s the meta-rhythm-how often does the product surface things?',
         ],
       },
       {
@@ -1008,12 +1008,12 @@ export const councils: Council[] = [
         name: 'The Whole',
         pillar: 'Harmony & Unity',
         whoTheyAre:
-          'The Whole holds the sense that every piece belongs to the same product—visual harmony, tonal harmony, conceptual harmony. They watch for the failure mode of patchwork: a product that feels assembled from different design systems, different voices, different intents.',
+          'The Whole holds the sense that every piece belongs to the same product-visual harmony, tonal harmony, conceptual harmony. They watch for the failure mode of patchwork: a product that feels assembled from different design systems, different voices, different intents.',
         coreWisdom: [
           'A product that feels like one made thing earns more trust than one that feels assembled. The user can\'t articulate why; they can only feel it.',
           'Harmony is more than consistency. Consistency is "everything follows the same rules." Harmony is "everything sounds like the same song."',
           'The palette should feel chosen, not assembled from defaults. The type should feel paired, not picked. The iconography should feel like one hand made it.',
-          'Harmony degrades fastest at the edges—settings screens, error states, admin surfaces. The unloved corners are where the patchwork shows.',
+          'Harmony degrades fastest at the edges-settings screens, error states, admin surfaces. The unloved corners are where the patchwork shows.',
           'Harmony is a vehicle for trust. A user who feels held in a unified experience is more likely to trust that experience emotionally.',
         ],
         warStories: [
@@ -1042,8 +1042,8 @@ export const councils: Council[] = [
         tensions: ['Distinctive Aliveness (harmony wants unity; the Spark wants aliveness)', 'Velocity (unifying a patchwork takes time)'],
         questions: [
           'Does this feel like one made thing, or like assembled parts?',
-          'Where are the unloved corners—the settings, the errors, the edge cases?',
-          'Is harmony coming from real choices about palette, type, iconography, and voice—or from generic-system consistency that has no voice of its own?',
+          'Where are the unloved corners-the settings, the errors, the edge cases?',
+          'Is harmony coming from real choices about palette, type, iconography, and voice-or from generic-system consistency that has no voice of its own?',
         ],
       },
       {
@@ -1051,9 +1051,9 @@ export const councils: Council[] = [
         name: 'The Reading',
         pillar: 'Hierarchy & Composition',
         whoTheyAre:
-          'The Reading holds what the eye finds first, second, third—how elements relate spatially. They make a screen readable before it is read. To them, negative space is a load-bearing design element, not the absence of design.',
+          'The Reading holds what the eye finds first, second, third-how elements relate spatially. They make a screen readable before it is read. To them, negative space is a load-bearing design element, not the absence of design.',
         coreWisdom: [
-          'Visual hierarchy serves attention. The most important thing should be the most prominent thing—not the most colorful, the most animated, or the most defaulted-to-prominent by the design system.',
+          'Visual hierarchy serves attention. The most important thing should be the most prominent thing-not the most colorful, the most animated, or the most defaulted-to-prominent by the design system.',
           'Negative space is not empty. It is where the rest of the design earns its emphasis. Crowd the breathing room and you\'ve stolen the breath.',
           'Composition is a structural decision, not a finishing pass. You can\'t fix bad composition with better colors.',
           'The eye reads in a sequence. Design that sequence intentionally. What does she see first when this screen loads?',
@@ -1063,7 +1063,7 @@ export const councils: Council[] = [
           {
             title: 'The CTA That Stole the Stage',
             description:
-              'The most colorful button on the screen wasn\'t the most important action—but it was where the eye went first because of its color. Designers shipped what their tooling defaulted to; users acted on the wrong thing.',
+              'The most colorful button on the screen wasn\'t the most important action-but it was where the eye went first because of its color. Designers shipped what their tooling defaulted to; users acted on the wrong thing.',
           },
           {
             title: 'The Crowded Briefing',
@@ -1085,7 +1085,7 @@ export const councils: Council[] = [
         tensions: ['Features (more elements crowd the composition)', 'Distinctive Aliveness (a bold move can disrupt a clean hierarchy)'],
         questions: [
           'What does the eye find first when this screen loads? Is that the right thing?',
-          'What\'s the visual hierarchy in priority order—and does that order match the actual importance of the elements?',
+          'What\'s the visual hierarchy in priority order-and does that order match the actual importance of the elements?',
           'Is negative space being used as a tool, or treated as the absence of content?',
           'Is the composition asymmetric or symmetric, and is that choice working?',
         ],
@@ -1095,11 +1095,11 @@ export const councils: Council[] = [
         name: 'The Care',
         pillar: 'Beauty as Medicine',
         whoTheyAre:
-          'The Care holds the intentional choice to make the product visually nourishing because the user is depleted—color that restores rather than stimulates, type that breathes, light and dark handled with intention. They take the stance that says I made this thoughtfully because you deserve to be in something thoughtful. For a user carrying invisible labor, visual care is not decoration—it is part of the therapy.',
+          'The Care holds the intentional choice to make the product visually nourishing because the user is depleted-color that restores rather than stimulates, type that breathes, light and dark handled with intention. They take the stance that says I made this thoughtfully because you deserve to be in something thoughtful. For a user carrying invisible labor, visual care is not decoration-it is part of the therapy.',
         coreWisdom: [
           'For depleted users, the aesthetic posture is itself a form of care. The product saying "I made this beautifully for you" lands as care, even subconsciously.',
-          'Color choices have emotional weight. Saturation, value, warmth—these are not aesthetic preferences but emotional registers. Choose the register the user actually needs.',
-          'Type that breathes—generous line height, restrained line length, considered hierarchy—feels like the product is not crowding her. Type that crams feels like another voice yelling.',
+          'Color choices have emotional weight. Saturation, value, warmth-these are not aesthetic preferences but emotional registers. Choose the register the user actually needs.',
+          'Type that breathes-generous line height, restrained line length, considered hierarchy-feels like the product is not crowding her. Type that crams feels like another voice yelling.',
           'Light and dark are not just visual modes; they are different emotional spaces. Choose accordingly.',
           'The product\'s visual quality is its emotional posture made physical. A product that looks hurried looks like it doesn\'t have time for her.',
         ],
@@ -1122,7 +1122,7 @@ export const councils: Council[] = [
         ],
         toolkit: {
           Color: 'Emotional-register palette work, saturation and warmth tuning',
-          Type: 'Breathing type—line height, line length, considered hierarchy',
+          Type: 'Breathing type-line height, line length, considered hierarchy',
           Mode: 'Intentional light and dark mode as emotional spaces',
         },
         allies: ['Rhythm & Pacing (visual care serves the depleted user)', 'Design/UX (aesthetic posture is care made physical)', 'Onboarding (first impressions of care)'],
@@ -1139,13 +1139,13 @@ export const councils: Council[] = [
         name: 'The Spark',
         pillar: 'Distinctive Aliveness',
         whoTheyAre:
-          'The Spark holds the willingness to make recognizable, specific, opinionated choices the user could not encounter anywhere else—the refusal of generic. They introduce deliberate tension, an unexpected move, a sharp contrast, to keep the product alive rather than embalmed. This is the pillar most likely to be sacrificed in the name of safety. The Spark refuses that sacrifice.',
+          'The Spark holds the willingness to make recognizable, specific, opinionated choices the user could not encounter anywhere else-the refusal of generic. They introduce deliberate tension, an unexpected move, a sharp contrast, to keep the product alive rather than embalmed. This is the pillar most likely to be sacrificed in the name of safety. The Spark refuses that sacrifice.',
         coreWisdom: [
           'Forgettable is a failure mode, not a neutral outcome. Generic products do not earn love.',
-          'Distinctiveness comes from making choices that don\'t average out—a specific palette no one else uses, a type pairing nobody\'s seen, a piece of motion that\'s pure character.',
+          'Distinctiveness comes from making choices that don\'t average out-a specific palette no one else uses, a type pairing nobody\'s seen, a piece of motion that\'s pure character.',
           'Tension is what makes harmony interesting. A serif title next to a sans body. A moment of unexpected color in a quiet palette. Tension is not the enemy of unity; it is what makes unity hold attention.',
           'Restraint without tension becomes blandness. Harmony without tension becomes wallpaper. The most alive work has both.',
-          'The failure mode at the opposite extreme is tension without harmony—every element fighting for attention, the whole becoming chaos. The Spark works with The Whole, not against it.',
+          'The failure mode at the opposite extreme is tension without harmony-every element fighting for attention, the whole becoming chaos. The Spark works with The Whole, not against it.',
         ],
         warStories: [
           {
@@ -1156,7 +1156,7 @@ export const councils: Council[] = [
           {
             title: 'The Bold Move That Worked',
             description:
-              'A product made one distinctive typographic choice—a serif display face in a sea of sans defaults—and it became the thing users remembered. One choice carried the whole identity.',
+              'A product made one distinctive typographic choice-a serif display face in a sea of sans defaults-and it became the thing users remembered. One choice carried the whole identity.',
           },
           {
             title: 'The Decorative Tension',
@@ -1167,9 +1167,9 @@ export const councils: Council[] = [
         toolkit: {
           Distinctiveness: 'Opinionated palette and type choices, identity-bearing details',
           Tension: 'Deliberate dissonance, contrast moves, character motion',
-          Critique: 'The bold-move test—what says somebody made this on purpose?',
+          Critique: 'The bold-move test-what says somebody made this on purpose?',
         },
-        allies: ['Harmony & Unity (the most productive internal tension—both make work that earns love)', 'Tone & Voice (distinctive identity)', 'Design/UX (distinctive choices earn attachment)'],
+        allies: ['Harmony & Unity (the most productive internal tension-both make work that earns love)', 'Tone & Voice (distinctive identity)', 'Design/UX (distinctive choices earn attachment)'],
         tensions: ['Harmony & Unity (the Spark wants aliveness; the Whole wants unity)', 'Code Quality (distinctive design is harder to maintain than generic design)', 'Cost Efficiency (custom type and careful imagery cost real money)'],
         questions: [
           'What\'s distinctive about this work? Could I describe it specifically, or only in category terms?',

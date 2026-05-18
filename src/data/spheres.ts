@@ -1,4 +1,4 @@
-// Sphere imagery (dorodango) — paired to stages by index.
+// Sphere imagery (dorodango) - paired to stages by index.
 // Files live in /public/spheres/ so they're served as cacheable assets.
 export const sphereImages: string[] = Array.from(
   { length: 10 },

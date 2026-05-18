@@ -1,0 +1,68 @@
+/* LobeHeader - shared title / description / CTA for the three home-page
+   lobes (North Star, Council, Foundation), so they read as one set. */
+
+.lobe-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 11px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Title - the prominent section heading, upright Fraunces. */
+.lobe-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 144;
+  font-weight: 300;
+  font-size: clamp(23px, 2.8vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--color-wood-deep);
+}
+
+/* Description - one supporting line, with a weighted lead phrase. */
+.lobe-description {
+  margin: 0;
+  max-width: 30em;
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 28;
+  font-weight: 400;
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--color-ink-soft);
+}
+.lobe-lead {
+  font-weight: 500;
+  color: var(--color-wood-deep);
+}
+
+/* CTA - understated text + arrow, in the terracotta human accent. */
+.lobe-cta {
+  margin-top: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-terracotta);
+  transition: color 0.2s ease;
+}
+.lobe-cta-arrow {
+  transition: transform 0.2s ease;
+}
+.lobe-cta:hover {
+  color: color-mix(in srgb, var(--color-terracotta) 78%, #000);
+}
+.lobe-cta:hover .lobe-cta-arrow {
+  transform: translateX(3px);
+}

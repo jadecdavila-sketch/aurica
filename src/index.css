@@ -7,9 +7,9 @@
 
 /* ──────────────── Design system ────────────────
    Two coexisting palettes:
-   1) Cradle palette (cream/wood/Fraunces) — used by the Home hero
+   1) Cradle palette (cream/wood/Fraunces) - used by the Home hero
    2) Council-app palette (cream/forest/gold/olive + shadcn semantic tokens)
-      — used by drilldowns and content pages, copied from the
+      - used by drilldowns and content pages, copied from the
       product-council-app so its UI primitives drop in cleanly.
 */
 @theme inline {
@@ -115,7 +115,7 @@
   :root { --sphere-size: 38px; --string-len: 80px; --row-width: 389px; --stage-width: 509px; }
 }
 
-/* Base layer — Tailwind preflight already handles margin/padding reset.
+/* Base layer - Tailwind preflight already handles margin/padding reset.
    Anything site-wide goes in @layer base so utilities still win. */
 @layer base {
   html, body, #root { min-height: 100vh; }
@@ -144,7 +144,6 @@
   font-variation-settings: 'opsz' 144;
 }
 .text-display .accent {
-  font-style: italic;
   font-weight: 400;
   color: var(--color-terracotta);
 }
@@ -173,7 +172,6 @@
 
 .text-question {
   font-family: var(--font-display);
-  font-style: italic;
   font-weight: 400;
   color: var(--color-ink-soft);
   font-variation-settings: 'opsz' 24;
@@ -301,7 +299,6 @@
   position: absolute;
   top: 0;
   font-family: var(--font-display);
-  font-style: italic;
   font-weight: 400;
   font-size: 13px;
   color: var(--color-ink-soft);

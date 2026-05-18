@@ -23,7 +23,27 @@ function monogram(name: string) {
 }
 
 /**
- * TeamSheet — the detail drawer for a studio member, mirroring the
+ * Renders the small slice of inline markdown the bios use - **bold** and
+ * *italic*. Anything outside those markers passes through as plain text.
+ */
+function renderRich(text: string) {
+  return text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((seg, i) => {
+    if (seg.startsWith('**') && seg.endsWith('**')) {
+      return (
+        <strong key={i} className="font-semibold text-ink">
+          {seg.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (seg.startsWith('*') && seg.endsWith('*')) {
+      return <em key={i}>{seg.slice(1, -1)}</em>;
+    }
+    return seg;
+  });
+}
+
+/**
+ * TeamSheet - the detail drawer for a studio member, mirroring the
  * council's bottom-sheet drill-in but in the cream/Fraunces page palette.
  * The open seat renders as a recruiting invitation instead of a bio.
  */
@@ -87,13 +107,13 @@ export function TeamSheet({ memberId, open, onOpenChange }: TeamSheetProps) {
 
               <h1 className="text-display mb-4">{member.name}</h1>
 
-              <p className="font-display italic text-xl text-ink-soft leading-snug mb-10">
-                {member.tagline}
+              <p className="font-display text-xl text-ink-soft leading-snug mb-10">
+                {renderRich(member.tagline)}
               </p>
 
               <div className="space-y-5 text-ink-soft leading-relaxed mb-12">
                 {member.bio.map((para, i) => (
-                  <p key={i}>{para}</p>
+                  <p key={i}>{renderRich(para)}</p>
                 ))}
               </div>
 
@@ -104,12 +124,21 @@ export function TeamSheet({ memberId, open, onOpenChange }: TeamSheetProps) {
                 <ul className="space-y-2.5">
                   {member.focus.map((f) => (
                     <li key={f} className="flex items-baseline gap-3 text-ink">
-                      <span className="text-terracotta font-display">—</span>
+                      <span className="text-terracotta font-display">-</span>
                       <span>{f}</span>
                     </li>
                   ))}
                 </ul>
               </div>
+
+              {member.outsideStudio && (
+                <div className="border-t border-stone/40 pt-8 mt-12">
+                  <div className="text-eyebrow mb-5">outside the studio</div>
+                  <p className="text-ink-soft leading-relaxed">
+                    {member.outsideStudio}
+                  </p>
+                </div>
+              )}
 
               {member.open && (
                 <Link

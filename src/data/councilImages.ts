@@ -1,5 +1,5 @@
 // Council portrait imagery, keyed by council id (matches src/data/councils.ts).
-// Files live in /public/council/ — original filenames preserved (with spaces).
+// Files live in /public/council/ - original filenames preserved (with spaces).
 export const councilImages: Record<string, string> = {
   'architect':          '/council/1. Architect.png',
   'midnight-responder': '/council/2. MidnightResponder.png',

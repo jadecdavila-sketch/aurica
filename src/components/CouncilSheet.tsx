@@ -236,7 +236,7 @@ export function CouncilSheet({ councilId, open, onOpenChange }: CouncilSheetProp
                   alt={council.name}
                   className="w-full h-full object-cover object-top"
                 />
-                {/* Scrim concentrated at the base — just enough to seat the
+                {/* Scrim concentrated at the base - just enough to seat the
                     title; the artwork stays crisp for the top ~60% of the band. */}
                 <div className="absolute inset-0 bg-gradient-to-t from-background from-0% via-background/70 via-13% to-transparent to-40%" />
               </motion.div>

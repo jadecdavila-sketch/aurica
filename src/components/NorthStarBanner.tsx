@@ -1,14 +1,15 @@
+import { LobeHeader } from './LobeHeader';
 import './NorthStarBanner.css';
 
 /**
- * NorthStarBanner — TO-DO 1, Option B.
+ * NorthStarBanner - TO-DO 1, Option B.
  *
  * A banner that sits above the council ring. It names the context the
  * council operates within: the council does not free-associate, it reads the
  * Product North Star before it speaks.
  *
- * Title: "Product North Star" — the prominent section heading. Below it, the
- * product thesis — the themes and guiding principles every piece of product
+ * Title: "Product North Star" - the prominent section heading. Below it, the
+ * product thesis - the themes and guiding principles every piece of product
  * work is filtered through. Subtext: the verbatim canonical line from the
  * handoff brief, confirmed by Jade as load-bearing for the framework. Nothing
  * in the subtext is paraphrased.
@@ -16,7 +17,7 @@ import './NorthStarBanner.css';
 export function NorthStarBanner() {
   return (
     <aside className="north-star fade-up" aria-label="Product North Star">
-      {/* Compass-star medallion — a guiding star inside a lens, echoing the
+      {/* Compass-star medallion - a guiding star inside a lens, echoing the
           radial lines of the council ring below. */}
       <span className="north-star-medallion" aria-hidden="true">
         <svg viewBox="0 0 48 48" className="north-star-icon">
@@ -35,12 +36,12 @@ export function NorthStarBanner() {
         </svg>
       </span>
 
-      <h2 className="north-star-title">Product North Star</h2>
-
-      <p className="north-star-thesis">
-        <span className="lead">Product thesis</span> — the product themes and
-        guiding principles. All product work is filtered through this lens.
-      </p>
+      <LobeHeader
+        title="Product North Star"
+        lead="Product thesis"
+        description="the product themes and guiding principles. All product work is filtered through this lens."
+        problemId="north-star"
+      />
 
       <p className="north-star-subtext">
         “<span className="key">Auditable</span> means she can check Larkin’s

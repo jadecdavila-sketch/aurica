@@ -1,18 +1,21 @@
 import { useEffect, useState } from 'react';
+import { LobeHeader } from './LobeHeader';
 import './Foundation.css';
 
 /**
- * Foundation — the Living Architecture Documentation, drawn as a road atlas.
+ * Foundation - the Living Architecture Documentation, drawn as a road atlas.
  *
  * Placed below the Council: every change clears the council first, then routes
- * through the docs. The atlas makes the doc system's own metaphor literal —
+ * through the docs. The atlas makes the doc system's own metaphor literal -
  *   · towns        = systems (sub-docs)
  *   · INDEX.md     = the router every agent reads first
  *   · signpost     = keyword routers
- *   · potholes     = Gotchas — traps that have broken things before
- *   · construction = [REVIEW NEEDED] flags — known-imperfect state
- *   · the junction = CROSS_SYSTEM_DEPENDENCIES.md — where ripples travel
- *   · the tollgate = the pre-push git hook — unskippable by design
+ *   · the district = a tier of the architecture (here, the AI layer)
+ *   · ripple roads = direct system-to-system dependencies
+ *   · potholes     = Gotchas - traps that have broken things before
+ *   · construction = [REVIEW NEEDED] flags - known-imperfect state
+ *   · the junction = CROSS_SYSTEM_DEPENDENCIES.md - where ripples travel
+ *   · the tollgate = the pre-push git hook - unskippable by design
  * Hover (or tap) any marker to read what it stands for.
  */
 
@@ -38,19 +41,40 @@ interface Feature {
   keywords?: string[];
   reviewed?: string;
   stale?: boolean;
+  /** Render the town label above the marker instead of below - used where
+      roads enter from below and would otherwise cross the label. */
+  labelAbove?: boolean;
   roads: string[];
 }
 
-const ROADS: { id: string; d: string; major?: boolean; stale?: boolean }[] = [
-  { id: 'entry', d: 'M66,282 C112,279 156,283 196,282', major: true },
-  { id: 'toEmail', d: 'M224,272 C322,248 410,150 512,138' },
-  { id: 'toCal', d: 'M230,286 C342,294 452,298 544,300' },
-  { id: 'toFam', d: 'M226,296 C318,344 402,428 488,452', stale: true },
-  { id: 'emailX', d: 'M542,142 C616,194 690,250 758,288' },
-  { id: 'calX', d: 'M576,300 C636,300 700,300 758,300' },
-  { id: 'famX', d: 'M516,452 C604,412 686,352 760,312' },
-  { id: 'exit', d: 'M788,300 C812,300 840,300 862,300', major: true },
-  { id: 'push', d: 'M906,300 C924,300 942,300 958,300', major: true },
+const ROADS: { id: string; d: string; major?: boolean; stale?: boolean; ripple?: boolean }[] = [
+  // spine - agents enter the atlas
+  { id: 'entry', d: 'M100,360 C140,358 172,361 200,360', major: true },
+  // INDEX out to the systems
+  { id: 'toEmail', d: 'M230,350 C300,312 372,282 426,270' },
+  { id: 'toCal', d: 'M232,352 C340,322 472,272 558,256' },
+  { id: 'toNotif', d: 'M232,356 C372,344 552,304 670,290' },
+  { id: 'toVault', d: 'M230,372 C296,408 376,436 448,444', stale: true },
+  { id: 'toGifts', d: 'M232,372 C372,428 506,450 608,453' },
+  // systems out to the cross-system junction
+  { id: 'emailX', d: 'M462,274 C556,304 668,332 752,352' },
+  { id: 'calX', d: 'M596,262 C652,290 706,318 756,344' },
+  { id: 'notifX', d: 'M704,300 C724,316 742,332 758,346' },
+  { id: 'vaultX', d: 'M488,442 C580,418 680,388 754,366' },
+  { id: 'giftsX', d: 'M646,444 C688,422 726,396 758,372' },
+  // junction -> hook -> push
+  { id: 'exit', d: 'M794,360 C812,360 830,360 842,360', major: true },
+  { id: 'push', d: 'M892,360 C906,360 918,360 926,360', major: true },
+  // up into the AI-layer district
+  { id: 'aiEmailSafety', d: 'M436,246 C414,204 394,160 380,132' },
+  { id: 'aiEmailGemini', d: 'M456,248 C488,204 520,158 544,132' },
+  { id: 'aiSafetyGemini', d: 'M392,114 C440,108 488,108 534,114' },
+  { id: 'aiGeminiClaude', d: 'M572,114 C620,120 668,120 704,114' },
+  { id: 'aiNotifClaude', d: 'M694,268 C706,224 714,172 720,134' },
+  // ripple roads - direct system-to-system dependencies
+  { id: 'ripEmailCal', d: 'M462,260 C500,252 538,251 560,253', ripple: true },
+  { id: 'ripCalNotif', d: 'M592,260 C624,270 652,280 674,285', ripple: true },
+  { id: 'ripEmailGifts', d: 'M450,282 C486,344 548,408 612,444', ripple: true },
 ];
 
 const roadD = (id: string) => ROADS.find((r) => r.id === id)?.d ?? '';
@@ -59,129 +83,223 @@ const FEATURES: Feature[] = [
   {
     id: 'index',
     kind: 'index',
-    x: 212,
-    y: 282,
+    x: 214,
+    y: 360,
     name: 'INDEX.md',
     kicker: 'Router',
-    title: 'INDEX.md — the router',
+    title: 'INDEX.md - the router',
     body: 'A short index: every system, its keywords, its last-reviewed date, a pointer to its sub-doc. Every agent reads it first to find which way to go.',
-    roads: ['entry', 'toEmail', 'toCal', 'toFam'],
+    roads: ['entry', 'toEmail', 'toCal', 'toNotif', 'toVault', 'toGifts'],
   },
   {
     id: 'signpost',
     kind: 'signpost',
-    x: 330,
-    y: 244,
+    x: 322,
+    y: 336,
     name: 'keyword routers',
     kicker: 'Signpost',
     title: 'Keyword routers',
     body: 'Each sub-doc carries keyword fields. Match the task against them and they point to exactly which sub-docs to load in full.',
-    roads: ['toEmail', 'toCal', 'toFam'],
+    roads: ['toEmail', 'toCal', 'toNotif', 'toVault', 'toGifts'],
   },
+
+  /* Domain features - the systems an agent actually changes */
   {
     id: 'email',
     kind: 'system',
-    x: 528,
-    y: 134,
+    x: 444,
+    y: 264,
     name: 'Email Pipeline',
     file: '11-email-pipeline.md',
-    kicker: 'System',
+    kicker: 'Domain feature',
     title: 'Email Pipeline',
-    body: 'Public interface, internal dependencies, gotchas and known issues for the inbound mail system. An agent loads this in full before touching it.',
-    keywords: ['email', 'ingest', 'metadata', 'dedup'],
-    reviewed: '2026-04-30',
-    roads: ['toEmail', 'emailX'],
+    body: 'Filter, urgency-gate, defer or parse, sanitize, Gemini, validate, store. The most-connected system in the codebase - it touches seven others.',
+    keywords: ['gmail', 'pushHandler', 'parseEmail', 'email_metadata'],
+    reviewed: '2026-05-08',
+    roads: ['toEmail', 'emailX', 'aiEmailSafety', 'aiEmailGemini', 'ripEmailCal', 'ripEmailGifts'],
   },
   {
     id: 'calendar',
     kind: 'system',
-    x: 560,
-    y: 300,
+    x: 576,
+    y: 252,
     name: 'Calendar Sync',
     file: '12-google-calendar-sync.md',
-    kicker: 'System',
+    kicker: 'Domain feature',
     title: 'Google Calendar Sync',
-    body: 'Two-way event sync over a shared Google OAuth grant. The sub-doc carries the interface every calendar-touching change must respect.',
-    keywords: ['calendar', 'oauth', 'events', 'sync'],
-    reviewed: '2026-05-02',
-    roads: ['toCal', 'calX'],
+    body: 'Webhook plus scheduled sync plus writer. The client and the server each carry a copy of the routing rules - they must stay in lock-step.',
+    keywords: ['google calendar', 'calendarRouting', 'events', 'deduplicateEvents'],
+    reviewed: '2026-05-07',
+    roads: ['toCal', 'calX', 'ripEmailCal', 'ripCalNotif'],
   },
   {
-    id: 'family',
+    id: 'notifications',
     kind: 'system',
-    x: 502,
-    y: 458,
-    name: 'Family Knowledge',
-    file: '26-family-knowledge.md',
-    kicker: 'System',
-    title: 'Family Knowledge',
-    body: 'Profiles and relationships the assistant reasons over. This doc has not been touched in months — the faded road says read it, but verify against current code.',
-    keywords: ['family', 'profiles', 'memory'],
-    reviewed: '2025-11-18',
-    stale: true,
-    roads: ['toFam', 'famX'],
+    x: 690,
+    y: 286,
+    name: 'Notifications',
+    file: '14-notifications.md',
+    kicker: 'Domain feature',
+    title: 'Notifications',
+    body: 'An hourly cron and a real-time trigger, every line of copy routed through one voice chokepoint. The SCHEDULE table is the single source of the daily cadence.',
+    keywords: ['hourlyNotifier', 'realTimeAlert', 'FCM', 'SCHEDULE'],
+    reviewed: '2026-05-07',
+    roads: ['toNotif', 'notifX', 'aiNotifClaude', 'ripCalNotif'],
   },
   {
-    id: 'construction',
-    kind: 'construction',
-    x: 502,
-    y: 512,
-    name: '[REVIEW NEEDED]',
-    kicker: 'Construction zone',
-    title: '[REVIEW NEEDED]',
-    body: 'A flag marking state that is known-imperfect and waiting on a fix. Agents working nearby tread carefully — and resolve the flag atomically when the fix lands.',
-    roads: ['toFam'],
+    id: 'vault',
+    kind: 'system',
+    x: 468,
+    y: 446,
+    name: 'Document Vault',
+    file: '13-document-vault.md',
+    kicker: 'Domain feature',
+    title: 'Document Vault',
+    body: 'A sidecar store - the documents stay in the user’s own Drive, only the metadata in Firestore. This doc has not been touched in weeks; the faded road says read it, but verify against current code.',
+    keywords: ['vault', 'sidecar', 'drive.file', 'vault_documents'],
+    reviewed: '2026-04-28',
+    stale: true,
+    roads: ['toVault', 'vaultX'],
   },
+  {
+    id: 'gifts',
+    kind: 'system',
+    x: 628,
+    y: 452,
+    name: 'Gifts',
+    file: '15-gifts.md',
+    kicker: 'Domain feature',
+    title: 'Gifts',
+    body: 'Birthday-lead and email-detected gift opportunities, carried through a Gemini chat and a curation pass before anything reaches her.',
+    keywords: ['gifts', 'birthday', 'gift_conversations', 'giftCuration'],
+    reviewed: '2026-05-06',
+    roads: ['toGifts', 'giftsX', 'ripEmailGifts'],
+  },
+
+  /* The AI layer - a tier of the architecture, shown as a district */
+  {
+    id: 'safety',
+    kind: 'system',
+    x: 374,
+    y: 114,
+    name: 'AI Safety',
+    labelAbove: true,
+    file: '09-ai-safety-pipeline.md',
+    kicker: 'AI layer',
+    title: 'AI Safety Pipeline',
+    body: 'A three-layer defense - sanitize the input, run the model, validate the output. It wraps every untrusted string before a model ever sees it.',
+    keywords: ['email-sanitizer', 'output-validator', 'prompt injection', 'PHI'],
+    reviewed: '2026-05-01',
+    roads: ['aiEmailSafety', 'aiSafetyGemini'],
+  },
+  {
+    id: 'gemini',
+    kind: 'system',
+    x: 552,
+    y: 114,
+    name: 'Gemini',
+    labelAbove: true,
+    file: '07-gemini-integration.md',
+    kicker: 'AI layer',
+    title: 'Gemini Integration',
+    body: 'Parsing, prompt cache, Vision OCR and narrative. parseEmail is the central call - most of the codebase reaches a model through here.',
+    keywords: ['gemini', 'parseEmail', 'prompt cache', 'Vision OCR'],
+    reviewed: '2026-05-07',
+    roads: ['aiEmailGemini', 'aiSafetyGemini', 'aiGeminiClaude'],
+  },
+  {
+    id: 'claude',
+    kind: 'system',
+    x: 724,
+    y: 114,
+    name: 'Claude Voice',
+    labelAbove: true,
+    file: '08-claude-voice-engine.md',
+    kicker: 'AI layer',
+    title: 'Claude Voice Engine',
+    body: 'The single chokepoint every notification surface speaks through. One hard-rules file sets the voice for all of them at once.',
+    keywords: ['claude', 'larkinClaude', 'hard rules', 'prompt caching'],
+    reviewed: '2026-05-07',
+    roads: ['aiNotifClaude', 'aiGeminiClaude'],
+  },
+
+  /* Potholes - the Gotchas */
   {
     id: 'pothole-docid',
     kind: 'pothole',
-    x: 372,
-    y: 198,
+    x: 340,
+    y: 298,
     name: 'pothole',
     kicker: 'Pothole · Gotcha',
     title: 'The doc-ID recipe',
-    body: 'email_metadata uses a SHA-256 doc-ID recipe to stop duplicate writes. Miss it and the pipeline writes the same message twice.',
+    body: 'email_metadata uses a SHA-256 doc-ID recipe to stop duplicate writes. The recipe is repeated in three files - change it in one and you orphan every existing doc.',
     roads: ['toEmail'],
   },
   {
     id: 'pothole-oauth',
     kind: 'pothole',
-    x: 398,
-    y: 296,
+    x: 360,
+    y: 310,
     name: 'pothole',
     kicker: 'Pothole · Gotcha',
     title: 'Shared OAuth scope',
-    body: 'The Gmail OAuth scope is shared across several features. Narrow it for one and you quietly break the others.',
+    body: 'One Google OAuth grant is shared across email, calendar and vault. Narrow the scope for one feature and you quietly break the others.',
     roads: ['toCal'],
   },
   {
     id: 'pothole-dual',
     kind: 'pothole',
-    x: 652,
-    y: 226,
+    x: 640,
+    y: 118,
     name: 'pothole',
     kicker: 'Pothole · Gotcha',
-    title: 'The dual-model layer',
-    body: 'The response layer runs two models — Gemini parses, Claude speaks. Treat it as one seam and it tears.',
-    roads: ['emailX'],
+    title: 'The dual-model seam',
+    body: 'Two models share the work - Gemini parses, Claude speaks - and one dispatcher routes between them. Treat the seam as a single model and the voice tears.',
+    roads: ['aiGeminiClaude'],
   },
+  {
+    id: 'pothole-rtalert',
+    kind: 'pothole',
+    x: 528,
+    y: 376,
+    name: 'pothole',
+    kicker: 'Pothole · Gotcha',
+    title: 'The realTimeAlert trigger',
+    body: 'realTimeAlert fires on every email_metadata write - and quietly creates gift conversation stubs. Touch the trigger and the ripple reaches gifts.',
+    roads: ['ripEmailGifts'],
+  },
+
+  /* Construction zone - a [REVIEW NEEDED] flag */
+  {
+    id: 'construction',
+    kind: 'construction',
+    x: 468,
+    y: 502,
+    name: '[REVIEW NEEDED]',
+    kicker: 'Construction zone',
+    title: '[REVIEW NEEDED]',
+    body: 'A flag marking state that is known-imperfect and waiting on a fix. Agents working nearby tread carefully - and resolve the flag atomically when the fix lands.',
+    roads: ['toVault'],
+  },
+
+  /* The cross-system junction + the tollgate */
   {
     id: 'cross',
     kind: 'junction',
     x: 772,
-    y: 300,
+    y: 360,
     name: 'CROSS-SYSTEM',
     file: 'CROSS_SYSTEM_DEPENDENCIES.md',
     kicker: 'Intersection',
     title: 'Cross-system dependencies',
-    body: 'Where systems connect — which are foundational, and where a change in one ripples to the others. Foundational work routes through here before any code is written.',
-    roads: ['emailX', 'calX', 'famX', 'exit'],
+    body: 'Where systems connect - which are foundational, and where a change in one ripples to the others. Foundational work routes through here before any code is written.',
+    roads: ['emailX', 'calX', 'notifX', 'vaultX', 'giftsX', 'exit'],
   },
   {
     id: 'tollgate',
     kind: 'tollgate',
-    x: 884,
-    y: 300,
+    x: 868,
+    y: 360,
     name: 'pre-push hook',
     kicker: 'Tollgate',
     title: 'The pre-push hook',
@@ -193,9 +311,10 @@ const FEATURES: Feature[] = [
 const AGENTS: { road: string; dur: string; begin: string }[] = [
   { road: 'entry', dur: '4.5s', begin: '0s' },
   { road: 'toEmail', dur: '8s', begin: '1.4s' },
-  { road: 'toCal', dur: '6.5s', begin: '0.6s' },
-  { road: 'famX', dur: '7.5s', begin: '2.1s' },
-  { road: 'calX', dur: '4s', begin: '0.3s' },
+  { road: 'toNotif', dur: '7s', begin: '0.6s' },
+  { road: 'calX', dur: '5s', begin: '0.3s' },
+  { road: 'aiNotifClaude', dur: '6.5s', begin: '2.1s' },
+  { road: 'ripEmailGifts', dur: '9s', begin: '1.8s' },
   { road: 'exit', dur: '3.4s', begin: '0s' },
 ];
 
@@ -236,19 +355,12 @@ export function Foundation() {
 
   return (
     <section className="foundation fade-up" aria-label="The Foundation">
-      <div className="foundation-head">
-        <h2 className="font-display font-light text-ink tracking-[-0.022em] text-[clamp(22px,2.6vw,33px)] leading-[1.1] text-center">
-          The Foundation
-        </h2>
-        <span className="font-display italic text-base text-ink-soft">
-          the living documentation
-        </span>
-      </div>
-
-      <p className="foundation-intro">
-        Every change clears the Council first. Then it routes through here — the
-        roadmap every agent reads before it touches a file.
-      </p>
+      <LobeHeader
+        title="The Foundation"
+        lead="Living documentation"
+        description="the architecture roadmap every agent reads before it touches a file."
+        problemId="foundation"
+      />
 
       <div className="atlas">
         <svg
@@ -280,7 +392,7 @@ export function Foundation() {
           <rect x="11" y="11" width="978" height="538" className="atlas-frame-outer" />
           <rect x="18" y="18" width="964" height="524" className="atlas-frame-inner" />
 
-          {/* Title cartouche — names the territory this map covers */}
+          {/* Title cartouche - names the territory this map covers */}
           <g>
             <rect x="34" y="34" width="196" height="34" className="atlas-cartouche" />
             <text x="132" y="56" className="atlas-cartouche-text" textAnchor="middle">
@@ -288,7 +400,7 @@ export function Foundation() {
             </text>
           </g>
 
-          {/* Compass rose — a plain cardinal rose, distinct from the North Star */}
+          {/* Compass rose - a plain cardinal rose, distinct from the North Star */}
           <g transform="translate(912 88)">
             <circle r="33" className="atlas-compass-ring" />
             <circle r="24" className="atlas-compass-ring" />
@@ -310,24 +422,34 @@ export function Foundation() {
             </text>
           </g>
 
-          {/* Roads — drawn casing-then-line so they read as paths */}
+          {/* AI-layer district - a tinted region grouping one tier of the atlas */}
+          <g aria-hidden="true">
+            <rect x="274" y="52" width="552" height="120" rx="8" className="atlas-district" />
+            <text x="550" y="66" textAnchor="middle" className="atlas-district-label">
+              the AI layer
+            </text>
+          </g>
+
+          {/* Roads - drawn casing-then-line so they read as paths.
+              Ripple roads skip the casing - they read as informal side-roads. */}
           <g>
             {ROADS.map((r) => (
               <g key={r.id} className={cls('atlas-road-g', litRoads.has(r.id) && 'is-lit')}>
-                <path d={r.d} className="atlas-road-casing" />
+                {!r.ripple && <path d={r.d} className="atlas-road-casing" />}
                 <path
                   d={r.d}
                   className={cls(
                     'atlas-road',
                     r.major && 'atlas-road--major',
                     r.stale && 'atlas-road--stale',
+                    r.ripple && 'atlas-road--ripple',
                   )}
                 />
               </g>
             ))}
           </g>
 
-          {/* Living traffic — agents travelling the docs before the code */}
+          {/* Living traffic - agents travelling the docs before the code */}
           {motionOk && (
             <g className="atlas-agents" aria-hidden="true">
               {AGENTS.map((a, i) => (
@@ -345,14 +467,14 @@ export function Foundation() {
 
           {/* Entry + exit endpoints (non-interactive) */}
           <g className="atlas-endpoint">
-            <circle cx="66" cy="282" r="5" />
-            <text x="66" y="312" textAnchor="middle" className="atlas-endpoint-label">
+            <circle cx="100" cy="360" r="5" />
+            <text x="100" y="338" textAnchor="middle" className="atlas-endpoint-label">
               agents enter
             </text>
           </g>
           <g className="atlas-endpoint">
-            <path d="M958,300 l14,0 m-6,-5 l6,5 l-6,5" className="atlas-endpoint-arrow" />
-            <text x="966" y="330" textAnchor="middle" className="atlas-endpoint-label">
+            <path d="M926,360 l14,0 m-6,-5 l6,5 l-6,5" className="atlas-endpoint-arrow" />
+            <text x="933" y="338" textAnchor="middle" className="atlas-endpoint-label">
               git push
             </text>
           </g>
@@ -371,7 +493,7 @@ export function Foundation() {
         </svg>
       </div>
 
-      {/* Detail panel — workflow by default, the hovered marker otherwise */}
+      {/* Detail panel - workflow by default, the hovered marker otherwise */}
       <div className="atlas-detail" aria-live="polite">
         {active ? (
           <div className="atlas-detail-card" key={active.id}>
@@ -488,7 +610,11 @@ function renderMark(f: Feature) {
           <circle r="15" className="atlas-town-ring" />
           <circle r="10" className="atlas-town-disc" />
           <circle r="3" className="atlas-town-core" />
-          <text y="34" className="atlas-label" textAnchor="middle">
+          <text
+            y={f.labelAbove ? -26 : 34}
+            className="atlas-label"
+            textAnchor="middle"
+          >
             {f.name}
           </text>
         </>

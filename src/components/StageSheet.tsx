@@ -19,7 +19,7 @@ interface StageSheetProps {
 }
 
 /**
- * Bottom-drawer detail for a product development stage — the stage-side
+ * Bottom-drawer detail for a product development stage - the stage-side
  * counterpart to {@link CouncilSheet}. Opened from the Cradle on the home
  * page; the journey being sequential, it keeps an in-drawer prev/next.
  */
@@ -73,7 +73,7 @@ export function StageSheet({
               onCouncilNavigate={() => onOpenChange(false)}
             />
 
-            {/* Prev / Next — swaps the drawer in place rather than closing */}
+            {/* Prev / Next - swaps the drawer in place rather than closing */}
             <nav className="flex items-center justify-between border-t border-border pt-8">
               {prev ? (
                 <button

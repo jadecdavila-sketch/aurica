@@ -2,11 +2,12 @@ import { useState, useCallback, useEffect } from 'react';
 import { team } from '@/data';
 import './TeamMedallion.css';
 
-/* Three crafts, 120° apart: top, lower-right, lower-left. */
-const ANGLES = [0, 120, 240];
+/* Three crafts in an inverted triangle: top-left, top-right, bottom point.
+   Mirrors the team data order - Jade and Alanna up top, Jamie at the point. */
+const ANGLES = [300, 60, 180];
 const LABEL_POS: Record<number, 'above' | 'below'> = {
   0: 'above',
-  1: 'below',
+  1: 'above',
   2: 'below',
 };
 
@@ -23,7 +24,7 @@ interface TeamMedallionProps {
 }
 
 /**
- * TeamMedallion — the studio as the human form of the council.
+ * TeamMedallion - the studio as the human form of the council.
  *
  * Three portraits overlap into a single medallion. A click opens it: the
  * circles glide apart into a triangle, radial lines draw in, the studio
@@ -89,12 +90,12 @@ export function TeamMedallion({ onSelect }: TeamMedallionProps) {
             aria-hidden
           >
             <circle cx="0" cy="0" r="200" />
-            <line data-index="0" x1="0" y1="0" x2="0" y2="-200" />
-            <line data-index="1" x1="0" y1="0" x2="173.21" y2="100" />
-            <line data-index="2" x1="0" y1="0" x2="-173.21" y2="100" />
+            <line data-index="0" x1="0" y1="0" x2="-173.21" y2="-100" />
+            <line data-index="1" x1="0" y1="0" x2="173.21" y2="-100" />
+            <line data-index="2" x1="0" y1="0" x2="0" y2="200" />
           </svg>
 
-          {/* The studio mark — the point all three crafts meet. */}
+          {/* The studio mark - the point all three crafts meet. */}
           <div className="studio-center" aria-hidden>
             <span className="studio-center-mark">+</span>
             <span className="studio-center-hint">the studio</span>

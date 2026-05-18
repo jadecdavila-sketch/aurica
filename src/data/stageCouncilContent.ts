@@ -6,7 +6,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'discovery',
     councilId: 'witness',
     isPrimary: true,
-    quote: 'Before you build anything—have you watched someone struggle with this problem? Not asked them about it. Watched them. Where do they sigh? Where do they give up? Where do they cobble together some workaround? That\'s where the opportunity lives.',
+    quote: 'Before you build anything-have you watched someone struggle with this problem? Not asked them about it. Watched them. Where do they sigh? Where do they give up? Where do they cobble together some workaround? That\'s where the opportunity lives.',
   },
   {
     stageId: 'discovery',
@@ -20,7 +20,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'validation',
     councilId: 'questioner',
     isPrimary: true,
-    quote: 'You have assumptions. Let\'s turn them into experiments. What\'s the smallest thing you could build—or fake—that would tell you if this is worth pursuing? A landing page? A prototype? A concierge service? Don\'t build the whole thing to find out nobody wants it.',
+    quote: 'You have assumptions. Let\'s turn them into experiments. What\'s the smallest thing you could build-or fake-that would tell you if this is worth pursuing? A landing page? A prototype? A concierge service? Don\'t build the whole thing to find out nobody wants it.',
   },
   {
     stageId: 'validation',
@@ -32,7 +32,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'validation',
     councilId: 'long-game',
     isPrimary: false,
-    quote: 'If this works, where does it go? Just something to hold lightly as you validate. Not to distract you—just to make sure you\'re not validating yourself into a corner.',
+    quote: 'If this works, where does it go? Just something to hold lightly as you validate. Not to distract you-just to make sure you\'re not validating yourself into a corner.',
   },
 
   // Design
@@ -40,7 +40,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'design',
     councilId: 'architect',
     isPrimary: true,
-    quote: 'Now we shape it. But remember—design isn\'t decoration. It\'s decisions. Every element either builds trust or spends it. Every interaction either feels considered or careless. We\'re not just making it look nice. We\'re making it feel inevitable.',
+    quote: 'Now we shape it. But remember-design isn\'t decoration. It\'s decisions. Every element either builds trust or spends it. Every interaction either feels considered or careless. We\'re not just making it look nice. We\'re making it feel inevitable.',
   },
   {
     stageId: 'design',
@@ -52,7 +52,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'design',
     councilId: 'questioner',
     isPrimary: false,
-    quote: 'Before you finalize—test it. A prototype in front of real users will teach you more than a hundred internal reviews. What you think is clear might be confusing. Find out before you build.',
+    quote: 'Before you finalize-test it. A prototype in front of real users will teach you more than a hundred internal reviews. What you think is clear might be confusing. Find out before you build.',
   },
 
   // Architecture
@@ -60,13 +60,13 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'architecture',
     councilId: 'architect',
     isPrimary: true,
-    quote: 'Architecture is trade-offs. Every decision opens some doors and closes others. Our job isn\'t to make perfect choices—it\'s to make conscious choices. Know what you\'re trading and why.',
+    quote: 'Architecture is trade-offs. Every decision opens some doors and closes others. Our job isn\'t to make perfect choices-it\'s to make conscious choices. Know what you\'re trading and why.',
   },
   {
     stageId: 'architecture',
     councilId: 'groundskeeper',
     isPrimary: true,
-    quote: 'Whatever we build, we have to maintain. Choose boring technology where you can. Save your complexity budget for what actually differentiates you. And please—set up CI/CD now, not "later."',
+    quote: 'Whatever we build, we have to maintain. Choose boring technology where you can. Save your complexity budget for what actually differentiates you. And please-set up CI/CD now, not "later."',
   },
   {
     stageId: 'architecture',
@@ -78,7 +78,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'architecture',
     councilId: 'long-game',
     isPrimary: false,
-    quote: 'Will this architecture let you scale to 10x users? Go international? Pass a security audit? You don\'t have to solve all of that now—but don\'t make it impossible later.',
+    quote: 'Will this architecture let you scale to 10x users? Go international? Pass a security audit? You don\'t have to solve all of that now-but don\'t make it impossible later.',
   },
 
   // Build
@@ -86,7 +86,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'build',
     councilId: 'architect',
     isPrimary: true,
-    quote: 'Build with intention. Every component should earn its place. We\'re not just getting features done—we\'re creating something people will live in. Code quality and user experience aren\'t separate concerns. They\'re the same concern, seen from different angles.',
+    quote: 'Build with intention. Every component should earn its place. We\'re not just getting features done-we\'re creating something people will live in. Code quality and user experience aren\'t separate concerns. They\'re the same concern, seen from different angles.',
   },
   {
     stageId: 'build',
@@ -98,7 +98,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'build',
     councilId: 'witness',
     isPrimary: false,
-    quote: 'As you build, keep asking: can everyone use this? Accessibility isn\'t a phase—it\'s a practice. Build it in from the start. And test with real users before you think you\'re ready. You\'re not ready.',
+    quote: 'As you build, keep asking: can everyone use this? Accessibility isn\'t a phase-it\'s a practice. Build it in from the start. And test with real users before you think you\'re ready. You\'re not ready.',
   },
 
   // Harden
@@ -106,7 +106,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'harden',
     councilId: 'midnight-responder',
     isPrimary: true,
-    quote: 'Now we break things—on purpose. What happens under load? What happens when that third-party API is slow? What happens when the database connection drops? Let\'s find out now, in a controlled way, instead of at 2am with angry users.',
+    quote: 'Now we break things-on purpose. What happens under load? What happens when that third-party API is slow? What happens when the database connection drops? Let\'s find out now, in a controlled way, instead of at 2am with angry users.',
   },
   {
     stageId: 'harden',
@@ -118,7 +118,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'harden',
     councilId: 'architect',
     isPrimary: false,
-    quote: 'Security review time. Have we validated inputs? Protected against the obvious attacks? Locked down access appropriately? This isn\'t about paranoia—it\'s about professionalism. We owe our users protection.',
+    quote: 'Security review time. Have we validated inputs? Protected against the obvious attacks? Locked down access appropriately? This isn\'t about paranoia-it\'s about professionalism. We owe our users protection.',
   },
   {
     stageId: 'harden',
@@ -138,13 +138,13 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'launch',
     councilId: 'witness',
     isPrimary: true,
-    quote: 'Watch the first users carefully. Not the metrics—the humans. Where do they stumble? What do they ask about? What\'s the expression on their face? The first few days of real usage will teach you things no amount of testing could.',
+    quote: 'Watch the first users carefully. Not the metrics-the humans. Where do they stumble? What do they ask about? What\'s the expression on their face? The first few days of real usage will teach you things no amount of testing could.',
   },
   {
     stageId: 'launch',
     councilId: 'questioner',
     isPrimary: false,
-    quote: 'Now we find out. All those assumptions, all those decisions—reality is about to weigh in. Pay attention. The data starts flowing today.',
+    quote: 'Now we find out. All those assumptions, all those decisions-reality is about to weigh in. Pay attention. The data starts flowing today.',
   },
 
   // Learn
@@ -152,7 +152,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'learn',
     councilId: 'questioner',
     isPrimary: true,
-    quote: 'Now we have data. Real data. Not projections, not assumptions—actual user behavior. What are they doing? Where do they drop off? What do they come back to? Let\'s look carefully before we jump to conclusions.',
+    quote: 'Now we have data. Real data. Not projections, not assumptions-actual user behavior. What are they doing? Where do they drop off? What do they come back to? Let\'s look carefully before we jump to conclusions.',
   },
   {
     stageId: 'learn',
@@ -184,7 +184,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'iterate',
     councilId: 'questioner',
     isPrimary: false,
-    quote: 'Before we build the next thing—do we know if the last thing worked? Let\'s close the loop on our experiments. Validated learning isn\'t just "we shipped it." It\'s "we know what happened."',
+    quote: 'Before we build the next thing-do we know if the last thing worked? Let\'s close the loop on our experiments. Validated learning isn\'t just "we shipped it." It\'s "we know what happened."',
   },
 
   // Scale
@@ -192,7 +192,7 @@ export const stageCouncilContent: StageCouncilContent[] = [
     stageId: 'scale',
     councilId: 'long-game',
     isPrimary: true,
-    quote: 'Our time has come. Those seeds we planted? Time to see which ones grew. Enterprise customers need compliance. International users need localization. Volume needs cost efficiency. Let\'s talk about the walls you didn\'t build—and be grateful.',
+    quote: 'Our time has come. Those seeds we planted? Time to see which ones grew. Enterprise customers need compliance. International users need localization. Volume needs cost efficiency. Let\'s talk about the walls you didn\'t build-and be grateful.',
   },
   {
     stageId: 'scale',

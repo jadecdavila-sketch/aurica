@@ -1,14 +1,14 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * CouncilStrands — the human-in-the-loop thread, woven through the council.
+ * CouncilStrands - the human-in-the-loop thread, woven through the council.
  *
  * Thin terracotta strands anchored at two poles (the top and bottom council
  * seats). Collapsed, they twist into a tight coil; convening the council
  * untwists them into a billowed meridian sphere, the six councils riding it
  * like beads on a thread. Inspired by a magic-strand spinner toy.
  *
- * Prototype: additive — it does not yet touch the existing radial
+ * Prototype: additive - it does not yet touch the existing radial
  * `council-lines`. This is the first of three woven instances; the North Star
  * and the Foundation are the other two, all driven by the same expand state.
  */
@@ -19,7 +19,7 @@ interface CouncilStrandsProps {
 
 // Geometry is authored in desktop viewBox units. The SVG element is sized
 // down on small screens (see CouncilRing.css), which scales it to match the
-// responsive ring radii — the same trick that keeps `.council-lines` in register.
+// responsive ring radii - the same trick that keeps `.council-lines` in register.
 const STRAND_COUNT = 12;
 const SAMPLES = 28;
 const R_COLLAPSED = 68; // --ring-radius-collapsed
@@ -29,7 +29,7 @@ const DURATION = 900; // matches the council member transition
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
-/** cubic-bezier solver — mirrors --ease-slow: cubic-bezier(0.22,0.61,0.36,1). */
+/** cubic-bezier solver - mirrors --ease-slow: cubic-bezier(0.22,0.61,0.36,1). */
 function makeEasing(p1x: number, p1y: number, p2x: number, p2y: number) {
   const cx = 3 * p1x;
   const bx = 3 * (p2x - p1x) - cx;
@@ -56,7 +56,7 @@ const easeSlow = makeEasing(0.22, 0.61, 0.36, 1);
 /**
  * One strand's path at progress `p` (0 = collapsed coil, 1 = open sphere).
  * Each strand is a meridian twisted by `phi`; the sphere bulge comes from a
- * sine envelope — zero at the poles, widest at the equator.
+ * sine envelope - zero at the poles, widest at the equator.
  */
 function strandPath(k: number, p: number): string {
   const radius = lerp(R_COLLAPSED, R_EXPANDED, p);

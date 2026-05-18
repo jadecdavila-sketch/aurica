@@ -5,6 +5,7 @@ import { CouncilSheet } from '@/components/CouncilSheet';
 import { StageSheet } from '@/components/StageSheet';
 import { NorthStarBanner } from '@/components/NorthStarBanner';
 import { Foundation } from '@/components/Foundation';
+import { LobeHeader } from '@/components/LobeHeader';
 
 export function Home() {
   const [openCouncilId, setOpenCouncilId] = useState<string | null>(null);
@@ -26,7 +27,7 @@ export function Home() {
     }
   };
 
-  // Memoised — the Cradle re-initialises its physics whenever this changes.
+  // Memoised - the Cradle re-initialises its physics whenever this changes.
   const handleSelectStage = useCallback((id: string) => {
     setOpenStageId(id);
     setStageDrawerOpen(true);
@@ -62,7 +63,7 @@ export function Home() {
           <h2 className="font-display font-light text-ink tracking-[-0.022em] text-[clamp(22px,2.6vw,33px)] leading-[1.1] text-center">
             The Product Development Journey
           </h2>
-          <span className="font-display italic text-base text-ink-soft">
+          <span className="font-display text-lg text-ink-soft">
             our methodology, in motion
           </span>
         </div>
@@ -72,24 +73,32 @@ export function Home() {
         </div>
       </section>
 
-      {/* The Council — North Star banner (Option B) sets the context, then the
+      {/* The Council - North Star banner (Option B) sets the context, then the
           section title sits directly above the medallion-to-ring interaction
           with its bottom drawer drill-in. */}
       <section className="px-6 pb-32 max-w-[1209px] mx-auto">
-        <h2 className="mt-8 mb-16 font-display font-light text-ink text-center tracking-[-0.02em] leading-[1.14] text-[clamp(28px,4vw,48px)] max-w-[840px] mx-auto">
+        <h2 className="mt-8 mb-4 font-display font-light text-ink text-center tracking-[-0.02em] leading-[1.14] text-[clamp(28px,4vw,48px)] max-w-[840px] mx-auto">
           How we take products from good to{' '}
-          <span className="italic font-normal text-terracotta">great</span>.
+          <span className="font-normal text-terracotta">great</span>.
         </h2>
+        <p className="mb-16 font-display text-ink-soft text-center text-[clamp(15px,1.7vw,19px)] max-w-[640px] mx-auto">
+          An AI augmented + accelerated product development framework
+        </p>
         <NorthStarBanner />
-        <h2 className="mt-20 font-display font-light text-ink tracking-[-0.022em] text-[clamp(22px,2.6vw,33px)] leading-[1.1] text-center">
-          The Council
-        </h2>
+        <div className="mt-20">
+          <LobeHeader
+            title="The Council"
+            lead="Multi-perspective review"
+            description="six specialized agentic AI critics, each reading the product through its own lens, all held to the north star. The human in the loop involved at every step for critical decision-making."
+            problemId="council"
+          />
+        </div>
         <div className="w-full mt-9">
           <CouncilRing onSelectCouncil={handleSelectCouncil} />
         </div>
       </section>
 
-      {/* The Foundation — the living documentation, drawn as a road atlas.
+      {/* The Foundation - the living documentation, drawn as a road atlas.
           It sits below the council: every change clears the council first,
           then routes through the docs. */}
       <section className="px-6 pb-32">

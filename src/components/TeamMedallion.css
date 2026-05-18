@@ -1,5 +1,5 @@
-/* TeamMedallion — the studio as the human form of the council.
-   Three portraits overlap into a medallion, then open into a triangle —
+/* TeamMedallion - the studio as the human form of the council.
+   Three portraits overlap into a medallion, then open into a triangle -
    the same medallion-to-ring gesture as the homepage CouncilRing.
    Uses the cream/gold/wood palette from index.css. */
 
@@ -41,7 +41,7 @@
   height: 100%;
 }
 
-/* Radial lines + orbit circle — drawn in on expand, echoing the council. */
+/* Radial lines + orbit circle - drawn in on expand, echoing the council. */
 .studio-lines {
   position: absolute;
   top: 50%;
@@ -86,7 +86,7 @@
   opacity: 1;
 }
 
-/* Center node — the studio mark. Appears as the medallion opens: the point
+/* Center node - the studio mark. Appears as the medallion opens: the point
    all three crafts connect to. sketch + hammer. */
 .studio-center {
   position: absolute;
@@ -133,7 +133,7 @@
   opacity: 1;
 }
 
-/* Members — positioned by angle, the same rotate/translate trick as the
+/* Members - positioned by angle, the same rotate/translate trick as the
    council ring so they travel along a true radius. */
 .studio-member {
   position: absolute;
@@ -202,7 +202,7 @@
   pointer-events: none;
 }
 
-/* Monogram placeholder — until a real portrait is set. */
+/* Monogram placeholder - until a real portrait is set. */
 .studio-monogram {
   font-family: var(--font-display);
   font-variation-settings: 'opsz' 144;
@@ -212,7 +212,7 @@
   letter-spacing: 0.01em;
 }
 
-/* The open seat — a circle still waiting to be filled. */
+/* The open seat - a circle still waiting to be filled. */
 .studio-member.is-open-seat .studio-portrait {
   background: color-mix(in srgb, var(--color-cream-soft) 55%, transparent);
   box-shadow: none;
@@ -230,7 +230,7 @@
   color: var(--color-ink-light);
 }
 
-/* Collapsed-state portrait shadow — a little tighter than expanded. */
+/* Collapsed-state portrait shadow - a little tighter than expanded. */
 .studio-stage:not(.is-expanded) .studio-portrait {
   box-shadow:
     0 0 0 2px var(--color-cream),
@@ -238,7 +238,7 @@
     0 10px 28px rgba(63, 46, 31, 0.26);
 }
 
-/* Labels — only visible when expanded. */
+/* Labels - only visible when expanded. */
 .studio-label {
   position: absolute;
   width: 220px;
@@ -264,7 +264,6 @@
 .studio-label-name {
   font-family: var(--font-display);
   font-weight: 400;
-  font-style: italic;
   font-size: 19px;
   color: var(--color-wood-deep);
   letter-spacing: -0.005em;
@@ -279,7 +278,7 @@
   margin-top: 4px;
 }
 
-/* Hover (expanded) — the hovered maker grows and steps forward; the
+/* Hover (expanded) - the hovered maker grows and steps forward; the
    others recede. */
 .studio-stage.is-expanded .studio-member:hover { z-index: 9; }
 
@@ -327,7 +326,7 @@
   opacity: 1;
 }
 
-/* Convene hint — sits below the collapsed medallion. */
+/* Convene hint - sits below the collapsed medallion. */
 .studio-convene-hint {
   position: absolute;
   top: 50%;
@@ -375,7 +374,7 @@
   .studio-stage:not(.is-expanded) .studio-ring-inner { animation: none; }
 }
 
-/* Responsive sizing — mirrors the council ring's breakpoints. */
+/* Responsive sizing - mirrors the council ring's breakpoints. */
 @media (max-width: 880px) {
   .studio-stage {
     --portrait-size: 116px;

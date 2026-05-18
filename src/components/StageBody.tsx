@@ -65,7 +65,7 @@ interface StageBodyProps {
 }
 
 /**
- * The shared stage detail — hero, description, council voices, activities, and
+ * The shared stage detail - hero, description, council voices, activities, and
  * the "done" marker. Rendered by both the full-page route ({@link StageView})
  * and the bottom drawer ({@link StageSheet}); only the surrounding chrome and
  * the prev/next navigation differ between them.
@@ -110,7 +110,7 @@ export function StageBody({ stage, onCouncilNavigate }: StageBodyProps) {
         {stage.description}
       </motion.div>
 
-      {/* Council Voices — thumbnail + quote, primary highlighted */}
+      {/* Council Voices - thumbnail + quote, primary highlighted */}
       {councilVoices.length > 0 && (
         <section className="mb-20">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-6">
@@ -224,7 +224,7 @@ function CouncilVoice({
   );
 }
 
-/* ────── Activity row — collaboration mode colored & iconed ────── */
+/* ────── Activity row - collaboration mode colored & iconed ────── */
 function ActivityRow({ activity, index }: { activity: Activity; index: number }) {
   const Icon = modeIcons[activity.collaborationMode];
   const hasExpandedContent =

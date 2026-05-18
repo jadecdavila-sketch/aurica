@@ -28,13 +28,21 @@ const labelPositions: Record<number, 'above' | 'below'> = {
 
 interface CouncilRingProps {
   onSelectCouncil: (id: string) => void;
+  /** Notified whenever the ring expands or collapses. Lets a parent react
+      to the medallion opening - e.g. the StrandSpinner's council lobe. */
+  onExpandedChange?: (expanded: boolean) => void;
 }
 
-export function CouncilRing({ onSelectCouncil }: CouncilRingProps) {
+export function CouncilRing({ onSelectCouncil, onExpandedChange }: CouncilRingProps) {
   const [expanded, setExpanded] = useState(false);
   const ringRef = useRef<HTMLDivElement>(null);
 
   const toggle = useCallback(() => setExpanded((v) => !v), []);
+
+  // Report expand/collapse so a parent can follow the ring's state.
+  useEffect(() => {
+    onExpandedChange?.(expanded);
+  }, [expanded, onExpandedChange]);
 
   // Close ring on Escape
   useEffect(() => {
@@ -94,7 +102,7 @@ export function CouncilRing({ onSelectCouncil }: CouncilRingProps) {
             aria-hidden
           >
             <circle cx="0" cy="0" r="230" />
-            {/* One radial spoke per seat — generated so the count stays in
+            {/* One radial spoke per seat - generated so the count stays in
                 sync with councilOrder. */}
             {councilOrder.map((_, i) => {
               const a = (i * 2 * Math.PI) / councilOrder.length;

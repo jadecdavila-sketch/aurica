@@ -36,7 +36,7 @@ function computeAnchors(D: Dims) {
 interface CradleProps {
   /**
    * Invoked with a stage id when a sphere is clicked. Must be referentially
-   * stable (e.g. wrapped in useCallback) — the physics simulation re-initialises
+   * stable (e.g. wrapped in useCallback) - the physics simulation re-initialises
    * whenever this changes, since it lives in the setup effect's dependencies.
    */
   onSelectStage: (id: string) => void;

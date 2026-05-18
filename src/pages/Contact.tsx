@@ -17,7 +17,7 @@ export function Contact() {
       </h1>
 
       {sent ? (
-        <div className="text-center text-ink-soft font-display italic text-2xl">
+        <div className="text-center text-ink-soft font-display text-2xl">
           Thank you. We'll be in touch.
         </div>
       ) : (

@@ -1,4 +1,4 @@
-/* Foundation — the living documentation, drawn as a road atlas.
+/* Foundation - the living documentation, drawn as a road atlas.
    Paper, ink and gold: the atlas frames the doc system the way the council
    ring frames its medallions. Hover any marker to read what it stands for. */
 
@@ -9,23 +9,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.foundation-head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.foundation-intro {
-  margin: 16px auto 0;
-  max-width: 46ch;
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--color-ink-soft);
 }
 
 /* ── the atlas ────────────────────────────────────────────── */
@@ -103,6 +86,24 @@
   opacity: 0.6;
 }
 
+/* AI-layer district - a tinted region grouping one tier of the atlas */
+.atlas-district {
+  fill: color-mix(in srgb, var(--color-gold) 7%, transparent);
+  stroke: var(--color-wood-light);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.atlas-district-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  fill: var(--color-wood);
+  opacity: 0.6;
+}
+
 /* ── roads ────────────────────────────────────────────────── */
 
 .atlas-road-casing {
@@ -125,6 +126,12 @@
 .atlas-road--stale {
   stroke-dasharray: 5 7;
   opacity: 0.4;
+}
+/* Ripple roads - direct system-to-system deps, drawn as thin side-roads */
+.atlas-road--ripple {
+  stroke-width: 1.6;
+  stroke-dasharray: 1.5 5;
+  opacity: 0.6;
 }
 .atlas-road-g.is-lit .atlas-road {
   stroke: var(--color-gold);
@@ -184,6 +191,11 @@
   font-size: 12.5px;
   letter-spacing: 0.03em;
   fill: var(--color-wood-deep);
+  /* Cream halo - keeps labels legible where a road passes behind them */
+  paint-order: stroke;
+  stroke: #f5efe1;
+  stroke-width: 3.4px;
+  stroke-linejoin: round;
 }
 .atlas-label--flag {
   font-size: 10.5px;
@@ -229,7 +241,7 @@
   fill: var(--color-terracotta);
 }
 
-/* Stale system — weathered, lower contrast */
+/* Stale system - weathered, lower contrast */
 .atlas-node.is-stale .atlas-town-ring {
   stroke: var(--color-stone);
   stroke-dasharray: 3 3;
@@ -278,7 +290,7 @@
   fill: var(--color-terracotta);
 }
 
-/* Barriers — construction zone & tollgate */
+/* Barriers - construction zone & tollgate */
 .atlas-barrier-plank {
   stroke: var(--color-wood);
   stroke-width: 1;
@@ -378,7 +390,7 @@
   color: var(--color-terracotta);
 }
 
-/* Workflow — the default state of the panel */
+/* Workflow - the default state of the panel */
 .atlas-steps {
   display: flex;
   gap: 30px;
@@ -397,7 +409,6 @@
 }
 .atlas-step-label {
   font-family: var(--font-display);
-  font-style: italic;
   font-size: 17px;
   color: var(--color-wood-deep);
 }

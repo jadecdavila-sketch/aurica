@@ -1,0 +1,141 @@
+/* StrandSpinner - prototype, iteration 3.
+   A spiral whorl at the top; three lobes of hairline strands below it. The
+   toy is still - it untwists open once, then rests. --open (0 wound … 1
+   untwisted open) is set on the wrapper only while a transition runs. */
+
+.strand-spinner {
+  position: relative;
+  width: min(1320px, 95vw);
+  margin: 0 auto;
+  --open: 0;
+  --council: 0;
+}
+
+.ss-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  /* Clicks fall through the armature to the sections; the whorl opts back in. */
+  pointer-events: none;
+}
+
+/* The central axis - the spindle the toy hangs on. */
+.ss-axis {
+  stroke: var(--color-stone);
+  stroke-width: 1;
+  opacity: 0.3;
+}
+
+/* Hairline strands - fine threads, kept quiet so they read as structure
+   rather than noise. Warm palette, terracotta-led; stroke width varies per
+   strand (set inline) for an uneven, hand-spun field. */
+.ss-strand {
+  fill: none;
+  stroke-linecap: round;
+  stroke-opacity: 0.6;
+  transition: stroke-opacity 0.5s ease;
+}
+.ss-strand--terracotta { stroke: var(--color-terracotta); stroke-opacity: 0.72; }
+.ss-strand--gold       { stroke: var(--color-gold); }
+.ss-strand--wood       { stroke: var(--color-wood-light); }
+.ss-strand--olive      { stroke: #8C8C5A; } /* studio olive (= --secondary) */
+
+/* Wound shut, the threads pull taut and brighten a little. */
+.strand-spinner.is-wound .ss-strand { stroke-opacity: 0.9; }
+.strand-spinner.is-wound .ss-strand--terracotta { stroke-opacity: 1; }
+
+/* The whorl - the abstract human, at the top. A clear terracotta spiral:
+   more present than the hairline strands, since it is the thing you hold. */
+.ss-whorl {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.ss-whorl-hit { fill: transparent; }
+
+.ss-whorl-spiral {
+  fill: none;
+  stroke: var(--color-terracotta);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  transition: stroke-width 0.35s ease;
+}
+.ss-whorl-core { fill: var(--color-terracotta); }
+
+.strand-spinner.is-wound .ss-whorl-spiral,
+.ss-whorl:focus-visible .ss-whorl-spiral {
+  stroke-width: 2.4;
+}
+/* No browser focus box on the whorl - clicking it would otherwise show the
+   default outline. Keyboard focus stays legible via the thickened spiral. */
+.ss-whorl:focus { outline: none; }
+
+/* The human's header - the spiral named, in the lobe-header style so it
+   matches the three section headers. */
+.ss-human {
+  position: absolute;
+  left: 54%;
+  width: 36%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* The pointer line tying the human's header back to the spiral. */
+.ss-human-link {
+  stroke: var(--color-terracotta);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+/* ── the lobe contents - the real sections in their clearings ─────────── */
+
+.ss-lobes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ss-lobe {
+  position: absolute;
+  left: 50%;
+  /* Scale + fade with the twist: full and roomy untwisted, coiled away when
+     the whorl is wound. The rAF loop drives --open, so no CSS transition. */
+  transform: translate(-50%, -50%) scale(calc(0.46 + 0.54 * var(--open)));
+  transform-origin: center center;
+  opacity: var(--open);
+  pointer-events: auto;
+}
+
+/* The cream halo - sits behind a lobe's content as an ellipse the size of
+   that lobe's strand billow. The radial-gradient fades along the lobe's own
+   elliptical edge (closest-side), so the strands are veiled evenly all round
+   rather than to a boxy rectangle. It tracks the twist with --open and, for
+   the council, widens with --council as the lobe billows out. */
+.ss-halo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(var(--open));
+  transform-origin: center center;
+  opacity: var(--open);
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse closest-side at center,
+    var(--color-cream) 62%,
+    transparent 100%
+  );
+}
+
+/* When wound shut the sections are inert - coiled away with the strands. */
+.strand-spinner.is-wound .ss-lobe { pointer-events: none; }
+
+/* The Foundation panel - no billow, and no spindle behind it. The section
+   sits in the clear below where the spindle lands, anchored at its top.
+   Fades with the twist but does not scale-collapse the way the lobes do. */
+.ss-panel {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: var(--open);
+  pointer-events: auto;
+}
+.strand-spinner.is-wound .ss-panel { pointer-events: none; }

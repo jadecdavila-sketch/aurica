@@ -84,7 +84,7 @@ export const collaborationModeLabels: Record<CollaborationMode, string> = {
   'human-only': 'Human Only',
 };
 
-/** A member of the studio — the human form of the council. */
+/** A member of the studio - the human form of the council. */
 export interface TeamMember {
   id: string;
   name: string;
@@ -96,8 +96,10 @@ export interface TeamMember {
   tagline: string;
   /** Paragraphs for the detail drawer. */
   bio: string[];
-  /** What this maker holds — or, for the open seat, who is sought. */
+  /** What this maker holds - or, for the open seat, who is sought. */
   focus: string[];
+  /** An optional personal coda - a glimpse of life outside the studio. */
+  outsideStudio?: string;
   /** Square portrait in /public/team/. Falls back to a monogram disc. */
   portrait?: string;
   /** True for the unfilled third seat. */

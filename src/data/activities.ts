@@ -56,7 +56,7 @@ export const activities: Activity[] = [
       'Assist with initial analysis of transcripts'
     ],
     humanMustOwn: [
-      'Conducting the actual interviews—humans connect with humans',
+      'Conducting the actual interviews-humans connect with humans',
       'Reading body language and emotional cues',
       'Building rapport that encourages honest sharing',
       'Real-time follow-up questions based on context'
@@ -70,7 +70,7 @@ export const activities: Activity[] = [
     humanExpertise: 'UX Researcher who can watch without interfering',
     description: 'Watch users in their natural environment to understand their real workflows, workarounds, and pain points that they might not mention in interviews.',
     keyConsiderations: [
-      'Be a "fly on the wall"—observe without influencing',
+      'Be a "fly on the wall"-observe without influencing',
       'Note the environment, tools, and interruptions',
       'Look for workarounds and "shadow IT" solutions',
       'Pay attention to what users do vs. what they say'
@@ -165,7 +165,7 @@ export const activities: Activity[] = [
     ],
     commonPitfalls: [
       'Only mapping obvious assumptions',
-      'Not prioritizing—trying to test everything at once',
+      'Not prioritizing-trying to test everything at once',
       'Confusing facts with assumptions'
     ],
     aiCanHelp: [
@@ -249,7 +249,7 @@ export const activities: Activity[] = [
     keyConsiderations: [
       'Focus on communicating the value proposition clearly',
       'Include a clear call-to-action to measure intent',
-      'Keep it simple—this is about learning, not launching',
+      'Keep it simple-this is about learning, not launching',
       'Set up tracking to capture meaningful signals'
     ],
     commonPitfalls: [
@@ -380,7 +380,7 @@ export const activities: Activity[] = [
       'Research alternative directions'
     ],
     humanMustOwn: [
-      'The actual decision—this is leadership',
+      'The actual decision-this is leadership',
       'Alignment with vision and values',
       'Team and stakeholder communication'
     ]
@@ -570,7 +570,7 @@ export const activities: Activity[] = [
     description: 'Test designs with real users to validate that solutions meet their needs.',
     keyConsiderations: [
       'Test with representative users, not just colleagues',
-      'Give tasks, not tours—let users try things',
+      'Give tasks, not tours-let users try things',
       'Capture both success/failure and user sentiment',
       'Test early and often, not just at the end'
     ],
@@ -745,7 +745,7 @@ export const activities: Activity[] = [
     humanExpertise: 'Security Engineer or security-minded Senior Engineer',
     description: 'Design security controls including authentication, authorization, and data protection.',
     keyConsiderations: [
-      'Apply defense in depth—multiple layers of protection',
+      'Apply defense in depth-multiple layers of protection',
       'Follow the principle of least privilege',
       'Plan for security monitoring and incident response',
       'Consider compliance requirements early'

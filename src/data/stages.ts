@@ -7,7 +7,7 @@ export const stages: Stage[] = [
     name: 'Discovery',
     subtitle: 'What problem are we solving? For whom? Why now?',
     description:
-      'This is where everything begins—understanding the humans you\'re building for and the problem worth solving. No code yet. Just listening, watching, and learning.',
+      'This is where everything begins-understanding the humans you\'re building for and the problem worth solving. No code yet. Just listening, watching, and learning.',
     primaryCouncils: ['witness'],
     secondaryCouncils: ['questioner'],
     whatDoneLooksLike:
@@ -19,11 +19,11 @@ export const stages: Stage[] = [
     name: 'Validation',
     subtitle: 'Is this problem real? Will people pay/use? What\'s the riskiest assumption?',
     description:
-      'Before investing in building, test your assumptions cheaply. Find out if you\'re right—or wrong—as fast as possible.',
+      'Before investing in building, test your assumptions cheaply. Find out if you\'re right-or wrong-as fast as possible.',
     primaryCouncils: ['questioner'],
     secondaryCouncils: ['witness', 'long-game'],
     whatDoneLooksLike:
-      'You have evidence—not just opinions—about whether this problem is worth solving and whether your approach resonates. You\'ve killed or validated your riskiest assumptions.',
+      'You have evidence-not just opinions-about whether this problem is worth solving and whether your approach resonates. You\'ve killed or validated your riskiest assumptions.',
   },
   {
     id: 'design',
@@ -31,7 +31,7 @@ export const stages: Stage[] = [
     name: 'Design',
     subtitle: 'What does the solution look like? How does it feel to use?',
     description:
-      'Translating understanding into form. This is where bones and soul come together—structure and feeling, function and delight.',
+      'Translating understanding into form. This is where bones and soul come together-structure and feeling, function and delight.',
     primaryCouncils: ['architect', 'witness'],
     secondaryCouncils: ['questioner'],
     whatDoneLooksLike:
@@ -43,7 +43,7 @@ export const stages: Stage[] = [
     name: 'Architecture',
     subtitle: 'How do we build this? What are the technical foundations?',
     description:
-      'Decisions made here echo for years. This is where you choose what kind of codebase you\'ll live in—and whether future-you will thank you or curse you.',
+      'Decisions made here echo for years. This is where you choose what kind of codebase you\'ll live in-and whether future-you will thank you or curse you.',
     primaryCouncils: ['architect', 'groundskeeper'],
     secondaryCouncils: ['midnight-responder', 'long-game'],
     whatDoneLooksLike:
@@ -79,7 +79,7 @@ export const stages: Stage[] = [
     name: 'Launch',
     subtitle: 'Getting it into users\' hands.',
     description:
-      'The moment of truth. But launch isn\'t an event—it\'s a transition. From building to operating. From hoping to knowing.',
+      'The moment of truth. But launch isn\'t an event-it\'s a transition. From building to operating. From hoping to knowing.',
     primaryCouncils: ['midnight-responder', 'witness'],
     secondaryCouncils: ['questioner'],
     whatDoneLooksLike:
@@ -91,7 +91,7 @@ export const stages: Stage[] = [
     name: 'Learn',
     subtitle: 'What\'s working? What\'s not? What did we get right and wrong?',
     description:
-      'Launch isn\'t the end—it\'s the beginning of learning at scale. Real users, real usage, real feedback.',
+      'Launch isn\'t the end-it\'s the beginning of learning at scale. Real users, real usage, real feedback.',
     primaryCouncils: ['questioner', 'witness'],
     secondaryCouncils: ['midnight-responder'],
     whatDoneLooksLike:
@@ -103,17 +103,17 @@ export const stages: Stage[] = [
     name: 'Iterate',
     subtitle: 'Making it better based on what you\'ve learned.',
     description:
-      'Back into the cycle, but smarter now. You\'re not guessing—you\'re improving based on evidence.',
+      'Back into the cycle, but smarter now. You\'re not guessing-you\'re improving based on evidence.',
     primaryCouncils: ['architect', 'groundskeeper'],
     secondaryCouncils: ['questioner'],
     whatDoneLooksLike:
-      'Product is meaningfully better based on evidence. Technical health is maintained or improved. The cycle continues—build, launch, learn, iterate.',
+      'Product is meaningfully better based on evidence. Technical health is maintained or improved. The cycle continues-build, launch, learn, iterate.',
   },
   {
     id: 'scale',
     number: 10,
     name: 'Scale',
-    subtitle: 'Growing beyond your first users—enterprise, international, volume.',
+    subtitle: 'Growing beyond your first users-enterprise, international, volume.',
     description:
       'The concerns that whispered before now speak loudly. Growth brings new challenges that require new focus.',
     primaryCouncils: ['long-game'],

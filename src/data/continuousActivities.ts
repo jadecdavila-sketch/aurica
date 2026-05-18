@@ -16,7 +16,7 @@ export const continuousActivities: ContinuousActivity[] = [
     startsAt: 'Architecture',
     tendedBy: 'architect',
     description:
-      'Security isn\'t a checklist—it\'s a practice. Dependency updates, vulnerability scanning, access reviews, incident response. Always watching, always maintaining.',
+      'Security isn\'t a checklist-it\'s a practice. Dependency updates, vulnerability scanning, access reviews, incident response. Always watching, always maintaining.',
     quote: 'Security is a property, not a feature. It requires continuous attention, not a one-time effort.',
   },
   {
@@ -34,8 +34,8 @@ export const continuousActivities: ContinuousActivity[] = [
     startsAt: 'Launch',
     tendedBy: 'witness',
     description:
-      'The voice of users who are stuck. Every ticket is signal. Patterns reveal product failures. Great support isn\'t just solving problems—it\'s feeding insight back into the product.',
-    quote: 'Behind every ticket is a human who tried and struggled. Honor that by listening—and by fixing the underlying cause.',
+      'The voice of users who are stuck. Every ticket is signal. Patterns reveal product failures. Great support isn\'t just solving problems-it\'s feeding insight back into the product.',
+    quote: 'Behind every ticket is a human who tried and struggled. Honor that by listening-and by fixing the underlying cause.',
   },
   {
     id: 'cost',
@@ -44,7 +44,7 @@ export const continuousActivities: ContinuousActivity[] = [
     tendedBy: 'long-game',
     description:
       'What are you spending? Is it worth it? As you grow, costs grow too. Are they growing linearly or exponentially? Are there zombies eating money?',
-    quote: 'Cost surprises kill companies. Pay attention—loosely at first, then tightly as you scale.',
+    quote: 'Cost surprises kill companies. Pay attention-loosely at first, then tightly as you scale.',
   },
 ];
 
