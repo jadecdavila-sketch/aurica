@@ -1,0 +1,198 @@
+/* HumanInTheLoop - the closing section of the home page.
+   The painter's tools fork to two canvases: a novice's result and a master's.
+   Same palette, two hands - the section's whole argument in one diagram. */
+
+.hitl {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Divider - marks the turn from the framework into its closing argument. */
+.hitl-divider {
+  width: 100%;
+  max-width: 600px;
+  height: 1px;
+  margin-bottom: 64px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-stone),
+    transparent
+  );
+}
+
+.hitl-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+/* Body - left-aligned for reading, in a column narrower than the section. */
+.hitl-body {
+  margin-top: 26px;
+  max-width: 600px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hitl-body p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.75;
+  color: var(--color-ink-soft);
+}
+
+/* The closer - the section's load-bearing line, lifted into the display face
+   (upright, never italic) and centered so it lands as a statement. */
+.hitl-body .hitl-closer {
+  margin-top: 8px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 40;
+  font-weight: 400;
+  font-size: clamp(18px, 2.1vw, 24px);
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+/* ── the diagram: tools forking to two canvases ───────────────── */
+
+.hitl-diagram {
+  margin-top: 52px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The tools - the shared palette, sat at the fork's origin. */
+.hitl-tools {
+  width: clamp(186px, 27vw, 264px);
+  height: auto;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5),
+    0 24px 50px -28px rgba(63, 46, 31, 0.4);
+}
+
+/* The branch band - two lines forking from the tools down to each canvas. */
+.hitl-branches {
+  position: relative;
+  width: 100%;
+  height: clamp(78px, 10vw, 112px);
+}
+.hitl-branch-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.hitl-branch-lines line {
+  stroke: var(--color-terracotta);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+/* The fork node - a small bead where the tools split into two paths. */
+.hitl-branch-node {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 7px;
+  height: 7px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--color-terracotta);
+}
+
+/* Line labels - mono, sat on each line's midpoint, breaking it like a key. */
+.hitl-branch-label {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  background: var(--color-cream);
+  padding: 3px 8px;
+}
+.hitl-branch-label--novice { left: 37.5%; }
+.hitl-branch-label--master { left: 62.5%; }
+
+/* The pair - two equal-width columns, canvases hung at matching height so the
+   branch lines land symmetrically above each one's center. */
+.hitl-pair {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.hitl-canvas {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hitl-canvas img {
+  max-width: 100%;
+  max-height: clamp(240px, 32vw, 360px);
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.5),
+    0 24px 50px -28px rgba(63, 46, 31, 0.4);
+}
+
+/* Canvas labels - hidden on the desktop diagram (the branch lines carry them),
+   shown as captions once the canvases stack. */
+.hitl-canvas-label {
+  display: none;
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+/* Stacked layout - the fork doesn't read vertically, so the branch band is
+   dropped and each canvas carries its own label. */
+@media (max-width: 700px) {
+  .hitl-diagram {
+    gap: 30px;
+  }
+  .hitl-branches {
+    display: none;
+  }
+  .hitl-pair {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .hitl-canvas img {
+    max-height: none;
+    width: 100%;
+    max-width: 360px;
+  }
+  .hitl-canvas-label {
+    display: block;
+  }
+}

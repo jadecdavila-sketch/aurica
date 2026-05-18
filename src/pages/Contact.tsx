@@ -13,7 +13,7 @@ export function Contact() {
     <section className="min-h-screen px-8 pt-[160px] pb-32 max-w-[760px] mx-auto">
       <div className="text-eyebrow text-eyebrow-rule mb-14">get in touch</div>
       <h1 className="text-display text-center mb-12">
-        Tell us what you're <span className="accent">building</span>.
+        Tell us about your <span className="accent">North Star</span>.
       </h1>
 
       {sent ? (

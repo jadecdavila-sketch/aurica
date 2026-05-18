@@ -15,7 +15,7 @@ export const team: TeamMember[] = [
     id: 'jade',
     name: 'Jade Davila',
     role: 'Co-Founder',
-    craft: 'the sketch',
+    craft: 'co-CEO',
     portrait: '/team/Jade.png',
     tagline:
       '**The Architect** and **The Diplomat**, with strong **Witness** and **Artisan** dimensions.',
@@ -40,7 +40,7 @@ export const team: TeamMember[] = [
     id: 'alanna',
     name: 'Alanna Colton',
     role: 'Co-Founder',
-    craft: 'the hammer',
+    craft: 'co-CEO',
     portrait: '/team/Alanna.png',
     tagline:
       '**The Artisan** and **The Diplomat**, with strong **Architect** and **Witness** dimensions.',

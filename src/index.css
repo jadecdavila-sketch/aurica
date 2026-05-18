@@ -327,20 +327,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
 }
-.river-dots {
+.river-divider {
   width: 100%;
-  height: 8px;
-  background-image: radial-gradient(circle at 4px center, var(--color-gold) 0 1.5px, transparent 1.5px);
-  background-size: 16px 8px;
-  background-position: 0 center;
-  animation: river-flow 18s linear infinite;
-  opacity: 0.7;
+  height: 1px;
+  background: var(--color-stone);
+  opacity: 0.6;
 }
-@keyframes river-flow {
-  from { background-position: 0 center; }
-  to   { background-position: 320px center; }
+
+/* Section strand - a thin vertical thread tying the home page's three
+   framework lobes together (North Star -> Council -> Foundation). Terracotta,
+   echoing the human-in-the-loop strand motif; soft-faded ends so it reads as
+   a woven thread rather than a hard rule. */
+.section-strand {
+  width: 1.5px;
+  height: 64px;
+  margin: 24px auto;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in srgb, var(--color-terracotta) 55%, transparent) 20%,
+    color-mix(in srgb, var(--color-terracotta) 55%, transparent) 80%,
+    transparent
+  );
 }
 
 @keyframes fade-up {
@@ -348,3 +357,17 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 .fade-up { animation: fade-up 0.8s var(--ease-out-quart) both; }
+
+/* The winged dollar drifts as if hovering in flight - a slow bob with
+   a faint sway. Stilled for anyone who prefers reduced motion. */
+@keyframes dollar-float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-0.18em) rotate(3deg); }
+}
+.dollar-float {
+  animation: dollar-float 3s ease-in-out infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dollar-float { animation: none; }
+}

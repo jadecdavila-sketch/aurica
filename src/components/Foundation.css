@@ -308,11 +308,17 @@
   margin-top: 24px;
 }
 .atlas-detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: var(--color-cream-soft);
   border: 1px solid color-mix(in srgb, var(--color-gold) 42%, transparent);
   border-radius: 4px;
   padding: 22px 26px;
-  min-height: 132px;
+  /* Tall enough for the largest feature card. A constant panel height means
+     hovering markers never reflows the page - which, when scrolled near the
+     foot of the page, was snapping the scroll and jerking the atlas. */
+  min-height: 248px;
   box-sizing: border-box;
   animation: atlas-detail-in 0.3s ease;
 }
@@ -427,6 +433,8 @@
   }
   .atlas-detail-card {
     padding: 18px 18px;
+    /* The stacked workflow column is the tallest content at this width. */
+    min-height: 420px;
   }
 }
 

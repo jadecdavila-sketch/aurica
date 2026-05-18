@@ -2,6 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 const links = [
+  { to: '/', label: 'home' },
   { to: '/work', label: 'work' },
   { to: '/team', label: 'studio' },
   { to: '/partnership', label: 'partnership' },
@@ -20,6 +21,7 @@ export function SiteNav() {
             <li key={l.to}>
               <NavLink
                 to={l.to}
+                end={l.to === '/'}
                 className={({ isActive }) =>
                   cn(
                     'text-eyebrow transition-colors hover:text-ink',

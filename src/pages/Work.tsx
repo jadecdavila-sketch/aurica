@@ -1,13 +1,23 @@
+/**
+ * Work - the studio's selected work.
+ *
+ * Currently the Larkin product site, embedded verbatim from
+ * /public/larkin-web/ in an iframe so it renders exactly as shipped,
+ * fully isolated from this site's styles, fonts, and scripts. The Studio
+ * nav stays fixed above; the iframe fills the viewport beneath it.
+ */
+
+// Height of the fixed SiteNav (py-5 row + text-lg logo + 1px border).
+const NAV_H = 69;
+
 export function Work() {
   return (
-    <section className="min-h-screen px-8 pt-[160px] pb-32 max-w-[1280px] mx-auto">
-      <div className="text-eyebrow text-eyebrow-rule mb-14">selected work</div>
-      <h1 className="text-display text-center max-w-[900px] mx-auto mb-20">
-        Projects in <span className="accent">progress</span> and at rest.
-      </h1>
-      <div className="text-center text-ink-light text-eyebrow">
-        case studies coming soon
-      </div>
-    </section>
+    <div style={{ height: '100dvh', paddingTop: NAV_H }}>
+      <iframe
+        src="/larkin-web/index.html"
+        title="Larkin - Operational Calm for Modern Life"
+        className="block w-full h-full border-0"
+      />
+    </div>
   );
 }

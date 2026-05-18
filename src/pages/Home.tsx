@@ -5,6 +5,7 @@ import { CouncilSheet } from '@/components/CouncilSheet';
 import { StageSheet } from '@/components/StageSheet';
 import { NorthStarBanner } from '@/components/NorthStarBanner';
 import { Foundation } from '@/components/Foundation';
+import { HumanInTheLoop } from '@/components/HumanInTheLoop';
 import { LobeHeader } from '@/components/LobeHeader';
 
 export function Home() {
@@ -69,40 +70,58 @@ export function Home() {
         </div>
 
         <div className="river">
-          <div className="river-dots" />
+          <div className="river-divider" />
         </div>
       </section>
 
       {/* The Council - North Star banner (Option B) sets the context, then the
           section title sits directly above the medallion-to-ring interaction
           with its bottom drawer drill-in. */}
-      <section className="px-6 pb-32 max-w-[1209px] mx-auto">
+      <section className="px-6 max-w-[1209px] mx-auto">
         <h2 className="mt-8 mb-4 font-display font-light text-ink text-center tracking-[-0.02em] leading-[1.14] text-[clamp(28px,4vw,48px)] max-w-[840px] mx-auto">
           How we take products from good to{' '}
           <span className="font-normal text-terracotta">great</span>.
         </h2>
         <p className="mb-16 font-display text-ink-soft text-center text-[clamp(15px,1.7vw,19px)] max-w-[640px] mx-auto">
-          An AI augmented + accelerated product development framework
+          An AI augmented{' '}
+          <span
+            className="font-body"
+            style={{ color: 'var(--color-terracotta)', fontWeight: 700 }}
+          >
+            +
+          </span>{' '}
+          accelerated product development framework
         </p>
         <NorthStarBanner />
-        <div className="mt-20">
-          <LobeHeader
-            title="The Council"
-            lead="Multi-perspective review"
-            description="six specialized agentic AI critics, each reading the product through its own lens, all held to the north star. The human in the loop involved at every step for critical decision-making."
-            problemId="council"
-          />
-        </div>
+
+        {/* Strand: the North Star threads down into the Council. */}
+        <SectionStrand />
+
+        <LobeHeader
+          title="The Council"
+          lead="Multi-perspective review"
+          description="six specialized agentic AI critics, each reading the product through its own lens, all held to the north star. The human in the loop involved at every step for critical decision-making."
+          problemId="council"
+        />
         <div className="w-full mt-9">
           <CouncilRing onSelectCouncil={handleSelectCouncil} />
         </div>
       </section>
+
+      {/* Strand: the Council threads down into the Foundation. */}
+      <SectionStrand />
 
       {/* The Foundation - the living documentation, drawn as a road atlas.
           It sits below the council: every change clears the council first,
           then routes through the docs. */}
       <section className="px-6 pb-32">
         <Foundation />
+      </section>
+
+      {/* The human in the loop - the closing section: the framework is only
+          as strong as the practitioner wielding it. */}
+      <section className="px-6 pb-32">
+        <HumanInTheLoop />
       </section>
 
       <CouncilSheet
@@ -119,4 +138,14 @@ export function Home() {
       />
     </>
   );
+}
+
+/**
+ * SectionStrand - a thin vertical thread linking the home page's three
+ * framework sections: the North Star, the Council, the Foundation. It echoes
+ * the human-in-the-loop strand motif - one continuous thread the page hangs
+ * from. Drawn once in each gap between the lobes.
+ */
+function SectionStrand() {
+  return <div className="section-strand" aria-hidden="true" />;
 }

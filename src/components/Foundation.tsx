@@ -522,16 +522,18 @@ export function Foundation() {
             )}
           </div>
         ) : (
-          <div className="atlas-detail-card atlas-steps" key="workflow">
-            {WORKFLOW.map((s) => (
-              <div className="atlas-step" key={s.n}>
-                <span className="atlas-step-n">{s.n}</span>
-                <div>
-                  <div className="atlas-step-label">{s.label}</div>
-                  <p className="atlas-step-text">{s.text}</p>
+          <div className="atlas-detail-card" key="workflow">
+            <div className="atlas-steps">
+              {WORKFLOW.map((s) => (
+                <div className="atlas-step" key={s.n}>
+                  <span className="atlas-step-n">{s.n}</span>
+                  <div>
+                    <div className="atlas-step-label">{s.label}</div>
+                    <p className="atlas-step-text">{s.text}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>
