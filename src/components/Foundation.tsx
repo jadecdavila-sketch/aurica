@@ -396,7 +396,7 @@ export function Foundation() {
           <g>
             <rect x="34" y="34" width="196" height="34" className="atlas-cartouche" />
             <text x="132" y="56" className="atlas-cartouche-text" textAnchor="middle">
-              docs/architecture/
+              codebase map
             </text>
           </g>
 
