@@ -297,7 +297,21 @@ export function Partnership() {
             </p>
           </PitchSection>
 
-          <PitchSection index={5} title="What we're asking for">
+          <PitchSection index={5} title="How do we scale this?">
+            <p className="mb-6 font-display text-wood-deep text-[clamp(20px,2.6vw,27px)] leading-[1.25] tracking-[-0.015em]">
+              Surgically - with precision.
+            </p>
+            <p className={PARA}>
+              We don't need dozens and dozens of practitioners to scale this
+              (yet). We need a handful of masterful heavy-hitters who can each
+              juggle a couple of products at a time. We start with Jade and
+              Alanna. We raise Macie up. We carefully hand-select new masters
+              as the projects begin to multiply. We grow with the specialized,
+              targeted precision of a Navy SEAL operation.
+            </p>
+          </PitchSection>
+
+          <PitchSection index={6} title="What we're asking for">
             <p className="mb-6 font-display text-wood-deep text-[clamp(20px,2.6vw,27px)] leading-[1.25] tracking-[-0.015em]">
               A collaborative conversation at the round table.
             </p>

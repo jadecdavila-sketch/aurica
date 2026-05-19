@@ -53,9 +53,7 @@ export function Home() {
         <div className="text-eyebrow text-eyebrow-rule mb-14">a studio</div>
 
         <h1 className="text-display text-center max-w-[1100px] mx-auto mb-24">
-          Building AI for the contexts
-          <br />
-          where <span className="accent">human relationship</span> matters.
+          AI for <span className="accent">humans</span>
         </h1>
 
         <Cradle onSelectStage={handleSelectStage} />
