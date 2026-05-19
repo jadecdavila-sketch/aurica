@@ -1,0 +1,139 @@
+/* Anatomy - the anatomy of a Business Lead.
+   An illustrated figure with thin connector lines pointing to anatomical
+   anchors, each named with the role it stands for. */
+
+.anatomy {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.anatomy-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.anatomy-subtitle {
+  margin: 14px 0 0;
+  max-width: 560px;
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 24;
+  font-weight: 400;
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.42;
+  color: var(--color-ink-soft);
+}
+
+/* The stage - the figure plus the annotation overlay live inside this box.
+   Slightly taller than wide so the figure takes its natural portrait shape
+   while leaving generous side gutters for the labels. */
+.anatomy-stage {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 0.95;
+  margin-top: 56px;
+}
+
+.anatomy-figure {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: auto;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Annotation lines - thin warm-ink connectors from each anchor to its label.
+   Strokes hold a constant pixel width thanks to non-scaling-stroke. */
+.anatomy-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.anatomy-lines line {
+  stroke: var(--color-wood-light);
+  stroke-width: 1;
+  stroke-linecap: round;
+  opacity: 0.7;
+}
+/* Small terracotta beads marking each anatomical anchor. */
+.anatomy-anchor {
+  fill: var(--color-terracotta);
+}
+
+/* Labels - mono, sat at the end of each connector. */
+.anatomy-label {
+  position: absolute;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-soft);
+}
+/* Left side: anchor the label's right edge to `left:`, text right-aligned. */
+.anatomy-label--left {
+  transform: translate(-100%, -50%);
+  padding-right: 10px;
+  text-align: right;
+}
+.anatomy-label--right {
+  padding-left: 10px;
+}
+
+/* Longer labels - allow a two-line wrap inside a fixed text width. */
+.anatomy-label--multiline {
+  white-space: normal;
+  max-width: 150px;
+  line-height: 1.3;
+}
+
+/* Legend - hidden on desktop (the labels sit on the figure); revealed on
+   mobile where the overlay doesn't fit. */
+.anatomy-legend {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .anatomy-stage {
+    max-width: 320px;
+    aspect-ratio: 0.483;
+    margin-top: 40px;
+  }
+  .anatomy-lines,
+  .anatomy-label {
+    display: none;
+  }
+  .anatomy-legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--color-ink-soft);
+  }
+  .anatomy-legend li::before {
+    content: '· ';
+    color: var(--color-terracotta);
+  }
+}

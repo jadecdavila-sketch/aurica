@@ -6,6 +6,7 @@ import { StageSheet } from '@/components/StageSheet';
 import { NorthStarBanner } from '@/components/NorthStarBanner';
 import { Foundation } from '@/components/Foundation';
 import { HumanInTheLoop } from '@/components/HumanInTheLoop';
+import { Anatomy } from '@/components/Anatomy';
 import { LobeHeader } from '@/components/LobeHeader';
 
 export function Home() {
@@ -120,6 +121,12 @@ export function Home() {
           as strong as the practitioner wielding it. */}
       <section className="px-6 pb-32">
         <HumanInTheLoop />
+      </section>
+
+      {/* The anatomy of a Business Lead - what the masterful practitioner
+          looks like, named feature by feature. */}
+      <section className="px-6 pb-32">
+        <Anatomy />
       </section>
 
       <CouncilSheet

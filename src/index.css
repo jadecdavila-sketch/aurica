@@ -330,9 +330,14 @@
 }
 .river-divider {
   width: 100%;
+  max-width: 600px;
   height: 1px;
-  background: var(--color-stone);
-  opacity: 0.6;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-stone),
+    transparent
+  );
 }
 
 /* Section strand - a thin vertical thread tying the home page's three

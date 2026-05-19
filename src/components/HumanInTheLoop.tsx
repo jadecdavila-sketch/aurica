@@ -23,7 +23,7 @@ export function HumanInTheLoop() {
         </p>
         <p>
           The framework can take an ok team to pretty damn good. In the hands of
-          a masterful practitioner, it becomes unbeatable.
+          a masterful practitioner, it becomes <strong><em>unbeatable</em></strong>.
         </p>
         <p>
           The framework isn’t just a tool, and what we do isn’t just about AI.
@@ -57,7 +57,7 @@ export function HumanInTheLoop() {
             <line x1="50" y1="0" x2="75" y2="100" vectorEffect="non-scaling-stroke" />
           </svg>
           <span className="hitl-branch-label hitl-branch-label--novice">
-            novice
+            professional
           </span>
           <span className="hitl-branch-label hitl-branch-label--master">
             master
@@ -70,7 +70,7 @@ export function HumanInTheLoop() {
               src="/novice-painting.png"
               alt="An abstract painting by a novice, in muted blocks of color"
             />
-            <figcaption className="hitl-canvas-label">novice</figcaption>
+            <figcaption className="hitl-canvas-label">professional</figcaption>
           </figure>
           <figure className="hitl-canvas">
             <img
