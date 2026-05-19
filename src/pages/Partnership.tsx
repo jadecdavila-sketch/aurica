@@ -52,8 +52,19 @@ const PARA = 'mb-5 text-ink-soft text-[1.0625rem] leading-[1.8]';
 const DEAL_POINTS = [
   'unosquare licenses the proprietary framework and accompanying toolset into build.unosquare from Sketch + Hammer.',
   'unosquare salaries Alanna and I as the first practitioners (Business Leads) applying the framework and tools in practice for design + front-end build. unosquare provides the back-end build.',
-  'Sketch + Hammer shares in the profits of the AI accelerator practice alongside unosquare.',
+  'Sketch + Hammer shares in the profits of the AI accelerator practice alongside unosquare. For deals that unosquare brings in, X% of the profit is shared. For deals that Sketch + Hammer brings in (Alanna has some hot 🔥 corporate + higher ed deals knocking at the door) a larger, Y% of the profits are shared.',
   'Sketch + Hammer retains its identity, its IP, and its independent consumer product line.',
+];
+
+// Key characteristics of the corporate venture studio model.
+const MODEL_TRAITS = [
+  'The studio is its own entity. The corporate partner is the growth partner, not the owner.',
+  'Resources flow both ways. The corporate brings clients, distribution, and infrastructure. The studio brings methodology, IP, and practitioners.',
+  'The founders hold defined roles in both organizations.',
+  'IP stays with the studio. The corporate licenses what it needs, with defined scope.',
+  'Both sides have skin in the game. Salaries, license fees, profit share.',
+  'The studio keeps its independent product roadmap.',
+  'The structure can evolve. Growth, expansion, or graceful unwind built into the original agreement.',
 ];
 
 /** A numbered pitch section - mono index, Fraunces heading, then its body. */
@@ -208,7 +219,7 @@ export function Partnership() {
 
           <PitchSection index={2} title="The proposal">
             <p className={PARA}>
-              I don't want to leave unosquare. I'm proposing something I
+              I'm not telling you all of this because I want to leave unosquare. I'm proposing something I
               think serves both of us more than anything either of us could
               do alone.
             </p>
@@ -233,28 +244,23 @@ export function Partnership() {
             </p>
           </PitchSection>
 
-          <PitchSection index={3} title="Proposed high-level shape of the deal">
+          <PitchSection index={3} title="The Corporate Venture Studio">
+            <p className={PARA}>
+              We're proposing a corporate venture studio model for Sketch +
+              Hammer and unosquare. Here are some key characteristics of that
+              model:
+            </p>
             <ul className="list-disc pl-5 space-y-4 marker:text-[#8FA07B]">
-              {DEAL_POINTS.map((point) => (
+              {MODEL_TRAITS.map((trait) => (
                 <li
-                  key={point}
+                  key={trait}
                   className="pl-1.5 text-ink-soft text-[1.0625rem] leading-[1.75]"
                 >
-                  {point}
+                  {trait}
                 </li>
               ))}
             </ul>
-            <p className="mt-12 font-display font-light text-wood-deep text-center tracking-[-0.02em] leading-[1.18] text-[clamp(23px,3vw,33px)]">
-              You get the <span className="text-terracotta">money tree</span>.
-              We get the <span className="text-terracotta">soil</span>.
-            </p>
-          </PitchSection>
-
-          <PitchSection
-            index={4}
-            title="The Corporate Venture Studio model is not novel"
-          >
-            <p className={PARA}>
+            <p className={`${PARA} mt-9`}>
               IDEO and Steelcase ran a version of this from 1996 to 2010.
               Steelcase took an equity position, David Kelley held an officer
               role at Steelcase and remained chairman of IDEO. The IDEO brand
@@ -271,6 +277,23 @@ export function Partnership() {
             <p className="mt-7 border-l-2 border-stone/50 pl-4 text-[0.875rem] italic leading-[1.7] text-ink-light">
               Other corporate venture studios include P&amp;G Ventures, ENGIE
               Factory, and L'Oréal's Founders Factory partnership.
+            </p>
+          </PitchSection>
+
+          <PitchSection index={4} title="Proposed high-level shape of the deal">
+            <ul className="list-disc pl-5 space-y-4 marker:text-[#8FA07B]">
+              {DEAL_POINTS.map((point) => (
+                <li
+                  key={point}
+                  className="pl-1.5 text-ink-soft text-[1.0625rem] leading-[1.75]"
+                >
+                  {point}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-12 font-display font-light text-wood-deep text-center tracking-[-0.02em] leading-[1.18] text-[clamp(23px,3vw,33px)]">
+              You get the <span className="text-terracotta">money tree</span>.
+              We get the <span className="text-terracotta">soil</span>.
             </p>
           </PitchSection>
 
