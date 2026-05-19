@@ -100,7 +100,7 @@ export function Home() {
         <LobeHeader
           title="The Council"
           lead="Multi-perspective review"
-          description="six specialized agentic AI critics, each reading the product through its own lens, all held to the north star. The human in the loop involved at every step for critical decision-making."
+          description="seven specialized agentic AI critics, each reading the product through its own lens, all held to the north star. The human in the loop involved at every step for critical decision-making."
           problemId="council"
         />
         <div className="w-full mt-9">
