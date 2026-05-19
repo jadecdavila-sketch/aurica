@@ -50,8 +50,8 @@ const PARA = 'mb-5 text-ink-soft text-[1.0625rem] leading-[1.8]';
 
 // The proposed deal, point by point - rendered as a "+"-marked list.
 const DEAL_POINTS = [
-  'unosquare licenses the proprietary framework and accompanying toolset into build.unosquare from Sketch + Hammer.',
-  'unosquare salaries Alanna and I as the first practitioners (Business Leads) applying the framework and tools in practice for design + front-end build. unosquare provides the back-end build.',
+  'unosquare licenses the proprietary framework and accompanying toolset into build.unosquare from Sketch + Hammer in the form of revenue share.',
+  'unosquare salaries Alanna and I as the first practitioners (Business Leads) applying the framework and tools in practice for design + front-end build. unosquare provides the practitioners for the back-end build.',
   'Sketch + Hammer shares in the profits of the AI accelerator practice alongside unosquare. For deals that unosquare brings in, X% of the profit is shared. For deals that Sketch + Hammer brings in (Alanna has some hot 🔥 corporate + higher ed deals knocking at the door) a larger, Y% of the profits are shared.',
   'Sketch + Hammer retains its identity, its IP, and its independent consumer product line.',
 ];
@@ -299,7 +299,7 @@ export function Partnership() {
 
           <PitchSection index={5} title="What we're asking for">
             <p className="mb-6 font-display text-wood-deep text-[clamp(20px,2.6vw,27px)] leading-[1.25] tracking-[-0.015em]">
-              A conversation.
+              A collaborative conversation at the round table.
             </p>
             <p className={PARA}>
               We want to sit with you and walk through the structure: what the
