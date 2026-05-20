@@ -337,6 +337,24 @@
 .council-stage:not(.is-expanded) .council-member[data-index="0"] { z-index: 7; }
 .council-stage:not(.is-expanded) .council-member[data-index="3"] { z-index: 8; }
 
+/* Collapsed-state hover/focus feedback - the medallion lifts a touch and
+   the gold rings warm so it reads as clickable before the user discovers
+   the convene hint underneath. */
+.council-stage:not(.is-expanded) .council-ring {
+  transition: transform 320ms var(--ease-slow);
+}
+.council-stage:not(.is-expanded) .council-ring:hover,
+.council-stage:not(.is-expanded) .council-ring:focus-visible {
+  transform: scale(1.03);
+}
+.council-stage:not(.is-expanded) .council-ring:hover .council-portrait,
+.council-stage:not(.is-expanded) .council-ring:focus-visible .council-portrait {
+  box-shadow:
+    0 0 0 2px var(--color-cream),
+    0 0 0 3px var(--color-gold),
+    0 16px 36px rgba(63, 46, 31, 0.36);
+}
+
 /* Convene hint */
 .council-convene-hint {
   position: absolute;

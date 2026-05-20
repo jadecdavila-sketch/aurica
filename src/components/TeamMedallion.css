@@ -238,6 +238,29 @@
     0 10px 28px rgba(63, 46, 31, 0.26);
 }
 
+/* Collapsed-state hover/focus feedback - the medallion lifts a touch and
+   the gold rings warm so it reads as clickable before the user discovers
+   the convene hint underneath. */
+.studio-stage:not(.is-expanded) .studio-ring {
+  transition: transform 320ms var(--ease-slow);
+}
+.studio-stage:not(.is-expanded) .studio-ring:hover,
+.studio-stage:not(.is-expanded) .studio-ring:focus-visible {
+  transform: scale(1.03);
+}
+.studio-stage:not(.is-expanded) .studio-ring:hover .studio-portrait,
+.studio-stage:not(.is-expanded) .studio-ring:focus-visible .studio-portrait {
+  box-shadow:
+    0 0 0 2px var(--color-cream),
+    0 0 0 3px var(--color-gold),
+    0 16px 36px rgba(63, 46, 31, 0.36);
+}
+.studio-stage:not(.is-expanded) .studio-ring:hover .studio-member.is-open-seat .studio-portrait,
+.studio-stage:not(.is-expanded) .studio-ring:focus-visible .studio-member.is-open-seat .studio-portrait {
+  border-color: var(--color-terracotta);
+  box-shadow: none;
+}
+
 /* Labels - only visible when expanded. */
 .studio-label {
   position: absolute;
