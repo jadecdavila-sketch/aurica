@@ -3,8 +3,12 @@ import type { TeamMember } from '@/types';
 /**
  * The Studio - the human form of the Council.
  *
- * Jade and Alanna are final - real bios and portraits. The third seat is the
- * open-role placeholder until Jamie's name, role, and craft land.
+ * All three makers are real: Jade and Alanna as co-founders / co-CEOs,
+ * and Jamie Beth Schindler as the Conductor.
+ *
+ * The medallion and detail drawer both render `craft` as the line under
+ * the name, so it must carry the full label (e.g. "co-founder · co-CEO").
+ * `role` is kept for the drawer's screen-reader description only.
  *
  * Portraits live in /public/team/ and are referenced by absolute URL.
  * Bios and taglines may use **bold** and *italic* - TeamSheet renders that
@@ -15,7 +19,7 @@ export const team: TeamMember[] = [
     id: 'jade',
     name: 'Jade Davila',
     role: 'Co-Founder',
-    craft: 'co-CEO',
+    craft: 'co-founder · co-CEO',
     portrait: '/team/Jade.png',
     tagline:
       '**The Architect** and **The Diplomat**, with strong **Witness** and **Artisan** dimensions.',
@@ -40,7 +44,7 @@ export const team: TeamMember[] = [
     id: 'alanna',
     name: 'Alanna Colton',
     role: 'Co-Founder',
-    craft: 'co-CEO',
+    craft: 'co-founder · co-CEO',
     portrait: '/team/Alanna.png',
     tagline:
       '**The Artisan** and **The Diplomat**, with strong **Architect** and **Witness** dimensions.',
@@ -60,21 +64,27 @@ export const team: TeamMember[] = [
       'Alanna is a mother of two, a renovator of homes, and a steady force in the lives of the people around her. She moves through the world with the kind of grace that makes other people feel held, without ever announcing she is holding them.',
   },
   {
-    id: 'open',
-    name: 'The third seat',
-    role: 'Open role',
-    craft: 'the third',
-    open: true,
-    tagline: 'We’re shaping a third seat at the bench.',
+    id: 'jamie',
+    name: 'Jamie Beth Schindler',
+    role: 'Conductor',
+    craft: 'The Conductor',
+    portrait: '/team/JBS.png',
+    tagline:
+      '**The Conductor**, with strong **Diplomat** and **Witness** dimensions.',
     bio: [
-      'The studio is small on purpose - a bench, not an org chart. But it isn’t finished. We’re holding a third seat open for the right maker.',
-      'We don’t yet know whether they’re a designer, an engineer, or something we haven’t named. We know they care about craft, about AI-native products, and about the unglamorous work that makes a product trustworthy. If that sounds like you - tell us what you’re building.',
+      'Jamie makes complex things actually happen. She is the person who holds many moving parts in tune with each other, who keeps the work moving without dropping balls, and who quietly produces the conditions under which other people’s brilliance can land. Her career has carried her from the administrative offices of Manhattan Theatre Club, through admissions and academic leadership at the Jewish Theological Seminary’s William Davidson School of Jewish Education, Lancaster Country Day School, and New Community Jewish High School, into the dean’s office at Lancaster Theological Seminary, and into her current role as Chief of Staff for Innovation and Brand Identity at ansrsource. The throughline across all of it: strategic coordination of personnel, complex projects, and large-scale events, alongside the management of sensitive and confidential data. She named her own council, which is itself the right kind of move.',
+      'The five Conductor pillars sit fully inside her practice. **Orchestration:** bringing many parts into coherent performance, coordinating cross-functional and fully-remote teams across continents and time zones so that the right hands move at the right time. At ansrsource this looks like the monthly production of up to twenty online, asynchronous adult education micro-courses; earlier in her career it looked like coordinating Teaching Artist residencies that touched NYC public schools, Rikers Island teen and adult programs, and universities in the same week. **Execution and follow-through:** the unglamorous integrity of delivering on commitments, including her dedicated work as Project Manager on a proprietary training application built for a key multinational client, and the high-volume project lifecycles she has directed without dropping quality. **Communications and the written record:** what gets written, what gets documented, how messaging strategy moves through email sequences, paid campaigns, and content across multiple audiences. **Financial stewardship:** the discipline she has carried across multimillion-dollar tuition assistance programs, government and funder reporting, and the kind of accountability that does not blink under scrutiny. **Discretion:** the capacity to handle confidential faculty and executive searches, sensitive board documents, and the trust that comes with knowing what to say and what not to.',
+      'Two other councils run strongly underneath. As **The Diplomat**, she carries the relational and political fluency that complex orchestration requires. She has built and maintained a network of nearly 400 subject matter experts across instructional design, finance, generative AI, and marketing, and earlier in her career, as Director of Admissions for the Jewish Theological Seminary’s graduate school of Jewish education, she traveled extensively across the United States and Canada to identify and engage prospective applicants, acting as their primary advocate and strategic guide through the full application cycle. She knows how to read what a stakeholder is actually asking for under what they are saying. As **The Witness**, she leads with warmth that is rare in operations work; she loves spreadsheets, and she loves people, and her work has consistently combined the two in ways that honor both. The way she shows up for the humans inside a complex program is part of why those programs succeed.',
+      'Jamie is also a published author and essayist, with bylines in The New York Times, The Washington Post, and other major outlets. During COVID lockdown, while her friends were baking sourdough bread, she conceived of and hosted a podcast about spreadsheets and the fascinating ways interesting people use them, which is the kind of move only she could have made. She holds an MSEd in Higher Education Administration from Baruch College at CUNY and a BA in English from George Mason University.',
     ],
     focus: [
-      'Could be design',
-      'Could be engineering',
-      'Could be a craft we haven’t named yet',
+      'Orchestration, execution, communications, stewardship, discretion',
+      'Chief of Staff for Innovation and Brand Identity at ansrsource',
+      'A network of ~400 subject matter experts across design, finance, AI, and marketing',
+      'Published essayist - bylines in The New York Times and The Washington Post',
     ],
+    outsideStudio:
+      'Jamie lives in Lancaster, Pennsylvania. She writes essays, hosts a podcast about spreadsheets, and finds the people who use them fascinating. She has spent her career moving between organizations that needed her particular combination of rigor and warmth, and she has yet to find a complex project she could not bring across the finish line.',
   },
 ];
 

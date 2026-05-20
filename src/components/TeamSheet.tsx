@@ -100,9 +100,7 @@ export function TeamSheet({ memberId, open, onOpenChange }: TeamSheetProps) {
             {/* Content */}
             <div className="max-w-[720px] mx-auto px-8 py-14">
               <div className="text-eyebrow mb-5">
-                {member.open
-                  ? 'the studio · an open seat'
-                  : `${member.role} · ${member.craft}`}
+                {member.open ? 'the studio · an open seat' : member.craft}
               </div>
 
               <h1 className="text-display mb-4">{member.name}</h1>

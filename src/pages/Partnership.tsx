@@ -142,20 +142,41 @@ export function Partnership() {
       <section className="min-h-screen pb-32">
         <div className="px-6 pt-[160px] pb-14 flex flex-col items-center">
           <div className="text-eyebrow text-eyebrow-rule mb-14">partnership</div>
-          <h1 className="text-display text-center max-w-[1000px] mx-auto">
-            Sketch{' '}
-            <span className="font-body font-medium text-terracotta text-[1.05em]">
-              +
-            </span>{' '}
-            Hammer &amp;{' '}
-            <img
-              src="/unosquare-logo.svg"
-              alt="unosquare"
-              className="inline-block align-[-0.2em] ml-[0.15em]"
-              style={{ height: '1em', width: 'auto' }}
-            />
-            <br />
-            <span className="accent">flourishing together</span>
+          <h1 className="text-display text-center w-full max-w-[1000px] mx-auto">
+            <div className="flex items-center justify-center whitespace-nowrap">
+              <div className="flex-1 text-right pr-[0.5em]">
+                Sketch{' '}
+                <span className="font-body font-medium text-terracotta text-[1.05em]">
+                  +
+                </span>{' '}
+                Hammer
+              </div>
+              <span
+                className="coin-flip flex-none"
+                style={{ width: '1.8em', height: '1.8em' }}
+                role="img"
+                aria-label="and"
+                tabIndex={0}
+              >
+                <span className="coin-flip__inner">
+                  <span className="coin-flip__face">
+                    <img src="/continuous-motion.png" alt="" aria-hidden="true" />
+                  </span>
+                  <span className="coin-flip__face coin-flip__back">
+                    <img src="/euro.png" alt="" aria-hidden="true" />
+                  </span>
+                </span>
+              </span>
+              <div className="flex-1 text-left pl-[0.5em]">
+                <img
+                  src="/unosquare-logo.svg"
+                  alt="unosquare"
+                  className="inline-block align-[-0.26em] relative top-[0.2em]"
+                  style={{ height: '1.3em', width: 'auto' }}
+                />
+              </div>
+            </div>
+            <span className="accent text-[0.72em]">flourishing together</span>
           </h1>
         </div>
 
@@ -224,8 +245,11 @@ export function Partnership() {
               do alone.
             </p>
             <p className={PARA}>
-              unosquare needs an AI accelerator arm. A defensible service
-              line that no peer firm has. The kind of capability you can't
+              unosquare needs an AI accelerator arm.{' '}
+              <strong className="font-bold">
+                A defensible, tech-enabled service line
+              </strong>{' '}
+              that no peer firm has. The kind of capability you can't
               hire your way into because it requires a methodology that was{' '}
               <strong className="font-bold">
                 forged through the actual building of products
@@ -304,14 +328,38 @@ export function Partnership() {
             <p className={PARA}>
               We don't need dozens and dozens of practitioners to scale this
               (yet). We need a handful of masterful heavy-hitters who can each
-              juggle a couple of products at a time. We start with Jade and
-              Alanna. We raise Macie up. We carefully hand-select new masters
+              juggle a couple of products at a time. We start with Sketch + Hammer and
+              select tech-enabled unosquare engineers. We raise others up. We carefully hand-select new masters
               as the projects begin to multiply. We grow with the specialized,
               targeted precision of a Navy SEAL operation.
             </p>
+            <p className={PARA}>
+              The framework is what makes that precision possible. It's
+              proprietary methodology, encoded as callable infrastructure that
+              agents can run. It captures judgment, not just process. This is
+              what moves a services firm into tech-enabled services, a
+              category competitors can't enter by hiring more bodies or buying
+              more tools. The framework scales the volume. The practitioners
+              scale the judgment.
+            </p>
           </PitchSection>
 
-          <PitchSection index={6} title="What we're asking for">
+          <PitchSection index={6} title="What this could become">
+            <p className={PARA}>
+              The first chapter is unosquare. Panopto, then a set of clients
+              where the framework can be applied at depth.
+            </p>
+            <p className={PARA}>
+              The second chapter is bigger and longer-horizon. Ridgemont's
+              portfolio holds companies across business services, healthcare,
+              education, and adjacent sectors. Each has product development
+              challenges that the framework was designed to address. A working
+              partnership at unosquare creates the proof and the playbook for
+              deploying the methodology across that wider ground.
+            </p>
+          </PitchSection>
+
+          <PitchSection index={7} title="What we're asking for">
             <p className="mb-6 font-display text-wood-deep text-[clamp(20px,2.6vw,27px)] leading-[1.25] tracking-[-0.015em]">
               A collaborative conversation at the round table.
             </p>

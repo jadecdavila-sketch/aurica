@@ -376,3 +376,51 @@
 @media (prefers-reduced-motion: reduce) {
   .dollar-float { animation: none; }
 }
+
+/* Two-faced coin between Sketch + Hammer and unosquare in the
+   Partnership h1. Hover (or keyboard focus) flips front to back.
+   Size and inline spacing are set at the use site. */
+.coin-flip {
+  display: inline-block;
+  perspective: 800px;
+  vertical-align: middle;
+}
+.coin-flip__inner {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.coin-flip:hover .coin-flip__inner,
+.coin-flip:focus-visible .coin-flip__inner {
+  transform: rotateY(180deg);
+}
+.coin-flip__face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.coin-flip__face img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.coin-flip__back {
+  transform: rotateY(180deg);
+}
+/* The Euro reverse sits slightly smaller in its photo frame than the
+   obverse - zoom its inner image so both apparent coin sizes match. */
+.coin-flip__back img {
+  transform: scale(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .coin-flip__inner { transition: none; }
+}

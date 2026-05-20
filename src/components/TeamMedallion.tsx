@@ -136,7 +136,7 @@ export function TeamMedallion({ onSelect }: TeamMedallionProps) {
                   {m.open ? 'The third seat' : m.name}
                 </div>
                 <div className="studio-label-role">
-                  {m.open ? 'open role' : `co-founder · ${m.craft}`}
+                  {m.open ? 'open role' : m.craft}
                 </div>
               </div>
             </div>
