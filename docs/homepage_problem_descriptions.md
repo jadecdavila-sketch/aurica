@@ -38,6 +38,10 @@ The Council is a structured set of voices, human and AI, each with a different l
 
 That structure scales. Any strong practitioner can learn to operate the Council, which means the discipline of multi-perspective critique becomes a repeatable practice instead of a singular act.
 
+Research on agentic systems is converging on this same insight. Multi-agent approaches outperform single-agent approaches. Hybrid human-AI workflows outperform either operating alone. The Council operationalizes both findings as a discipline.
+
+Embedded inside build.unosquare, The Council becomes a layer of the product itself. Every project run through the platform gets a structured multi-perspective critique pass. The tool gets sharper. The service gets defensible. That is what tech-enabled services looks like in practice.
+
 ---
 
 ## The Foundation

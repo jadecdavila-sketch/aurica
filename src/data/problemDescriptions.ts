@@ -36,6 +36,8 @@ export const problemDescriptions: ProblemDescription[] = [
       '**The Architect** insists on bones and soul. **The Witness** refuses to leave users out. **The Midnight Responder** plans for failure at 3am. **The Long Game** whispers about which shortcuts will become walls. **The Artisan** refuses generic. **The Questioner** refuses assumptions. **The Groundskeeper** protects future-you.',
       '**The Council does not vote. It surfaces tensions.** Where voices disagree, the disagreement is itself the artifact: a decision the team faces, named clearly, not flattened into a single compromised answer.',
       'That structure scales. Any strong practitioner can learn to operate the Council, which means the discipline of multi-perspective critique becomes a repeatable practice instead of a singular act.',
+      'Research on agentic systems is converging on this same insight. Multi-agent approaches outperform single-agent approaches. Hybrid human-AI workflows outperform either operating alone. The Council operationalizes both findings as a discipline.',
+      'Embedded inside build.unosquare, The Council becomes a layer of the product itself. Every project run through the platform gets a structured multi-perspective critique pass. The tool gets sharper. The service gets defensible. That is what tech-enabled services looks like in practice.',
     ],
   },
   {
