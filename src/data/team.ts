@@ -80,8 +80,8 @@ export const team: TeamMember[] = [
     focus: [
       'Orchestration, execution, communications, stewardship, discretion',
       'Chief of Staff for Innovation and Brand Identity at ansrsource',
-      'A network of ~400 subject matter experts across design, finance, AI, and marketing',
-      'Published essayist - bylines in The New York Times and The Washington Post',
+      'The ability to create and maintain networks of freelancers, project employees, and a deep bench of talent',
+      'Published essayist - bylines in The New York Times, The Washington Post, Huff Post, Salon and more',
     ],
     outsideStudio:
       'Jamie lives in Lancaster, Pennsylvania. She teaches and writes across genres, mentors incarcerated journalists, and tells stories live on stage. She has spent her career moving between organizations that needed her particular combination of rigor and warmth, and she has yet to find a complex project she could not bring across the finish line.',

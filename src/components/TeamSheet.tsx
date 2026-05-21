@@ -117,7 +117,7 @@ export function TeamSheet({ memberId, open, onOpenChange }: TeamSheetProps) {
 
               <div className="border-t border-stone/40 pt-8">
                 <div className="text-eyebrow mb-5">
-                  {member.open ? 'who we’re looking for' : 'what they hold'}
+                  {member.open ? 'who we’re looking for' : 'what she holds'}
                 </div>
                 <ul className="space-y-2.5">
                   {member.focus.map((f) => (

@@ -1,4 +1,17 @@
-import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from 'react';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+} from '@/components/ui/sheet';
 import { PasswordGate } from '@/components/PasswordGate';
 
 // Each label glides through a vertical band of the hero image (fractions of
@@ -88,10 +101,116 @@ function PitchSection({
   );
 }
 
+/**
+ * CoinSheet - a right-side drawer that opens when the title coin is
+ * clicked. Tells the story of Boccioni's "Forme uniche della continuità
+ * nello spazio" and the 20-cent Italian euro it lives on.
+ */
+function CoinSheet({
+  open,
+  onOpenChange,
+}: {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}) {
+  return (
+    <Sheet open={open} onOpenChange={onOpenChange}>
+      <SheetContent
+        side="right"
+        className="w-[92vw] sm:max-w-lg p-0 overflow-y-auto bg-cream text-ink"
+      >
+        <SheetHeader className="sr-only">
+          <SheetTitle>Forme uniche della continuità nello spazio</SheetTitle>
+          <SheetDescription>
+            Umberto Boccioni's 1913 sculpture, imprinted on Italy's 20-cent
+            euro coin.
+          </SheetDescription>
+        </SheetHeader>
+
+        <div className="px-7 pt-12 pb-16">
+          <div className="flex justify-center mb-8">
+            <img
+              src="/continuous-motion.png"
+              alt="The Italian 20-cent euro, designed with Boccioni's Forme uniche della continuità nello spazio."
+              className="w-40 h-40 rounded-full object-cover"
+            />
+          </div>
+          <div className="text-eyebrow mb-7">about the coin</div>
+
+          <h2 className="font-display font-light text-wood-deep text-[clamp(26px,3vw,34px)] leading-[1.15] tracking-[-0.02em] mb-1">
+            Umberto Boccioni
+          </h2>
+          <p className="text-ink-soft text-sm tracking-wide mb-6">
+            Italian, 1882–1916
+          </p>
+
+          <p className="font-display italic text-ink text-[clamp(18px,2vw,22px)] leading-[1.3] mb-1">
+            Forme uniche della continuità nello spazio
+          </p>
+          <p className="text-ink-soft text-sm mb-1">
+            (Unique Forms of Continuity in Space)
+          </p>
+          <p className="text-ink-light text-sm mb-10">
+            1913 (cast in bronze posthumously, 1931)
+          </p>
+
+          <div className="space-y-5 text-ink-soft text-[1.0625rem] leading-[1.8]">
+            <p>
+              Boccioni was the leading artist of Italian Futurism, the early
+              twentieth century movement that celebrated speed, technology,
+              and the dynamism of the modern world. Born in Reggio Calabria,
+              he studied at the Accademia di Belle Arti in Rome before
+              moving to Milan, where he co-authored the Manifesto of the
+              Futurist Painters and became the movement's principal
+              theoretician. He was 31 when he made this figure.
+            </p>
+            <p>
+              The figure is not a portrait. It is the synthesis of walking,
+              compressed into a single body. The silhouette has been flung
+              open so that the air around the figure becomes part of the
+              form. The polished metal contours allude to machinery; the
+              triumphant stance and armless torso quote the warrior statues
+              of antiquity. Boccioni wrote it himself: "Let us fling open
+              the figure and let it incorporate within itself whatever may
+              surround it." The Futurists had renounced the past in favor of
+              the dynamism of the machine age, but the figure Boccioni made
+              quotes the warriors of ancient Rome anyway. He couldn't leave
+              classical antiquity behind. The craft of sculpture is older
+              than any movement that claims to break with it.
+            </p>
+          </div>
+
+          <h3 className="mt-12 mb-4 font-display font-light text-wood-deep text-[clamp(20px,2.4vw,26px)] leading-[1.2] tracking-[-0.015em]">
+            Imprinted on the euro
+          </h3>
+          <p className="text-ink-soft text-[1.0625rem] leading-[1.8] mb-10">
+            In 1998, Italy chose this sculpture as the image on its 20 cent
+            coin. Boccioni's striding figure now rides in every pocket in
+            Italy. A national symbol, chosen because the country recognized
+            in it something essential about itself: the past and the future
+            held in the same body, walking forward.
+          </p>
+
+          <p className="font-display font-light text-wood-deep text-center text-[clamp(20px,2.6vw,27px)] leading-[1.25] tracking-[-0.015em] my-10">
+            That's the figure we're building.
+          </p>
+
+          <p className="text-ink-soft text-[1.0625rem] leading-[1.8]">
+            AI is the medium of the moment. The craft underneath it is
+            older. The figure walks because the craft holds the form steady
+            while the technology moves through it.
+          </p>
+        </div>
+      </SheetContent>
+    </Sheet>
+  );
+}
+
 export function Partnership() {
   const figureRef = useRef<HTMLElement>(null);
   const treeRef = useRef<HTMLParagraphElement>(null);
   const soilRef = useRef<HTMLParagraphElement>(null);
+  const [coinOpen, setCoinOpen] = useState(false);
 
   useEffect(() => {
     let rafId = 0;
@@ -151,12 +270,12 @@ export function Partnership() {
                 </span>{' '}
                 Hammer
               </div>
-              <span
-                className="coin-flip flex-none"
+              <button
+                type="button"
+                className="coin-flip flex-none cursor-pointer bg-transparent border-0 p-0"
                 style={{ width: '1.8em', height: '1.8em' }}
-                role="img"
-                aria-label="and"
-                tabIndex={0}
+                aria-label="and (about the coin)"
+                onClick={() => setCoinOpen(true)}
               >
                 <span className="coin-flip__inner">
                   <span className="coin-flip__face">
@@ -166,7 +285,7 @@ export function Partnership() {
                     <img src="/euro.png" alt="" aria-hidden="true" />
                   </span>
                 </span>
-              </span>
+              </button>
               <div className="flex-1 text-left pl-[0.5em]">
                 <img
                   src="/unosquare-logo.svg"
@@ -373,6 +492,8 @@ export function Partnership() {
           </PitchSection>
         </div>
       </section>
+
+      <CoinSheet open={coinOpen} onOpenChange={setCoinOpen} />
     </PasswordGate>
   );
 }

@@ -256,11 +256,17 @@ export function Cradle({ onSelectStage }: CradleProps) {
       return ke;
     }
 
-    const onEnter = () => {
+    // Replay the cascade when the cradle is at rest. Hovering covers desktop
+    // re-engagement; clicking covers touch devices (where mouseenter doesn't
+    // really fire) and just feels right - a kid pokes the cradle, it swings.
+    // Sphere taps stopPropagation, so they still open the stage drawer; this
+    // catches every other click on the stage (frame, strings, empty space).
+    const tryReplay = () => {
       if (liftingIndices.size > 0) return;
       if (totalKineticEnergy() < 0.05) liftAndRelease(0, -0.45);
     };
-    stageEl.addEventListener('mouseenter', onEnter);
+    stageEl.addEventListener('mouseenter', tryReplay);
+    stageEl.addEventListener('click', tryReplay);
 
     const demoTimer = window.setTimeout(() => liftAndRelease(0, -0.45), 1400);
 
@@ -294,7 +300,8 @@ export function Cradle({ onSelectStage }: CradleProps) {
       if (resizeTimer) window.clearTimeout(resizeTimer);
       window.removeEventListener('resize', sizeSvg);
       window.removeEventListener('resize', onResize);
-      stageEl.removeEventListener('mouseenter', onEnter);
+      stageEl.removeEventListener('mouseenter', tryReplay);
+      stageEl.removeEventListener('click', tryReplay);
       // Children we appended:
       for (const el of [...sphereEls, ...shadowEls, ...labelEls]) el.remove();
       svg.remove();
