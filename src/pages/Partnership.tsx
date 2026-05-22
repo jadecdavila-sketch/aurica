@@ -63,10 +63,10 @@ const PARA = 'mb-5 text-ink-soft text-[1.0625rem] leading-[1.8]';
 
 // The proposed deal, point by point - rendered as a "+"-marked list.
 const DEAL_POINTS = [
-  'unosquare licenses the proprietary framework and accompanying toolset into build.unosquare from Sketch + Hammer in the form of revenue share.',
+  'unosquare licenses the proprietary framework and accompanying toolset into build.unosquare from Aurica in the form of revenue share.',
   'unosquare salaries Alanna and I as the first practitioners (Business Leads) applying the framework and tools in practice for design + front-end build. unosquare provides the practitioners for the back-end build.',
-  'Sketch + Hammer shares in the profits of the AI accelerator practice alongside unosquare. For deals that unosquare brings in, X% of the profit is shared. For deals that Sketch + Hammer brings in (Alanna has some hot 🔥 corporate + higher ed deals knocking at the door) a larger, Y% of the profits are shared.',
-  'Sketch + Hammer retains its identity, its IP, and its independent consumer product line.',
+  'Aurica shares in the profits of the AI accelerator practice alongside unosquare. For deals that unosquare brings in, X% of the profit is shared. For deals that Aurica brings in (Alanna has some hot 🔥 corporate + higher ed deals knocking at the door) a larger, Y% of the profits are shared.',
+  'Aurica retains its identity, its IP, and its independent consumer product line.',
 ];
 
 // Key characteristics of the corporate venture studio model.
@@ -260,15 +260,16 @@ export function Partnership() {
     <PasswordGate>
       <section className="min-h-screen pb-32">
         <div className="px-6 pt-[160px] pb-14 flex flex-col items-center">
-          <div className="text-eyebrow text-eyebrow-rule mb-14">partnership</div>
+          <div className="text-eyebrow text-eyebrow-rule mb-14">a partnership</div>
           <h1 className="text-display text-center w-full max-w-[1000px] mx-auto">
             <div className="flex items-center justify-center whitespace-nowrap">
               <div className="flex-1 text-right pr-[0.5em]">
-                Sketch{' '}
-                <span className="font-body font-medium text-terracotta text-[1.05em]">
-                  +
-                </span>{' '}
-                Hammer
+                <img
+                  src="/Aurica.svg"
+                  alt="Aurica"
+                  className="inline-block align-[-0.26em] relative top-[-0.3em]"
+                  style={{ height: '0.8em', width: 'auto' }}
+                />
               </div>
               <button
                 type="button"
@@ -323,7 +324,7 @@ export function Partnership() {
             className={LABEL_CLASS}
             style={{ ...LABEL_STYLE, top: '70%' }}
           >
-            Sketch + Hammer needs soil to thrive and grow in.
+            Aurica needs soil to thrive and grow in.
           </p>
         </figure>
 
@@ -380,7 +381,7 @@ export function Partnership() {
               do.
             </p>
             <p className={PARA}>
-              Sketch + Hammer needs soil. A place to grow. The infrastructure
+              Aurica needs soil. A place to grow. The infrastructure
               that will help a two-founder studio thrive. A pipeline of real
               clients (Panopto first, then more) where the framework can be
               applied at scale.
@@ -389,8 +390,8 @@ export function Partnership() {
 
           <PitchSection index={3} title="The Corporate Venture Studio">
             <p className={PARA}>
-              We're proposing a corporate venture studio model for Sketch +
-              Hammer and unosquare. Here are some key characteristics of that
+              We're proposing a corporate venture studio model for Aurica
+              and unosquare. Here are some key characteristics of that
               model:
             </p>
             <ul className="list-disc pl-5 space-y-4 marker:text-[#8FA07B]">
@@ -447,7 +448,7 @@ export function Partnership() {
             <p className={PARA}>
               We don't need dozens and dozens of practitioners to scale this
               (yet). We need a handful of masterful heavy-hitters who can each
-              juggle a couple of products at a time. We start with Sketch + Hammer and
+              juggle a couple of products at a time. We start with Aurica and
               select tech-enabled unosquare engineers. We raise others up. We carefully hand-select new masters
               as the projects begin to multiply. We grow with the specialized,
               targeted precision of a Navy SEAL operation.
@@ -485,8 +486,8 @@ export function Partnership() {
             <p className={PARA}>
               We want to sit with you and walk through the structure: what the
               licensing looks like, what the salary and profit-share
-              mechanics look like, where the lines are between Sketch +
-              Hammer and unosquare. We want to do this in the way that
+              mechanics look like, where the lines are between Aurica and
+              unosquare. We want to do this in the way that
               protects all of us and gives the partnership room to evolve.
             </p>
           </PitchSection>

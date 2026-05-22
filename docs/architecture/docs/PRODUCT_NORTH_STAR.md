@@ -135,6 +135,16 @@ These are the failure modes this North Star exists to catch. When a recommendati
 
 ---
 
+## 08 The Coin
+
+Imprinted on the 20c euro is Forme uniche della continuità nello spazio(Unique Forms of Continuity in Space) by Umberto Boccioni.
+
+
+Boccioni was the leading artist of Italian Futurism, the early twentieth century movement that celebrated speed, technology, and the dynamism of the modern world. 
+
+The figure is not a portrait. It is the synthesis of walking, compressed into a single body. The silhouette has been flung open so that the air around the figure becomes part of the form. The polished metal contours allude to machinery; the triumphant stance and armless torso quote the warrior statues of antiquity. Boccioni wrote it himself: "Let us fling open the figure and let it incorporate within itself whatever may surround it." The Futurists had renounced the past in favor of the dynamism of the machine age, but the figure Boccioni made quotes the warriors of ancient Rome anyway. He couldn't leave classical antiquity behind. The craft of sculpture is older than any movement that claims to break with it.
+AI is the medium of the moment. The craft underneath it is older. The figure walks because the craft holds the form steady while the technology moves through it.
+
 PRODUCT_NORTH_STAR.md · sketch + hammer · v1.0 - working draft
 
 *This document is the thesis. It begins thin and sharpens through every engagement.*

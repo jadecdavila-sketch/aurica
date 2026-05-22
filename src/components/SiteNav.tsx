@@ -43,16 +43,10 @@ export function SiteNav() {
           <Link
             to="/"
             onClick={() => setOpen(false)}
-            className="font-display text-lg text-ink hover:text-wood transition-colors"
+            className="inline-flex items-center transition-opacity hover:opacity-70"
+            aria-label="Aurica — home"
           >
-            sketch{' '}
-            <span
-              className="font-display-sm"
-              style={{ color: 'var(--color-terracotta)', fontWeight: 700 }}
-            >
-              +
-            </span>{' '}
-            hammer
+            <img src="/Aurica.svg" alt="Aurica" className="h-7 w-auto" />
           </Link>
 
           {/* Desktop link row. */}
