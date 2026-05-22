@@ -51,9 +51,18 @@ export function Home() {
   return (
     <>
       <section className="min-h-screen flex flex-col items-center px-6 pt-[160px] pb-32">
-        <div className="text-eyebrow text-eyebrow-rule mb-14">a studio</div>
+        <div className="text-eyebrow text-eyebrow-rule mb-6">a studio</div>
 
-        <h1 className="text-display text-center max-w-[1100px] mx-auto mb-24">
+        <img
+          src="/Aurica.svg"
+          alt="Aurica"
+          className="w-[clamp(180px,26vw,300px)] h-auto mb-6"
+        />
+
+        <h1
+          className="text-display text-center max-w-[1100px] mx-auto mb-24"
+          style={{ fontSize: 'clamp(20px, 3vw, 34px)' }}
+        >
           AI for <span className="accent">humans</span>
         </h1>
 

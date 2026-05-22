@@ -46,7 +46,7 @@ export function SiteNav() {
             className="inline-flex items-center transition-opacity hover:opacity-70"
             aria-label="Aurica — home"
           >
-            <img src="/Aurica.svg" alt="Aurica" className="h-7 w-auto" />
+            <img src="/Aurica.svg" alt="Aurica" className="h-6 w-auto" />
           </Link>
 
           {/* Desktop link row. */}
