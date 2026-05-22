@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { SiteNav } from '@/components/SiteNav';
+import { SiteFooter } from '@/components/SiteFooter';
 import { Home } from '@/pages/Home';
 import { StageView } from '@/pages/StageView';
 import { CouncilView } from '@/pages/CouncilView';
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/spinner-lab" element={<SpinnerLab />} />
         </Routes>
       </main>
+      <SiteFooter />
     </>
   );
 }
