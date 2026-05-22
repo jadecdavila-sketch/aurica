@@ -14,6 +14,20 @@ interface TeamSheetProps {
   onOpenChange: (open: boolean) => void;
 }
 
+/** The LinkedIn "in" glyph - inlined since this lucide build has no Linkedin icon. */
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+    </svg>
+  );
+}
+
 function monogram(name: string) {
   return name
     .split(' ')
@@ -108,6 +122,19 @@ export function TeamSheet({ memberId, open, onOpenChange }: TeamSheetProps) {
               <p className="font-display text-xl text-ink-soft leading-snug mb-10">
                 {renderRich(member.tagline)}
               </p>
+
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${member.name} on LinkedIn`}
+                  className="inline-flex items-center gap-2 text-ink-soft hover:text-terracotta transition-colors -mt-5 mb-10"
+                >
+                  <LinkedInIcon className="w-5 h-5" />
+                  <span className="text-eyebrow">connect on LinkedIn</span>
+                </a>
+              )}
 
               <div className="space-y-5 text-ink-soft leading-relaxed mb-12">
                 {member.bio.map((para, i) => (

@@ -100,6 +100,8 @@ export interface TeamMember {
   focus: string[];
   /** An optional personal coda - a glimpse of life outside the studio. */
   outsideStudio?: string;
+  /** Full LinkedIn profile URL. Renders an icon-link in the bio drawer when set. */
+  linkedin?: string;
   /** Square portrait in /public/team/. Falls back to a monogram disc. */
   portrait?: string;
   /** True for the unfilled third seat. */

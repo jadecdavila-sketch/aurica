@@ -21,6 +21,7 @@ export const team: TeamMember[] = [
     role: 'Co-Founder',
     craft: 'co-founder · co-CEO',
     portrait: '/team/Jade.png',
+    linkedin: 'https://www.linkedin.com/in/jadedavila/',
     tagline:
       '**The Architect** and **The Diplomat**, with strong **Witness** and **Artisan** dimensions.',
     bio: [
@@ -46,6 +47,7 @@ export const team: TeamMember[] = [
     role: 'Co-Founder',
     craft: 'co-founder · co-CEO',
     portrait: '/team/Alanna.png',
+    linkedin: 'https://www.linkedin.com/in/alanna-colton-714326290/',
     tagline:
       '**The Artisan** and **The Diplomat**, with strong **Architect** and **Witness** dimensions.',
     bio: [
@@ -69,6 +71,7 @@ export const team: TeamMember[] = [
     role: 'Conductor',
     craft: 'The Conductor',
     portrait: '/team/JBS.png',
+    linkedin: 'https://www.linkedin.com/in/jamie-beth-schindler-47a9513/',
     tagline:
       '**The Conductor**, with strong **Diplomat** and **Witness** dimensions.',
     bio: [
