@@ -67,6 +67,9 @@ export const team: TeamMember[] = [
   },
   {
     id: 'jamie',
+    // Hidden from the medallion for now; data preserved so re-enabling is a
+    // one-line flip (`hidden: false`) without re-typing the bio.
+    hidden: true,
     name: 'Jamie Beth Schindler',
     role: 'Conductor',
     craft: 'The Conductor',

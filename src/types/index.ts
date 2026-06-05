@@ -106,4 +106,6 @@ export interface TeamMember {
   portrait?: string;
   /** True for the unfilled third seat. */
   open?: boolean;
+  /** True hides the member from the medallion without removing the data. */
+  hidden?: boolean;
 }

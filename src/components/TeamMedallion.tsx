@@ -2,9 +2,16 @@ import { useState, useCallback, useEffect } from 'react';
 import { team } from '@/data';
 import './TeamMedallion.css';
 
-/* Three crafts in an inverted triangle: top-left, top-right, bottom point.
-   Mirrors the team data order - Jade and Alanna up top, Jamie at the point. */
+/* Up to three crafts in an inverted triangle: top-left, top-right, bottom point.
+   Members order: Jade top-left, Alanna top-right, the third at the point.
+   Hidden members (`hidden: true`) are dropped before render; the corresponding
+   radial line and slot are dropped too, so the geometry stays honest. */
 const ANGLES = [300, 60, 180];
+const LINE_COORDS: { x2: number; y2: number }[] = [
+  { x2: -173.21, y2: -100 },
+  { x2: 173.21, y2: -100 },
+  { x2: 0, y2: 200 },
+];
 const LABEL_POS: Record<number, 'above' | 'below'> = {
   0: 'above',
   1: 'above',
@@ -34,6 +41,7 @@ interface TeamMedallionProps {
 export function TeamMedallion({ onSelect }: TeamMedallionProps) {
   const [expanded, setExpanded] = useState(false);
   const toggle = useCallback(() => setExpanded((v) => !v), []);
+  const visibleTeam = team.filter((m) => !m.hidden);
 
   // Collapse on Escape, mirroring the council ring.
   useEffect(() => {
@@ -90,9 +98,16 @@ export function TeamMedallion({ onSelect }: TeamMedallionProps) {
             aria-hidden
           >
             <circle cx="0" cy="0" r="200" />
-            <line data-index="0" x1="0" y1="0" x2="-173.21" y2="-100" />
-            <line data-index="1" x1="0" y1="0" x2="173.21" y2="-100" />
-            <line data-index="2" x1="0" y1="0" x2="0" y2="200" />
+            {visibleTeam.map((_, i) => (
+              <line
+                key={i}
+                data-index={i}
+                x1="0"
+                y1="0"
+                x2={LINE_COORDS[i].x2}
+                y2={LINE_COORDS[i].y2}
+              />
+            ))}
           </svg>
 
           {/* The studio mark - the point all three crafts meet. */}
@@ -101,7 +116,7 @@ export function TeamMedallion({ onSelect }: TeamMedallionProps) {
             <span className="studio-center-hint">the studio</span>
           </div>
 
-          {team.map((m, i) => (
+          {visibleTeam.map((m, i) => (
             <div
               key={m.id}
               className={`studio-member ${m.open ? 'is-open-seat' : ''}`}
